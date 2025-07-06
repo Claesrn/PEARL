@@ -198,10 +198,10 @@ fromEM s (Left e) = die $ "Error while " ++ s ++ ": " ++ e
 
 fromLEM :: String -> LEM a -> IO (a, [String])
 fromLEM _ (LEM (Right a, l)) = return (a, l)
-fromLEM s (LEM (Left e, l)) =
-  do putStrLn "LOG:"
-     mapM_ putStrLn l
-     die $ "Error while " ++ s ++ ": " ++ e
+fromLEM s (LEM (Left e, l)) = die $ "Error while " ++ s ++ ": " ++ e
+  -- do putStrLn "LOG:"
+  --    mapM_ putStrLn l
+    --  die $ "Error while " ++ s ++ ": " ++ e
 
 parseFile :: String -> Bool -> (String -> EM a) -> String -> IO a
 parseFile goal verbose parse file =
