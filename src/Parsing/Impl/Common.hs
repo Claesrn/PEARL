@@ -30,14 +30,19 @@ pConstant = symbol "'" *> pValue
 pName :: Parser String
 pName =
   lexeme . try $
-    do c <- letter; cs <- many pChar;
+    do c <- nameStart
+       cs <- many pChar
        let n = c : cs
        if n `elem` restricted then fail "Restricted Word" else return n
   where
-    pChar = choice [alphaNum, char '_', char '\'']
+    -- Allow starting with a letter or a selected set of symbols
+    nameStart = letter <|> oneOf "#!$"
+
+    -- Allow continuing with alphanumerics or selected extra symbols
+    pChar = alphaNum <|> oneOf "_'#!$"
+
     restricted = ["from", "fi", "else", "goto", "if", "entry", "exit",
                   "skip", "hd", "tl", "assert", "nil", "with"]
-
 -- parse a number
 pNum :: Parser Word
 pNum = lexeme . try $ read <$> many1 digit
