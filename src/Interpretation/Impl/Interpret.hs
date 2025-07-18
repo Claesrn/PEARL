@@ -94,7 +94,7 @@ evalBlocks prog outputs store l origin =
 -- interpret a given block
 evalBlock :: (Eq a, Show a) => Store -> Block a () -> Maybe (a, ()) -> SLEM (Maybe a, Store)
 evalBlock s b l =
-  do S.lift . logM $  show (label b) ++ prettyStore s -- TODO: improve
+  do -- S.lift . logM $  show (label b) ++ prettyStore s -- TODO: improve
      evalFrom s (from b) l
      s' <- evalSteps s (body b)
      l' <- evalJump s' (jump b)
