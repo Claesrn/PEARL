@@ -9,10 +9,10 @@ newtype LEM a = LEM {runLEM :: (EM a, [String])}
 
 instance Monad LEM where
   return = pure
-  LEM (v, l) >>= f =
-    LEM $ case v of
-      Left e -> (Left e, l)
-      Right res -> let LEM (v', l') = f res in (v', l ++ l')
+  LEM (v, _) >>= f =
+    case v of
+      Left e -> LEM $ (Left e, [])
+      Right res -> f res
 
 instance Functor LEM where
   fmap = liftM
@@ -31,5 +31,5 @@ logManyM = mapM_ logM
 
 emToLEM :: EM a -> LEM a
 emToLEM m = LEM $ case m of
-  Left e -> (Left e, [e])
+  Left e -> (Left e, [])
   Right s -> (Right s, [])

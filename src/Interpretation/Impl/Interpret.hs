@@ -3,7 +3,6 @@ module Interpretation.Impl.Interpret where
 
 import Utils.Error
 import Utils.Maps
-import Utils.PrettyPrint
 
 import RL.AST
 import RL.Operators
@@ -51,20 +50,13 @@ runProgram :: (Eq a, Show a) => Program a () -> Store -> LEM (Store, Stats)
 runProgram (decl, prog) inpstore =
   do  entry <- raise $ getEntry prog
       store <- raise $ createStore decl inpstore
-      let res = evalBlocks prog (output decl) store entry Nothing
-      S.runStateT res initStats
+      evalBlocks prog (output decl) store entry Nothing initStats
 
 -- Interpret a program with a (possibly mallformed) input
 -- Non-input values in a store are ignored
 -- output: program output and statistics
-runProgram' :: (Eq a, Show a) => Program a () -> Store -> LEM (Store, Stats)
-runProgram' (decl, prog) store =
-  do  entry <- raise $ getEntry prog
-      let res = evalBlocks prog (output decl) runStore entry Nothing
-      S.runStateT res initStats
-  where
-    nilStore = fromList . map (\n -> (n, Nil)) $ nonInput decl
-    runStore = combine nilStore store
+runProgram' :: Program a () -> Store -> LEM (Store, Stats)
+runProgram' (_, _) _ = undefined
 
 -- Create a proper store given an input store
 -- verifies that input store is wellformed
@@ -83,67 +75,69 @@ createStore decl store =
 -- interpret program till exit
 -- output: the output store
 evalBlocks :: (Eq a, Show a) =>
-  [Block a ()] -> [Name] -> Store -> (a, ()) -> Maybe (a, ()) -> SLEM Store
-evalBlocks prog outputs store l origin =
-  do block <- S.lift . raise $ getBlockErr prog l
-     (label', store') <- evalBlock store block origin
+  [Block a ()] -> [Name] -> Store -> (a, ()) -> Maybe (a, ()) -> Stats -> LEM (Store, Stats)
+evalBlocks prog outputs store l origin stats =
+  do block <- raise $ getBlockErr prog l
+     (label', store', stats') <- evalBlock store block origin stats
      case label' of
-       Nothing -> return $ store' `onlyIn` outputs
-       Just l'  -> evalBlocks prog outputs store' (l', ()) (Just l)
+       Nothing -> return $ (store' `onlyIn` outputs, stats')
+       Just l'  -> evalBlocks prog outputs store' (l', ()) (Just l) stats'
+ 
 
 -- interpret a given block
-evalBlock :: (Eq a, Show a) => Store -> Block a () -> Maybe (a, ()) -> SLEM (Maybe a, Store)
-evalBlock s b l =
-  do -- S.lift . logM $  show (label b) ++ prettyStore s -- TODO: improve
-     evalFrom s (from b) l
-     s' <- evalSteps s (body b)
-     l' <- evalJump s' (jump b)
-     return (l', s')
+evalBlock :: Eq a => Store -> Block a () -> Maybe (a, ()) -> Stats -> LEM (Maybe a, Store, Stats)
+evalBlock s b l stats =
+  do evalFrom s (from b) l
+     (s', stats') <- evalSteps s (body b) stats
+     (l', stats'') <- evalJump s' (jump b) stats'
+     return (l', s', stats'')
 
 -- interpret a come-from statement
 -- error if control-flow violates backwards determinism
-evalFrom :: Eq a => Store -> ComeFrom a ()-> Maybe (a, ()) -> SLEM ()
+evalFrom :: Eq a => Store -> ComeFrom a () -> Maybe (a, ()) -> LEM ()
 evalFrom _ (From (l, ())) (Just (l', ())) =
   if l == l' then return ()
-  else lift' $ Left "Unconditional from failed"
+  else raise $ Left "Unconditional from failed"
 evalFrom s (Fi e (l1, ()) (l2, ())) (Just (l', ())) =
-  do v <- lift' $ evalExpr s e
+  do v <- raise $ evalExpr s e
      let l = if truthy v then l1 else l2
      if l == l' then return ()
-     else lift' $ Left "Assertion failed in Fi"
+     else raise $ Left "Assertion failed in Fi"
 evalFrom _ (Entry ()) Nothing = return ()
-evalFrom _ _ _ = lift' $ Left "Unexpected jump to entry, or wrong start"
+evalFrom _ _ _ = raise $ Left "Unexpected jump to entry, or wrong start"
 
 -- interpret a jump statement
 -- outputs label of next block
-evalJump :: Store -> Jump a () -> SLEM (Maybe a)
-evalJump _ (Goto (l, ())) = incJump >> return (Just l)
-evalJump s (If e (l1, ()) (l2, ())) = incJump >>
-  do v <- lift' $ evalExpr s e
-     return . Just $
-      if truthy v then l1 else l2
-evalJump _ (Exit ()) = return Nothing
+evalJump :: Store -> Jump a () -> Stats -> LEM (Maybe a, Stats)
+evalJump _ (Goto (l, ())) stats = return (Just l, incJump stats)
+evalJump s (If e (l1, ()) (l2, ())) stats =
+  do v <- raise $ evalExpr s e
+     return (Just (if truthy v then l1 else l2), incJump stats)
+evalJump _ (Exit ()) stats = return (Nothing, stats)
 
 -- interpret multiple steps
-evalSteps :: Store -> [Step] -> SLEM Store
-evalSteps = S.foldM (\store step -> incStep >> evalStep store step)
+evalSteps :: Store -> [Step] -> Stats -> LEM (Store, Stats)
+evalSteps s [] stats = return (s, stats)
+evalSteps s (step:stepss) stats =
+  do (s', stats') <- evalStep s step stats
+     evalSteps s' stepss stats'
 
 -- interpret a given step
-evalStep :: Store -> Step -> SLEM Store
-evalStep s Skip = return s
-evalStep s (Assert e) =
-  do incAssert
-     v <- lift'$ evalExpr s e
-     if truthy v then return s
-     else lift' $ Left  $ "failed assertion: " ++ show e
-evalStep s (Replacement q1 q2) =
-  do (s1, v) <- lift' $ construct s q2
-     lift' $ deconstruct s1 v q1
-evalStep s (Update n op e) =
-  do v1 <- lift' $ find n s
-     v2 <- lift' $ evalExpr (s `without` n) e
-     v3 <- lift' $ calcR op v1 v2
-     return $ set n v3 s
+evalStep :: Store -> Step -> Stats -> LEM (Store, Stats)
+evalStep s Skip stats = return (s, stats)
+evalStep s (Assert e) stats =
+  do v <- raise $ evalExpr s e
+     if truthy v then return (s, stats)
+     else raise $ Left ("failed assertion: " ++ show e)
+evalStep s (Replacement q1 q2) stats =
+  do (s1, v) <- raise $ construct s q2
+     s2 <- raise $ deconstruct s1 v q1
+     return (s2, stats)
+evalStep s (Update n op e) stats =
+  do v1 <- raise $ find n s
+     v2 <- raise $ evalExpr (s `without` n) e
+     v3 <- raise $ calcR op v1 v2
+     return $ (set n v3 s, stats)
 
 -- construct an intermediate value and store for a replacement
 construct :: Store -> Pattern -> EM (Store, Value)
@@ -193,17 +187,11 @@ find n s =
     _ -> Left $ "Variable \"" ++ n ++ "\" not found during lookup"
 
 -- helper functions for statistics
-incAssert :: SLEM ()
-incAssert =
-  do stats <- S.get
-     S.put (stats{assertions = assertions stats + 1})
+incAssert :: Stats -> Stats
+incAssert stats = stats{assertions = assertions stats + 1}
 
-incJump :: SLEM ()
-incJump =
-  do stats <- S.get
-     S.put (stats{jumps = jumps stats + 1})
+incJump :: Stats -> Stats
+incJump stats = stats{jumps = jumps stats + 1}
 
-incStep :: SLEM ()
-incStep =
-  do stats <- S.get
-     S.put (stats{steps = steps stats + 1})
+incStep :: Stats -> Stats
+incStep stats = stats{steps = steps stats + 1}

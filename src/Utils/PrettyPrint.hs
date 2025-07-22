@@ -129,7 +129,7 @@ prettyBTVal Dynamic    = "Dyn"
 prettyVal :: Value -> String
 prettyVal (Atom a) = a
 prettyVal (Num i) = show i
-prettyVal (Pair v1 v2) = "("++ prettyVal v1 ++ "." ++ prettyVal v2 ++ ")"
+prettyVal (Pair v1 v2) = "Some pair idk"
 prettyVal Nil = "nil"
 
 prettyProg' :: Print a -> Program' a -> String
