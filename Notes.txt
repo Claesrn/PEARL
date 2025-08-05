@@ -1,0 +1,29 @@
+
+Interpreter:
+    The updated Interpreter is able to run programs, that before ran out of memory e.g. ARL-Symbol_rule 
+
+    TODO:
+        - Interpret the URTM -> to ensure the translated URTM works
+
+
+Partial evaluation:
+
+    PE takes a long time, URTM ran for 6 days and no result -> expecting having to run for a month+
+
+    BinInc.out information:
+        - POST PROCESSING
+            Nr. of blocks: 288916
+        - Compressing paths
+            Nr. of blocks: 1638
+        
+        Speed up:
+            Before -> 1051116
+            After -> 8384
+    
+    TODO: 
+        - PE smaller program e.g Apply Symbol
+        - PE the URTM
+
+Overall TODO:
+    - Fix the reversiblity problems
+

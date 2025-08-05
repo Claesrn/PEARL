@@ -1,3 +1,4 @@
+{-# LANGUAGE BangPatterns #-}
 module Interpretation.Impl.Interpret where
 
 
@@ -19,9 +20,9 @@ lift' :: EM a -> SLEM a
 lift' = S.lift . raise
 
 data Stats = Stats
-  { steps :: Int
-  , jumps :: Int
-  , assertions :: Int
+  { steps :: !Int
+  , jumps :: !Int
+  , assertions :: !Int
   } deriving Show
 
 prettyStats :: Stats -> String
@@ -117,56 +118,49 @@ evalJump _ (Exit ()) stats = return (Nothing, stats)
 
 -- interpret multiple steps
 evalSteps :: Store -> [Step] -> Stats -> LEM (Store, Stats)
-evalSteps s [] stats = return (s, stats)
-evalSteps s (step:stepss) stats =
-  do (s', stats') <- evalStep s step stats
+evalSteps !s [] stats = return (s, stats)
+evalSteps !s (step:stepss) stats =
+  do (!s', !stats') <- evalStep s step stats
      evalSteps s' stepss stats'
 
 -- interpret a given step
 evalStep :: Store -> Step -> Stats -> LEM (Store, Stats)
-evalStep s Skip stats = return (s, stats)
-evalStep s (Assert e) stats =
+evalStep !s Skip stats = return (s, stats)
+evalStep !s (Assert e) stats =
   do v <- raise $ evalExpr s e
      if truthy v then return (s, stats)
      else raise $ Left ("failed assertion: " ++ show e)
-evalStep s (Replacement q1 q2) stats =
-  do (s1, v) <- raise $ construct s q2
-     s2 <- raise $ deconstruct s1 v q1
+evalStep !s (Replacement q1 q2) stats =
+  do (!s1, !v) <- raise $ construct s q2
+     let !s2 = deconstruct s1 v q1
      return (s2, stats)
-evalStep s (Update n op e) stats =
+evalStep !s (Update n op e) stats =
   do v1 <- raise $ find n s
      v2 <- raise $ evalExpr (s `without` n) e
      v3 <- raise $ calcR op v1 v2
-     return $ (set n v3 s, stats)
+     return (set n v3 s, stats)
 
 -- construct an intermediate value and store for a replacement
 construct :: Store -> Pattern -> EM (Store, Value)
-construct store (QConst v) = return (store,v)
-construct store (QVar n) =
-  do v <- find n store
-     let store' = set n Nil store
+construct !store (QConst v) = return (store,v)
+construct !store (QVar n) =
+  do !v <- find n store
+     let !store' = set n Nil store
      return (store', v)
-construct store (QPair q1' q2') =
-  do (store', v)   <- construct store q1'
-     (store'', v') <- construct store' q2'
+construct !store (QPair q1' q2') =
+  do (!store', !v)   <- construct store q1'
+     (!store'', !v') <- construct store' q2'
      return (store'', Pair v v')
 
 -- deconstruct intermediate value into new store
 -- errors if cannot match
-deconstruct :: Store -> Value -> Pattern -> EM Store
-deconstruct store v (QConst v') =
-  if v == v'
-    then return store
-    else Left "Non-matching constants in replacement."
-deconstruct store v (QVar n) =
-  do v' <- find n store
-     if v' == Nil
-      then return $ set n v store
-      else Left "Non-nill variable in replacement."
-deconstruct store (Pair v1 v2) (QPair q1' q2') =
-  do store' <- deconstruct store v1 q1'
-     deconstruct store' v2 q2'
-deconstruct _ _ (QPair _ _) = Left "Scalar value with cons pattern in replacement."
+deconstruct :: Store -> Value -> Pattern -> Store
+deconstruct !store !v (QConst v') = store
+deconstruct !store !v (QVar n) = set n v store
+deconstruct !store (Pair v1 v2) (QPair q1' q2') =
+  let !store' = deconstruct store v1 q1'
+  in deconstruct store' v2 q2'
+deconstruct !store _ _ = store
 
 -- evaluate an expression
 evalExpr :: Store -> Expr -> EM Value

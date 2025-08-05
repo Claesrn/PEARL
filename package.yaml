@@ -41,7 +41,12 @@ ghc-options:
 
 library:
   source-dirs: src
-
+  default-extensions:
+    - StrictData
+    - Strict
+  ghc-options:
+    - -O2
+ 
 executables:
   PERevFlow-exe:
     main:                Main.hs
@@ -54,7 +59,7 @@ executables:
     - PERevFlow
     when:
     - condition: false
-      other-modules: Paths_PERevFlow 
+      other-modules: Paths_PERevFlow
 
 tests:
   PERevFlow-test:
