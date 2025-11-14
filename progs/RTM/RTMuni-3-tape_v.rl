@@ -18,7 +18,7 @@ stop: fi Start = End from init else act4
       exit
 
 act1: fi !RulesRev && Q = Start from init else act4
-      ((Q1 . (S1_t1 . ( S2_t1 . ( S1_t2 . ( S2_t2 . ( S1_t3 . ( S2_t3 . Q2))))))) . Rules) <- Rules' 
+      ((Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) . Rules) <- Rules' 
       if Q = Q1 && S_t1 = S1_t1 && S_t2 = S1_t2 && S_t3 = S1_t3 goto write else act2
 
 write: from act1
@@ -36,7 +36,7 @@ act2: fi Q = Q2 && S_t1 = S2_t1 && S_t2 = S2_t2 && S_t3 = S2_t3 from write else 
       if Q = Q1 && S1_t1 = 'SLASH && S1_t2 = 'SLASH && S1_t3 = 'SLASH goto move_t1 else act3
 
 act3: fi Q = Q2 && S1_t1 = 'SLASH && S1_t2 = 'SLASH && S1_t3 from move1 else act2
-      RulesRev <- ((Q1 . (S1_t1 . ( S2_t1 . ( S1_t2 . ( S2_t2 . ( S1_t3 . ( S2_t3 . Q2))))))) . RulesRev) 
+      RulesRev <- ((Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) . RulesRev) 
       if Rules' goto act4 else reload
 
 reload: fi Rules' from reload else act3
@@ -47,6 +47,8 @@ reload: fi Rules' from reload else act3
 act4: fi !RulesRev from reload else act3
       if !RulesRev && Q = End goto stop else act1
 
+// The move rules are missing the fact that a move now can be 'LEFT', 'RIGHT' and 'STAY'.
+// Currently only left and right is implemented.
 
 // ------ Moving rules regarding the first tape ----------
 

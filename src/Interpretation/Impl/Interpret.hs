@@ -103,7 +103,7 @@ evalFrom s (Fi e (l1, ()) (l2, ())) (Just (l', ())) =
   do v <- raise $ evalExpr s e
      let l = if truthy v then l1 else l2
      if l == l' then return ()
-     else raise $ Left "Assertion failed in Fi"
+     else raise $ Left ("Assertion failed in Fi " ++ show e) -- added for error searching
 evalFrom _ (Entry ()) Nothing = return ()
 evalFrom _ _ _ = raise $ Left "Unexpected jump to entry, or wrong start"
 
