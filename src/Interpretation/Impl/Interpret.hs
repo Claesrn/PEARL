@@ -10,6 +10,7 @@ import RL.Operators
 import RL.Values
 import RL.Variables
 import RL.Program
+import Debug.Trace (trace)
 
 import qualified Control.Monad.State as S
 
@@ -59,11 +60,14 @@ runProgram (decl, prog) inpstore =
 runProgram' :: Program a () -> Store -> LEM (Store, Stats)
 runProgram' (_, _) _ = undefined
 
+
 -- Create a proper store given an input store
 -- verifies that input store is wellformed
 createStore :: VariableDecl -> Store -> EM Store
 createStore decl store =
-  let anyTemp = any (\n -> n `elem` temp decl) (keys store)
+  let decl' = trace ("decl = " ++ show decl) decl
+      store' = trace ("store = " ++ show (keys store)) store
+      anyTemp = any (\n -> n `elem` temp decl) (keys store)
       anyOut = any (\n -> n `elem` output decl
                        && n `notElem` output decl) (keys store)
       allPresent = all (`elem` keys store) (input decl)

@@ -1,138 +1,163 @@
-Start = '1
-End = '32
-Rules ='
-  ((1 . (BLANK . (BLANK . 2))) .
-  ((2 . (SLASH . (RIGHT . 3))) .
-  ((3 . ($     . ($     . 4))) .
-  ((4 . (SLASH . (RIGHT . 5))) .
-  ((5 . (0     . (0     . 4))) .
-  ((5 . (1     . (1     . 4))) .
-  ((5 . (B     . (B     . 4))) .
-  ((5 . (#     . (#     . 4))) .
-  ((5 . (S     . (S     . 4))) .
-  ((5 . (M     . (M     . 4))) .
-  ((5 . (BLANK . (BLANK . 4))) .
-  ((5 . (P     . (P     . 4))) .
-  ((5 . (p     . (p     . 4))) .
-  ((5 . (H     . (H     . 4))) .
-  ((5 . (O     . (O     . 4))) .
-  ((5 . (I     . (I     . 4))) .
-  ((5 . (Z     . (Z     . 4))) .
-  ((5 . (W     . (W     . 4))) .
-  ((5 . ($     . ($     . 6))) .
-  ((6 . (SLASH . (RIGHT . 7))) .
-  ((7 . (0     . (0     . 6))) .
-  ((7 . (1     . (1     . 6))) .
-  ((7 . (B     . (B     . 6))) .
-  ((7 . (#     . (#     . 6))) .
-  ((7 . (S     . (S     . 6))) .
-  ((7 . (M     . (M     . 6))) .
-  ((7 . (BLANK . (BLANK . 6))) .
-  ((7 . (P     . (P     . 8))) .
-  ((7 . (p     . (p     . 8))) .
-  ((7 . (H     . (H     . 8))) .
-  ((7 . (O     . (O     . 8))) .
-  ((7 . (I     . (I     . 8))) .
-  ((7 . (Z     . (Z     . 8))) .
-  ((7 . (W     . (W     . 8))) .
-  ((8 . (p     . (I     . 10))) .
-  ((10 . (SLASH . (LEFT  . 11))) .
-  ((11 . (0     . (0     . 10))) .
-  ((11 . (1     . (1     . 10))) .
-  ((11 . (B     . (B     . 10))) .
-  ((11 . (#     . (#     . 10))) .
-  ((11 . (S     . (S     . 10))) .
-  ((11 . (M     . (M     . 10))) .
-  ((11 . (BLANK . (BLANK . 10))) .
-  ((11 . ($     . ($     . 10))) .
-  ((11 . (p     . (I     . 12))) .
-  ((12 . (SLASH . (RIGHT . 13))) .
-  ((13 . (0     . (0     . 12))) .
-  ((13 . (1     . (1     . 12))) .
-  ((13 . (B     . (B     . 12))) .
-  ((13 . (#     . (#     . 12))) .
-  ((13 . (S     . (S     . 12))) .
-  ((13 . (M     . (M     . 12))) .
-  ((13 . (BLANK . (BLANK . 12))) .
-  ((13 . ($     . ($     . 12))) .
-  ((13 . (I     . (I     . 14))) .
-  ((14 . (SLASH . (RIGHT . 15))) .
-  ((15 . (0     . (0     . 14))) .
-  ((15 . (1     . (1     . 14))) .
-  ((15 . (B     . (B     . 14))) .
-  ((15 . (#     . (#     . 14))) .
-  ((15 . (S     . (S     . 14))) .
-  ((15 . (M     . (M     . 14))) .
-  ((15 . (BLANK . (BLANK . 14))) .
-  ((15 . ($     . ($     . 14))) .
-  ((15 . (p     . (I     . 16))) .
-  ((16 . (I     . (I     . 23))) .
-  ((22 . (0     . (0     . 23))) .
-  ((22 . (1     . (1     . 23))) .
-  ((22 . (B     . (B     . 23))) .
-  ((22 . (#     . (#     . 23))) .
-  ((22 . (S     . (S     . 23))) .
-  ((22 . (M     . (M     . 23))) .
-  ((22 . (BLANK . (BLANK . 23))) .
-  ((22 . ($     . ($     . 23))) .
-  ((23 . (SLASH . (LEFT  . 22))) .
-  ((22 . (I     . (I     . 21))) .
-  ((20 . (0     . (0     . 21))) .
-  ((20 . (1     . (1     . 21))) .
-  ((20 . (B     . (B     . 21))) .
-  ((20 . (#     . (#     . 21))) .
-  ((20 . (S     . (S     . 21))) .
-  ((20 . (M     . (M     . 21))) .
-  ((20 . (BLANK . (BLANK . 21))) .
-  ((20 . ($     . ($     . 21))) .
-  ((21 . (SLASH . (LEFT  . 20))) .
-  ((20 . (I     . (I     . 19))) .
-  ((18 . (0     . (0     . 19))) .
-  ((18 . (1     . (1     . 19))) .
-  ((18 . (B     . (B     . 19))) .
-  ((18 . (#     . (#     . 19))) .
-  ((18 . (S     . (S     . 19))) .
-  ((18 . (M     . (M     . 19))) .
-  ((18 . (BLANK . (BLANK . 19))) .
-  ((18 . ($     . ($     . 19))) .
-  ((19 . (SLASH . (RIGHT . 18))) .
-  ((18 . (I     . (I     . 17))) .
-  ((17 . (P     . (P     . 26))) .
-  ((17 . (p     . (p     . 26))) .
-  ((17 . (H     . (H     . 26))) .
-  ((17 . (O     . (O     . 26))) .
-  ((17 . (I     . (I     . 26))) .
-  ((17 . (Z     . (Z     . 26))) .
-  ((17 . (W     . (W     . 26))) .
-  ((26 . (SLASH . (LEFT  . 27))) .
-  ((27 . (0     . (0     . 26))) .
-  ((27 . (1     . (1     . 26))) .
-  ((27 . (B     . (B     . 26))) .
-  ((27 . (#     . (#     . 26))) .
-  ((27 . (S     . (S     . 26))) .
-  ((27 . (M     . (M     . 26))) .
-  ((27 . (BLANK . (BLANK . 26))) .
-  ((27 . ($     . ($     . 28))) .
-  ((28 . (SLASH . (LEFT  . 29))) .
-  ((29 . (0     . (0     . 28))) .
-  ((29 . (1     . (1     . 28))) .
-  ((29 . (B     . (B     . 28))) .
-  ((29 . (#     . (#     . 28))) .
-  ((29 . (S     . (S     . 28))) .
-  ((29 . (M     . (M     . 28))) .
-  ((29 . (BLANK . (BLANK . 28))) .
-  ((29 . (P     . (P     . 28))) .
-  ((29 . (p     . (p     . 28))) .
-  ((29 . (H     . (H     . 28))) .
-  ((29 . (O     . (O     . 28))) .
-  ((29 . (I     . (I     . 28))) .
-  ((29 . (Z     . (Z     . 28))) .
-  ((29 . (W     . (W     . 28))) .
-  ((29 . ($     . ($     . 30))) .
-  ((30 . (SLASH . (LEFT  . 31))) .
-  ((31 . (BLANK . (BLANK . 32))) .
-nil))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+(Start End Rules S_right) -> (Start End Rules S_right) with (Q Q1 Q2 S1 S2 S S_left RulesRev Rule)
 
+stop:
+	fi (Start = End)
+		from init
+		else act4
+	'BLANK <- S
+	Q ^= End
+	exit
 
-// Tape for full specialization
-S_right = '($ . (p . ($ . (p . ($ . (p . ($ . nil)))))))
+init:
+	entry
+	S <- 'BLANK
+	Q ^= Start
+	if (Start = End)
+		goto stop
+		else act1
+
+act4:
+	fi !(RulesRev)
+		from reload
+		else act3
+	if (!(RulesRev) && (Q = End))
+		goto stop
+		else act1
+
+reload:
+	fi Rules
+		from reload
+		else act3
+	(Rule . RulesRev) <- RulesRev
+	Rules <- (Rule . Rules)
+	if RulesRev
+		goto reload
+		else act4
+
+act3:
+	fi ((Q = Q2) && (S1 = 'SLASH))
+		from move1
+		else act2
+	RulesRev <- ((Q1 . (S1 . (S2 . Q2))) . RulesRev)
+	if Rules
+		goto act4
+		else reload
+
+move1:
+	fi (S2 = 'LEFT)
+		from left2
+		else right2
+	goto act3
+
+left2:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b
+		else left_2p
+	goto move1
+
+left_2b:
+	from left1
+	S ^= 'BLANK
+	goto left2
+
+left1:
+	fi (S_right = 'nil)
+		from left_1b
+		else left_1p
+	if (S_left = 'nil)
+		goto left_2b
+		else left_2p
+
+left_1b:
+	from left
+	S ^= 'BLANK
+	goto left1
+
+left:
+	from move
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b
+		else left_1p
+
+move:
+	from act2
+	Q ^= Q1
+	Q ^= Q2
+	if (S2 = 'LEFT)
+		goto left
+		else right
+
+act2:
+	fi ((Q = Q2) && (S = S2))
+		from write
+		else act1
+	if ((Q = Q1) && (S1 = 'SLASH))
+		goto move
+		else act3
+
+write:
+	from act1
+	Q ^= Q1
+	Q ^= Q2
+	S ^= S1
+	S ^= S2
+	goto act2
+
+act1:
+	fi (!(RulesRev) && (Q = Start))
+		from init
+		else act4
+	((Q1 . (S1 . (S2 . Q2))) . Rules) <- Rules
+	if ((Q = Q1) && (S = S1))
+		goto write
+		else act2
+
+left_1p:
+	from left
+	S_right <- (S . S_right)
+	goto left1
+
+left_2p:
+	from left1
+	(S . S_left) <- S_left
+	goto left2
+
+right2:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b
+		else right_2p
+	goto move1
+
+right_2b:
+	from right1
+	S ^= 'BLANK
+	goto right2
+
+right1:
+	fi (S_left = 'nil)
+		from right_1b
+		else right_1p
+	if (S_right = 'nil)
+		goto right_2b
+		else right_2p
+
+right_1b:
+	from right
+	S ^= 'BLANK
+	goto right1
+
+right:
+	from move
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b
+		else right_1p
+
+right_1p:
+	from right
+	S_left <- (S . S_left)
+	goto right1
+
+right_2p:
+	from right1
+	(S . S_right) <- S_right
+	goto right2

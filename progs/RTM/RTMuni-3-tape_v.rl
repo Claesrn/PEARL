@@ -18,7 +18,7 @@ stop: fi Start = End from init else act4
       exit
 
 act1: fi !RulesRev && Q = Start from init else act4
-      ((Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) . Rules) <- Rules' 
+      ((Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) . Rules') <- Rules' 
       if Q = Q1 && S_t1 = S1_t1 && S_t2 = S1_t2 && S_t3 = S1_t3 goto write else act2
 
 write: from act1
@@ -55,7 +55,7 @@ act4: fi !RulesRev from reload else act3
 move_t1: from act2
       Q ^= Q1
       Q ^= Q2
-      if S2_t1 = 'LEFT goto left_t1 else right_t1
+      if S2_t1 = 'LEFT goto left_t1 else right_or_stay_t1
 
 left_t1: from move_t1
       if S_right_t1 = 'nil && S_t1 = 'BLANK goto left_1b_t1 else left_1p_t1 
@@ -82,7 +82,10 @@ left_2p_t1: from left1_t1
 left2_t1: fi S_left_t1 = 'nil && S_t1 = 'BLANK from left_2b_t1 else left_2p_t1
        goto move_t2
 
-right_t1: from move_t1
+right_or_stay_t1: from move_t1
+       if S2_t1 = 'RIGHT goto right_t1 else stay_t1
+
+right_t1: from right_or_stay_t1
        if S_left_t1 = 'nil && S_t1 = 'BLANK goto right_1b_t1 else right_1p_t1
 
 right_1b_t1: from right_t1 // MERGE? 1
@@ -105,13 +108,18 @@ right_2p_t1: from right1_t1
           goto right2_t1
 
 right2_t1: fi S_right_t1 = 'nil && S_t1 = 'BLANK from right_2b_t1 else right_2p_t1
-        goto move_t2
+        goto move_t1_right_or_stay
 
+stay_t1: from right_or_stay_t1
+      goto move_t1_right_or_stay
+
+move_t1_right_or_stay: fi S2_t1 = 'RIGHT from right2_t1 else stay_t1
+      goto move_t2
 
 // ------ Moving rules regarding the second tape ----------
 
-move_t2: fi S2_t1 = 'LEFT from left2_t1 else right2_t1
-      if S2_t2 = 'LEFT goto left_t2 else right_t2
+move_t2: fi S2_t1 = 'LEFT from left2_t1 else move_t1_right_or_stay
+      if S2_t2 = 'LEFT goto left_t2 else right_or_stay_t2
 
 left_t2: from move_t2
       if S_right_t2 = 'nil && S_t2 = 'BLANK goto left_1b_t2 else left_1p_t2 
@@ -138,7 +146,10 @@ left_2p_t2: from left1_t2
 left2_t2: fi S_left_t2 = 'nil && S_t2 = 'BLANK from left_2b_t2 else left_2p_t2
        goto move_t3 
 
-right_t2: from move_t2
+right_or_stay_t2: from move_t2
+       if S2_t2 = 'RIGHT goto right_t2 else stay_t2
+
+right_t2: from right_or_stay_t2
        if S_left_t2 = 'nil && S_t2 = 'BLANK goto right_1b_t2 else right_1p_t2
 
 right_1b_t2: from right_t2 // MERGE? 1
@@ -161,14 +172,20 @@ right_2p_t2: from right1_t2
           goto right2_t2
 
 right2_t2: fi S_right_t2 = 'nil && S_t2 = 'BLANK from right_2b_t2 else right_2p_t2
-        goto move_t3
+        goto move1_right_or_stay
+
+stay_t2: from right_or_stay_t2
+      goto move1_right_or_stay
+
+move1_right_or_stay: fi S2_t2 = 'RIGHT from right2_t2 else stay_t2
+      goto move_t3
 
 
 // ------ Moving rules regarding the third tape ----------
 
 
-move_t3:  fi S2_t2 = 'LEFT from left2_t2 else right2_t2
-      if S2_t3 = 'LEFT goto left_t3 else right_t3
+move_t3:  fi S2_t2 = 'LEFT from left2_t2 else move1_right_or_stay
+      if S2_t3 = 'LEFT goto left_t3 else right_or_stay_t3
 
 left_t3: from move_t3
       if S_right_t3 = 'nil && S_t3 = 'BLANK goto left_1b_t3 else left_1p_t3 
@@ -195,7 +212,10 @@ left_2p_t3: from left1_t3
 left2_t3: fi S_left_t3 = 'nil && S_t3 = 'BLANK from left_2b_t3 else left_2p_t3
        goto move1
 
-right_t3: from move_t3
+right_or_stay_t3: from move_t3
+       if S2_t3 = 'RIGHT goto right_t3 else stay_t3
+
+right_t3: from right_or_stay_t3
        if S_left_t3 = 'nil && S_t3 = 'BLANK goto right_1b_t3 else right_1p_t3
 
 right_1b_t3: from right_t3 // MERGE? 1
@@ -218,9 +238,15 @@ right_2p_t3: from right1_t3
           goto right2_t3
 
 right2_t3: fi S_right_t3 = 'nil && S_t3 = 'BLANK from right_2b_t3 else right_2p_t3
-        goto move1
+        goto move1_right_or_stay_t3
+
+stay_t3: from right_or_stay_t3
+      goto move1_right_or_stay_t3
+
+move1_right_or_stay_t3: fi S2_t3 = 'RIGHT from right2_t3 else stay_t3
+      goto move1
 
 
 
-move1: fi S2_t3 = 'LEFT from left2_t3 else right2_t3
+move1: fi S2_t3 = 'LEFT from left2_t3 else move1_right_or_stay_t3
        goto act3

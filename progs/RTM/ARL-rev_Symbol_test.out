@@ -1,0 +1,2381 @@
+(S_right) -> (S_right) with (S S_left)
+
+init_1:
+	entry
+	S <- 'BLANK
+	assert((S = 'BLANK))
+	S ^= 'BLANK
+	S ^= 'BLANK
+	assert((S = 'BLANK))
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_656
+		else right_1p_1_656
+
+right_1b_1_656:
+	from init_1
+	S ^= 'BLANK
+	goto right1_1_656
+
+right1_1_656:
+	fi (S_left = 'nil)
+		from right_1b_1_656
+		else right_1p_1_656
+	if (S_right = 'nil)
+		goto right_2b_1_656
+		else right_2p_1_656
+
+right_2b_1_656:
+	from right1_1_656
+	S ^= 'BLANK
+	goto right2_1_656
+
+right2_1_656:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_656
+		else right_2p_1_656
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_1048
+
+act2_1_1048:
+	fi (S = '$)
+		from right2_1_656
+		else act2_1_1443
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_1426
+		else right_1p_1_1426
+
+right_1b_1_1426:
+	from act2_1_1048
+	S ^= 'BLANK
+	goto right1_1_1426
+
+right1_1_1426:
+	fi (S_left = 'nil)
+		from right_1b_1_1426
+		else right_1p_1_1426
+	if (S_right = 'nil)
+		goto right_2b_1_1426
+		else right_2p_1_1426
+
+right_2b_1_1426:
+	from right1_1_1426
+	S ^= 'BLANK
+	goto right2_1_1426
+
+right2_1_1426:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_1426
+		else right_2p_1_1426
+	if (S = '0)
+		goto write_1_1428
+		else act2_1_1428
+
+write_1_1428:
+	from right2_1_1426
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_1431
+
+act2_1_1431:
+	fi (S = '1)
+		from write_1_1445
+		else write_1_1428
+	goto act2_1_1432
+
+act2_1_1432:
+	fi (S = 'B)
+		from write_1_1448
+		else act2_1_1431
+	goto act2_1_1433
+
+act2_1_1433:
+	fi (S = '#)
+		from write_1_1451
+		else act2_1_1432
+	goto act2_1_1434
+
+act2_1_1434:
+	fi (S = 'S)
+		from write_1_1454
+		else act2_1_1433
+	goto act2_1_1435
+
+act2_1_1435:
+	fi (S = 'M)
+		from write_1_1457
+		else act2_1_1434
+	goto act2_1_1436
+
+act2_1_1436:
+	fi (S = 'BLANK)
+		from write_1_1460
+		else act2_1_1435
+	goto act2_1_1437
+
+act2_1_1437:
+	fi (S = 'P)
+		from write_1_1463
+		else act2_1_1436
+	goto act2_1_1438
+
+act2_1_1438:
+	fi (S = 'p)
+		from write_1_1466
+		else act2_1_1437
+	goto act2_1_1439
+
+act2_1_1439:
+	fi (S = 'H)
+		from write_1_1469
+		else act2_1_1438
+	goto act2_1_1440
+
+act2_1_1440:
+	fi (S = 'O)
+		from write_1_1472
+		else act2_1_1439
+	goto act2_1_1441
+
+act2_1_1441:
+	fi (S = 'I)
+		from write_1_1475
+		else act2_1_1440
+	goto act2_1_1442
+
+act2_1_1442:
+	fi (S = 'Z)
+		from write_1_1478
+		else act2_1_1441
+	goto act2_1_1443
+
+act2_1_1443:
+	fi (S = 'W)
+		from write_1_1481
+		else act2_1_1442
+	goto act2_1_1048
+
+act2_1_1428:
+	from right2_1_1426
+	if (S = '1)
+		goto write_1_1445
+		else act2_1_1445
+
+write_1_1445:
+	from act2_1_1428
+	S ^= '1
+	S ^= '1
+	goto act2_1_1431
+
+act2_1_1445:
+	from act2_1_1428
+	if (S = 'B)
+		goto write_1_1448
+		else act2_1_1448
+
+write_1_1448:
+	from act2_1_1445
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_1432
+
+act2_1_1448:
+	from act2_1_1445
+	if (S = '#)
+		goto write_1_1451
+		else act2_1_1451
+
+write_1_1451:
+	from act2_1_1448
+	S ^= '#
+	S ^= '#
+	goto act2_1_1433
+
+act2_1_1451:
+	from act2_1_1448
+	if (S = 'S)
+		goto write_1_1454
+		else act2_1_1454
+
+write_1_1454:
+	from act2_1_1451
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_1434
+
+act2_1_1454:
+	from act2_1_1451
+	if (S = 'M)
+		goto write_1_1457
+		else act2_1_1457
+
+write_1_1457:
+	from act2_1_1454
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_1435
+
+act2_1_1457:
+	from act2_1_1454
+	if (S = 'BLANK)
+		goto write_1_1460
+		else act2_1_1460
+
+write_1_1460:
+	from act2_1_1457
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_1436
+
+act2_1_1460:
+	from act2_1_1457
+	if (S = 'P)
+		goto write_1_1463
+		else act2_1_1463
+
+write_1_1463:
+	from act2_1_1460
+	S ^= 'P
+	S ^= 'P
+	goto act2_1_1437
+
+act2_1_1463:
+	from act2_1_1460
+	if (S = 'p)
+		goto write_1_1466
+		else act2_1_1466
+
+write_1_1466:
+	from act2_1_1463
+	S ^= 'p
+	S ^= 'p
+	goto act2_1_1438
+
+act2_1_1466:
+	from act2_1_1463
+	if (S = 'H)
+		goto write_1_1469
+		else act2_1_1469
+
+write_1_1469:
+	from act2_1_1466
+	S ^= 'H
+	S ^= 'H
+	goto act2_1_1439
+
+act2_1_1469:
+	from act2_1_1466
+	if (S = 'O)
+		goto write_1_1472
+		else act2_1_1472
+
+write_1_1472:
+	from act2_1_1469
+	S ^= 'O
+	S ^= 'O
+	goto act2_1_1440
+
+act2_1_1472:
+	from act2_1_1469
+	if (S = 'I)
+		goto write_1_1475
+		else act2_1_1475
+
+write_1_1475:
+	from act2_1_1472
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_1441
+
+act2_1_1475:
+	from act2_1_1472
+	if (S = 'Z)
+		goto write_1_1478
+		else act2_1_1478
+
+write_1_1478:
+	from act2_1_1475
+	S ^= 'Z
+	S ^= 'Z
+	goto act2_1_1442
+
+act2_1_1478:
+	from act2_1_1475
+	if (S = 'W)
+		goto write_1_1481
+		else act2_1_1481
+
+write_1_1481:
+	from act2_1_1478
+	S ^= 'W
+	S ^= 'W
+	goto act2_1_1443
+
+act2_1_1481:
+	from act2_1_1478
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_1846
+
+act2_1_1846:
+	fi (S = '$)
+		from act2_1_1481
+		else act2_1_2241
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_2231
+		else right_1p_1_2231
+
+right_1b_1_2231:
+	from act2_1_1846
+	S ^= 'BLANK
+	goto right1_1_2231
+
+right1_1_2231:
+	fi (S_left = 'nil)
+		from right_1b_1_2231
+		else right_1p_1_2231
+	if (S_right = 'nil)
+		goto right_2b_1_2231
+		else right_2p_1_2231
+
+right_2b_1_2231:
+	from right1_1_2231
+	S ^= 'BLANK
+	goto right2_1_2231
+
+right2_1_2231:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_2231
+		else right_2p_1_2231
+	if (S = '0)
+		goto write_1_2233
+		else act2_1_2233
+
+write_1_2233:
+	from right2_1_2231
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_2236
+
+act2_1_2236:
+	fi (S = '1)
+		from write_1_2243
+		else write_1_2233
+	goto act2_1_2237
+
+act2_1_2237:
+	fi (S = 'B)
+		from write_1_2246
+		else act2_1_2236
+	goto act2_1_2238
+
+act2_1_2238:
+	fi (S = '#)
+		from write_1_2249
+		else act2_1_2237
+	goto act2_1_2239
+
+act2_1_2239:
+	fi (S = 'S)
+		from write_1_2252
+		else act2_1_2238
+	goto act2_1_2240
+
+act2_1_2240:
+	fi (S = 'M)
+		from write_1_2255
+		else act2_1_2239
+	goto act2_1_2241
+
+act2_1_2241:
+	fi (S = 'BLANK)
+		from write_1_2258
+		else act2_1_2240
+	goto act2_1_1846
+
+act2_1_2233:
+	from right2_1_2231
+	if (S = '1)
+		goto write_1_2243
+		else act2_1_2243
+
+write_1_2243:
+	from act2_1_2233
+	S ^= '1
+	S ^= '1
+	goto act2_1_2236
+
+act2_1_2243:
+	from act2_1_2233
+	if (S = 'B)
+		goto write_1_2246
+		else act2_1_2246
+
+write_1_2246:
+	from act2_1_2243
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_2237
+
+act2_1_2246:
+	from act2_1_2243
+	if (S = '#)
+		goto write_1_2249
+		else act2_1_2249
+
+write_1_2249:
+	from act2_1_2246
+	S ^= '#
+	S ^= '#
+	goto act2_1_2238
+
+act2_1_2249:
+	from act2_1_2246
+	if (S = 'S)
+		goto write_1_2252
+		else act2_1_2252
+
+write_1_2252:
+	from act2_1_2249
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_2239
+
+act2_1_2252:
+	from act2_1_2249
+	if (S = 'M)
+		goto write_1_2255
+		else act2_1_2255
+
+write_1_2255:
+	from act2_1_2252
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_2240
+
+act2_1_2255:
+	from act2_1_2252
+	if (S = 'BLANK)
+		goto write_1_2258
+		else act2_1_2258
+
+write_1_2258:
+	from act2_1_2255
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_2241
+
+act2_1_2258:
+	from act2_1_2255
+	if (S = 'P)
+		goto write_1_2629
+		else act2_1_2629
+
+write_1_2629:
+	from act2_1_2258
+	S ^= 'P
+	S ^= 'P
+	goto act2_1_2631
+
+act2_1_2631:
+	fi (S = 'P)
+		from write_1_2629
+		else act2_1_2643
+	goto act2_1_2633
+
+act2_1_2633:
+	fi (S = 'p)
+		from write_1_11330
+		else act2_1_2631
+	goto act2_1_2635
+
+act2_1_2635:
+	fi (S = 'H)
+		from write_1_11332
+		else act2_1_2633
+	goto act2_1_2637
+
+act2_1_2637:
+	fi (S = 'O)
+		from write_1_11334
+		else act2_1_2635
+	goto act2_1_2639
+
+act2_1_2639:
+	fi (S = 'I)
+		from write_1_11336
+		else act2_1_2637
+	goto act2_1_2641
+
+act2_1_2641:
+	fi (S = 'Z)
+		from write_1_11338
+		else act2_1_2639
+	goto act2_1_2643
+
+act2_1_2643:
+	fi (S = 'W)
+		from act2_1_11338
+		else act2_1_2641
+	if (S = 'I)
+		goto write_1_3021
+		else act2_1_2631
+
+write_1_3021:
+	from act2_1_2643
+	S ^= 'I
+	S ^= 'I
+	assert((S = 'I))
+	goto act2_1_3405
+
+act2_1_3405:
+	fi (S = '0)
+		from write_1_11314
+		else write_1_3021
+	goto act2_1_3406
+
+act2_1_3406:
+	fi (S = '1)
+		from write_1_11316
+		else act2_1_3405
+	goto act2_1_3407
+
+act2_1_3407:
+	fi (S = 'B)
+		from write_1_11318
+		else act2_1_3406
+	goto act2_1_3408
+
+act2_1_3408:
+	fi (S = '#)
+		from write_1_11320
+		else act2_1_3407
+	goto act2_1_3409
+
+act2_1_3409:
+	fi (S = 'S)
+		from write_1_11322
+		else act2_1_3408
+	goto act2_1_3410
+
+act2_1_3410:
+	fi (S = 'M)
+		from write_1_11324
+		else act2_1_3409
+	goto act2_1_3411
+
+act2_1_3411:
+	fi (S = 'BLANK)
+		from write_1_11326
+		else act2_1_3410
+	goto act2_1_3412
+
+act2_1_3412:
+	fi (S = '$)
+		from act2_1_11326
+		else act2_1_3411
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_3415
+		else left_1p_1_3415
+
+left_1b_1_3415:
+	from act2_1_3412
+	S ^= 'BLANK
+	goto left1_1_3415
+
+left1_1_3415:
+	fi (S_right = 'nil)
+		from left_1b_1_3415
+		else left_1p_1_3415
+	if (S_left = 'nil)
+		goto left_2b_1_3415
+		else left_2p_1_3415
+
+left_2b_1_3415:
+	from left1_1_3415
+	S ^= 'BLANK
+	goto left2_1_3415
+
+left2_1_3415:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_3415
+		else left_2p_1_3415
+	if (S = 'I)
+		goto write_1_3797
+		else act2_1_3797
+
+write_1_3797:
+	from left2_1_3415
+	S ^= 'I
+	S ^= 'I
+	assert((S = 'I))
+	goto act2_1_4181
+
+act2_1_4181:
+	fi (S = '0)
+		from write_1_11298
+		else write_1_3797
+	goto act2_1_4182
+
+act2_1_4182:
+	fi (S = '1)
+		from write_1_11300
+		else act2_1_4181
+	goto act2_1_4183
+
+act2_1_4183:
+	fi (S = 'B)
+		from write_1_11302
+		else act2_1_4182
+	goto act2_1_4184
+
+act2_1_4184:
+	fi (S = '#)
+		from write_1_11304
+		else act2_1_4183
+	goto act2_1_4185
+
+act2_1_4185:
+	fi (S = 'S)
+		from write_1_11306
+		else act2_1_4184
+	goto act2_1_4186
+
+act2_1_4186:
+	fi (S = 'M)
+		from write_1_11308
+		else act2_1_4185
+	goto act2_1_4187
+
+act2_1_4187:
+	fi (S = 'BLANK)
+		from write_1_11310
+		else act2_1_4186
+	goto act2_1_4188
+
+act2_1_4188:
+	fi (S = '$)
+		from act2_1_11310
+		else act2_1_4187
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_4191
+		else right_1p_1_4191
+
+right_1b_1_4191:
+	from act2_1_4188
+	S ^= 'BLANK
+	goto right1_1_4191
+
+right1_1_4191:
+	fi (S_left = 'nil)
+		from right_1b_1_4191
+		else right_1p_1_4191
+	if (S_right = 'nil)
+		goto right_2b_1_4191
+		else right_2p_1_4191
+
+right_2b_1_4191:
+	from right1_1_4191
+	S ^= 'BLANK
+	goto right2_1_4191
+
+right2_1_4191:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_4191
+		else right_2p_1_4191
+	if (S = 'I)
+		goto write_1_4573
+		else act2_1_4573
+
+write_1_4573:
+	from right2_1_4191
+	S ^= 'I
+	S ^= 'I
+	assert((S = 'I))
+	goto act2_1_4957
+
+act2_1_4957:
+	fi (S = '0)
+		from write_1_11282
+		else write_1_4573
+	goto act2_1_4958
+
+act2_1_4958:
+	fi (S = '1)
+		from write_1_11284
+		else act2_1_4957
+	goto act2_1_4959
+
+act2_1_4959:
+	fi (S = 'B)
+		from write_1_11286
+		else act2_1_4958
+	goto act2_1_4960
+
+act2_1_4960:
+	fi (S = '#)
+		from write_1_11288
+		else act2_1_4959
+	goto act2_1_4961
+
+act2_1_4961:
+	fi (S = 'S)
+		from write_1_11290
+		else act2_1_4960
+	goto act2_1_4962
+
+act2_1_4962:
+	fi (S = 'M)
+		from write_1_11292
+		else act2_1_4961
+	goto act2_1_4963
+
+act2_1_4963:
+	fi (S = 'BLANK)
+		from write_1_11294
+		else act2_1_4962
+	goto act2_1_4964
+
+act2_1_4964:
+	fi (S = '$)
+		from act2_1_11294
+		else act2_1_4963
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_4967
+		else right_1p_1_4967
+
+right_1b_1_4967:
+	from act2_1_4964
+	S ^= 'BLANK
+	goto right1_1_4967
+
+right1_1_4967:
+	fi (S_left = 'nil)
+		from right_1b_1_4967
+		else right_1p_1_4967
+	if (S_right = 'nil)
+		goto right_2b_1_4967
+		else right_2p_1_4967
+
+right_2b_1_4967:
+	from right1_1_4967
+	S ^= 'BLANK
+	goto right2_1_4967
+
+right2_1_4967:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_4967
+		else right_2p_1_4967
+	if (S = 'I)
+		goto write_1_5349
+		else act2_1_5349
+
+write_1_5349:
+	from right2_1_4967
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_5351
+
+act2_1_5351:
+	fi (S = 'I)
+		from write_1_5349
+		else act2_1_5351
+	if (S = 'I)
+		goto write_1_5741
+		else act2_1_5351
+
+write_1_5741:
+	from act2_1_5351
+	S ^= 'I
+	S ^= 'p
+	goto act2_1_5743
+
+act2_1_5743:
+	fi (S = 'p)
+		from write_1_5741
+		else act2_1_6138
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_6127
+		else left_1p_1_6127
+
+left_1b_1_6127:
+	from act2_1_5743
+	S ^= 'BLANK
+	goto left1_1_6127
+
+left1_1_6127:
+	fi (S_right = 'nil)
+		from left_1b_1_6127
+		else left_1p_1_6127
+	if (S_left = 'nil)
+		goto left_2b_1_6127
+		else left_2p_1_6127
+
+left_2b_1_6127:
+	from left1_1_6127
+	S ^= 'BLANK
+	goto left2_1_6127
+
+left2_1_6127:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_6127
+		else left_2p_1_6127
+	if (S = '0)
+		goto write_1_6129
+		else act2_1_6129
+
+write_1_6129:
+	from left2_1_6127
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_6132
+
+act2_1_6132:
+	fi (S = '1)
+		from write_1_6140
+		else write_1_6129
+	goto act2_1_6133
+
+act2_1_6133:
+	fi (S = 'B)
+		from write_1_6143
+		else act2_1_6132
+	goto act2_1_6134
+
+act2_1_6134:
+	fi (S = '#)
+		from write_1_6146
+		else act2_1_6133
+	goto act2_1_6135
+
+act2_1_6135:
+	fi (S = 'S)
+		from write_1_6149
+		else act2_1_6134
+	goto act2_1_6136
+
+act2_1_6136:
+	fi (S = 'M)
+		from write_1_6152
+		else act2_1_6135
+	goto act2_1_6137
+
+act2_1_6137:
+	fi (S = 'BLANK)
+		from write_1_6155
+		else act2_1_6136
+	goto act2_1_6138
+
+act2_1_6138:
+	fi (S = '$)
+		from write_1_6158
+		else act2_1_6137
+	goto act2_1_5743
+
+act2_1_6129:
+	from left2_1_6127
+	if (S = '1)
+		goto write_1_6140
+		else act2_1_6140
+
+write_1_6140:
+	from act2_1_6129
+	S ^= '1
+	S ^= '1
+	goto act2_1_6132
+
+act2_1_6140:
+	from act2_1_6129
+	if (S = 'B)
+		goto write_1_6143
+		else act2_1_6143
+
+write_1_6143:
+	from act2_1_6140
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_6133
+
+act2_1_6143:
+	from act2_1_6140
+	if (S = '#)
+		goto write_1_6146
+		else act2_1_6146
+
+write_1_6146:
+	from act2_1_6143
+	S ^= '#
+	S ^= '#
+	goto act2_1_6134
+
+act2_1_6146:
+	from act2_1_6143
+	if (S = 'S)
+		goto write_1_6149
+		else act2_1_6149
+
+write_1_6149:
+	from act2_1_6146
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_6135
+
+act2_1_6149:
+	from act2_1_6146
+	if (S = 'M)
+		goto write_1_6152
+		else act2_1_6152
+
+write_1_6152:
+	from act2_1_6149
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_6136
+
+act2_1_6152:
+	from act2_1_6149
+	if (S = 'BLANK)
+		goto write_1_6155
+		else act2_1_6155
+
+write_1_6155:
+	from act2_1_6152
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_6137
+
+act2_1_6155:
+	from act2_1_6152
+	if (S = '$)
+		goto write_1_6158
+		else act2_1_6158
+
+write_1_6158:
+	from act2_1_6155
+	S ^= '$
+	S ^= '$
+	goto act2_1_6138
+
+act2_1_6158:
+	from act2_1_6155
+	assert((S = 'I))
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_6535
+
+act2_1_6535:
+	fi (S = 'I)
+		from act2_1_6158
+		else act2_1_6930
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_6919
+		else left_1p_1_6919
+
+left_1b_1_6919:
+	from act2_1_6535
+	S ^= 'BLANK
+	goto left1_1_6919
+
+left1_1_6919:
+	fi (S_right = 'nil)
+		from left_1b_1_6919
+		else left_1p_1_6919
+	if (S_left = 'nil)
+		goto left_2b_1_6919
+		else left_2p_1_6919
+
+left_2b_1_6919:
+	from left1_1_6919
+	S ^= 'BLANK
+	goto left2_1_6919
+
+left2_1_6919:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_6919
+		else left_2p_1_6919
+	if (S = '0)
+		goto write_1_6921
+		else act2_1_6921
+
+write_1_6921:
+	from left2_1_6919
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_6924
+
+act2_1_6924:
+	fi (S = '1)
+		from write_1_6932
+		else write_1_6921
+	goto act2_1_6925
+
+act2_1_6925:
+	fi (S = 'B)
+		from write_1_6935
+		else act2_1_6924
+	goto act2_1_6926
+
+act2_1_6926:
+	fi (S = '#)
+		from write_1_6938
+		else act2_1_6925
+	goto act2_1_6927
+
+act2_1_6927:
+	fi (S = 'S)
+		from write_1_6941
+		else act2_1_6926
+	goto act2_1_6928
+
+act2_1_6928:
+	fi (S = 'M)
+		from write_1_6944
+		else act2_1_6927
+	goto act2_1_6929
+
+act2_1_6929:
+	fi (S = 'BLANK)
+		from write_1_6947
+		else act2_1_6928
+	goto act2_1_6930
+
+act2_1_6930:
+	fi (S = '$)
+		from write_1_6950
+		else act2_1_6929
+	goto act2_1_6535
+
+act2_1_6921:
+	from left2_1_6919
+	if (S = '1)
+		goto write_1_6932
+		else act2_1_6932
+
+write_1_6932:
+	from act2_1_6921
+	S ^= '1
+	S ^= '1
+	goto act2_1_6924
+
+act2_1_6932:
+	from act2_1_6921
+	if (S = 'B)
+		goto write_1_6935
+		else act2_1_6935
+
+write_1_6935:
+	from act2_1_6932
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_6925
+
+act2_1_6935:
+	from act2_1_6932
+	if (S = '#)
+		goto write_1_6938
+		else act2_1_6938
+
+write_1_6938:
+	from act2_1_6935
+	S ^= '#
+	S ^= '#
+	goto act2_1_6926
+
+act2_1_6938:
+	from act2_1_6935
+	if (S = 'S)
+		goto write_1_6941
+		else act2_1_6941
+
+write_1_6941:
+	from act2_1_6938
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_6927
+
+act2_1_6941:
+	from act2_1_6938
+	if (S = 'M)
+		goto write_1_6944
+		else act2_1_6944
+
+write_1_6944:
+	from act2_1_6941
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_6928
+
+act2_1_6944:
+	from act2_1_6941
+	if (S = 'BLANK)
+		goto write_1_6947
+		else act2_1_6947
+
+write_1_6947:
+	from act2_1_6944
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_6929
+
+act2_1_6947:
+	from act2_1_6944
+	if (S = '$)
+		goto write_1_6950
+		else act2_1_6950
+
+write_1_6950:
+	from act2_1_6947
+	S ^= '$
+	S ^= '$
+	goto act2_1_6930
+
+act2_1_6950:
+	from act2_1_6947
+	assert((S = 'I))
+	S ^= 'I
+	S ^= 'p
+	goto act2_1_7327
+
+act2_1_7327:
+	fi (S = 'p)
+		from act2_1_6950
+		else act2_1_7722
+	assert(!((S = 'SLASH)))
+	if ((S_left = 'nil) && (S = 'BLANK))
+		goto right_1b_1_7711
+		else right_1p_1_7711
+
+right_1b_1_7711:
+	from act2_1_7327
+	S ^= 'BLANK
+	goto right1_1_7711
+
+right1_1_7711:
+	fi (S_left = 'nil)
+		from right_1b_1_7711
+		else right_1p_1_7711
+	if (S_right = 'nil)
+		goto right_2b_1_7711
+		else right_2p_1_7711
+
+right_2b_1_7711:
+	from right1_1_7711
+	S ^= 'BLANK
+	goto right2_1_7711
+
+right2_1_7711:
+	fi ((S_right = 'nil) && (S = 'BLANK))
+		from right_2b_1_7711
+		else right_2p_1_7711
+	if (S = '0)
+		goto write_1_7713
+		else act2_1_7713
+
+write_1_7713:
+	from right2_1_7711
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_7716
+
+act2_1_7716:
+	fi (S = '1)
+		from write_1_7724
+		else write_1_7713
+	goto act2_1_7717
+
+act2_1_7717:
+	fi (S = 'B)
+		from write_1_7727
+		else act2_1_7716
+	goto act2_1_7718
+
+act2_1_7718:
+	fi (S = '#)
+		from write_1_7730
+		else act2_1_7717
+	goto act2_1_7719
+
+act2_1_7719:
+	fi (S = 'S)
+		from write_1_7733
+		else act2_1_7718
+	goto act2_1_7720
+
+act2_1_7720:
+	fi (S = 'M)
+		from write_1_7736
+		else act2_1_7719
+	goto act2_1_7721
+
+act2_1_7721:
+	fi (S = 'BLANK)
+		from write_1_7739
+		else act2_1_7720
+	goto act2_1_7722
+
+act2_1_7722:
+	fi (S = '$)
+		from write_1_7742
+		else act2_1_7721
+	goto act2_1_7327
+
+act2_1_7713:
+	from right2_1_7711
+	if (S = '1)
+		goto write_1_7724
+		else act2_1_7724
+
+write_1_7724:
+	from act2_1_7713
+	S ^= '1
+	S ^= '1
+	goto act2_1_7716
+
+act2_1_7724:
+	from act2_1_7713
+	if (S = 'B)
+		goto write_1_7727
+		else act2_1_7727
+
+write_1_7727:
+	from act2_1_7724
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_7717
+
+act2_1_7727:
+	from act2_1_7724
+	if (S = '#)
+		goto write_1_7730
+		else act2_1_7730
+
+write_1_7730:
+	from act2_1_7727
+	S ^= '#
+	S ^= '#
+	goto act2_1_7718
+
+act2_1_7730:
+	from act2_1_7727
+	if (S = 'S)
+		goto write_1_7733
+		else act2_1_7733
+
+write_1_7733:
+	from act2_1_7730
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_7719
+
+act2_1_7733:
+	from act2_1_7730
+	if (S = 'M)
+		goto write_1_7736
+		else act2_1_7736
+
+write_1_7736:
+	from act2_1_7733
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_7720
+
+act2_1_7736:
+	from act2_1_7733
+	if (S = 'BLANK)
+		goto write_1_7739
+		else act2_1_7739
+
+write_1_7739:
+	from act2_1_7736
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_7721
+
+act2_1_7739:
+	from act2_1_7736
+	if (S = '$)
+		goto write_1_7742
+		else act2_1_7742
+
+write_1_7742:
+	from act2_1_7739
+	S ^= '$
+	S ^= '$
+	goto act2_1_7722
+
+act2_1_7742:
+	from act2_1_7739
+	assert((S = 'I))
+	S ^= 'I
+	S ^= 'p
+	goto act2_1_8119
+
+act2_1_8119:
+	fi (S = 'p)
+		from act2_1_7742
+		else act2_1_11278
+	if (S = 'P)
+		goto write_1_8503
+		else act2_1_8503
+
+write_1_8503:
+	from act2_1_8119
+	S ^= 'P
+	S ^= 'P
+	goto act2_1_8505
+
+act2_1_8505:
+	fi (S = 'P)
+		from write_1_8503
+		else act2_1_8900
+	goto act2_1_8507
+
+act2_1_8507:
+	fi (S = 'p)
+		from write_1_11270
+		else act2_1_8505
+	goto act2_1_8509
+
+act2_1_8509:
+	fi (S = 'H)
+		from write_1_11272
+		else act2_1_8507
+	goto act2_1_8511
+
+act2_1_8511:
+	fi (S = 'O)
+		from write_1_11274
+		else act2_1_8509
+	goto act2_1_8513
+
+act2_1_8513:
+	fi (S = 'I)
+		from write_1_11276
+		else act2_1_8511
+	goto act2_1_8515
+
+act2_1_8515:
+	fi (S = 'Z)
+		from write_1_11278
+		else act2_1_8513
+	goto act2_1_8517
+
+act2_1_8517:
+	fi (S = 'W)
+		from write_1_11280
+		else act2_1_8515
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_8890
+		else left_1p_1_8890
+
+left_1b_1_8890:
+	from act2_1_8517
+	S ^= 'BLANK
+	goto left1_1_8890
+
+left1_1_8890:
+	fi (S_right = 'nil)
+		from left_1b_1_8890
+		else left_1p_1_8890
+	if (S_left = 'nil)
+		goto left_2b_1_8890
+		else left_2p_1_8890
+
+left_2b_1_8890:
+	from left1_1_8890
+	S ^= 'BLANK
+	goto left2_1_8890
+
+left2_1_8890:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_8890
+		else left_2p_1_8890
+	if (S = '0)
+		goto write_1_8892
+		else act2_1_8892
+
+write_1_8892:
+	from left2_1_8890
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_8895
+
+act2_1_8895:
+	fi (S = '1)
+		from write_1_8902
+		else write_1_8892
+	goto act2_1_8896
+
+act2_1_8896:
+	fi (S = 'B)
+		from write_1_8905
+		else act2_1_8895
+	goto act2_1_8897
+
+act2_1_8897:
+	fi (S = '#)
+		from write_1_8908
+		else act2_1_8896
+	goto act2_1_8898
+
+act2_1_8898:
+	fi (S = 'S)
+		from write_1_8911
+		else act2_1_8897
+	goto act2_1_8899
+
+act2_1_8899:
+	fi (S = 'M)
+		from write_1_8914
+		else act2_1_8898
+	goto act2_1_8900
+
+act2_1_8900:
+	fi (S = 'BLANK)
+		from write_1_8917
+		else act2_1_8899
+	goto act2_1_8505
+
+act2_1_8892:
+	from left2_1_8890
+	if (S = '1)
+		goto write_1_8902
+		else act2_1_8902
+
+write_1_8902:
+	from act2_1_8892
+	S ^= '1
+	S ^= '1
+	goto act2_1_8895
+
+act2_1_8902:
+	from act2_1_8892
+	if (S = 'B)
+		goto write_1_8905
+		else act2_1_8905
+
+write_1_8905:
+	from act2_1_8902
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_8896
+
+act2_1_8905:
+	from act2_1_8902
+	if (S = '#)
+		goto write_1_8908
+		else act2_1_8908
+
+write_1_8908:
+	from act2_1_8905
+	S ^= '#
+	S ^= '#
+	goto act2_1_8897
+
+act2_1_8908:
+	from act2_1_8905
+	if (S = 'S)
+		goto write_1_8911
+		else act2_1_8911
+
+write_1_8911:
+	from act2_1_8908
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_8898
+
+act2_1_8911:
+	from act2_1_8908
+	if (S = 'M)
+		goto write_1_8914
+		else act2_1_8914
+
+write_1_8914:
+	from act2_1_8911
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_8899
+
+act2_1_8914:
+	from act2_1_8911
+	if (S = 'BLANK)
+		goto write_1_8917
+		else act2_1_8917
+
+write_1_8917:
+	from act2_1_8914
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_8900
+
+act2_1_8917:
+	from act2_1_8914
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_9296
+
+act2_1_9296:
+	fi (S = '$)
+		from act2_1_8917
+		else act2_1_9691
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_9674
+		else left_1p_1_9674
+
+left_1b_1_9674:
+	from act2_1_9296
+	S ^= 'BLANK
+	goto left1_1_9674
+
+left1_1_9674:
+	fi (S_right = 'nil)
+		from left_1b_1_9674
+		else left_1p_1_9674
+	if (S_left = 'nil)
+		goto left_2b_1_9674
+		else left_2p_1_9674
+
+left_2b_1_9674:
+	from left1_1_9674
+	S ^= 'BLANK
+	goto left2_1_9674
+
+left2_1_9674:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_9674
+		else left_2p_1_9674
+	if (S = '0)
+		goto write_1_9676
+		else act2_1_9676
+
+write_1_9676:
+	from left2_1_9674
+	S ^= '0
+	S ^= '0
+	assert((S = '0))
+	goto act2_1_9679
+
+act2_1_9679:
+	fi (S = '1)
+		from write_1_9693
+		else write_1_9676
+	goto act2_1_9680
+
+act2_1_9680:
+	fi (S = 'B)
+		from write_1_9696
+		else act2_1_9679
+	goto act2_1_9681
+
+act2_1_9681:
+	fi (S = '#)
+		from write_1_9699
+		else act2_1_9680
+	goto act2_1_9682
+
+act2_1_9682:
+	fi (S = 'S)
+		from write_1_9702
+		else act2_1_9681
+	goto act2_1_9683
+
+act2_1_9683:
+	fi (S = 'M)
+		from write_1_9705
+		else act2_1_9682
+	goto act2_1_9684
+
+act2_1_9684:
+	fi (S = 'BLANK)
+		from write_1_9708
+		else act2_1_9683
+	goto act2_1_9685
+
+act2_1_9685:
+	fi (S = 'P)
+		from write_1_9711
+		else act2_1_9684
+	goto act2_1_9686
+
+act2_1_9686:
+	fi (S = 'p)
+		from write_1_9714
+		else act2_1_9685
+	goto act2_1_9687
+
+act2_1_9687:
+	fi (S = 'H)
+		from write_1_9717
+		else act2_1_9686
+	goto act2_1_9688
+
+act2_1_9688:
+	fi (S = 'O)
+		from write_1_9720
+		else act2_1_9687
+	goto act2_1_9689
+
+act2_1_9689:
+	fi (S = 'I)
+		from write_1_9723
+		else act2_1_9688
+	goto act2_1_9690
+
+act2_1_9690:
+	fi (S = 'Z)
+		from write_1_9726
+		else act2_1_9689
+	goto act2_1_9691
+
+act2_1_9691:
+	fi (S = 'W)
+		from write_1_9729
+		else act2_1_9690
+	goto act2_1_9296
+
+act2_1_9676:
+	from left2_1_9674
+	if (S = '1)
+		goto write_1_9693
+		else act2_1_9693
+
+write_1_9693:
+	from act2_1_9676
+	S ^= '1
+	S ^= '1
+	goto act2_1_9679
+
+act2_1_9693:
+	from act2_1_9676
+	if (S = 'B)
+		goto write_1_9696
+		else act2_1_9696
+
+write_1_9696:
+	from act2_1_9693
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_9680
+
+act2_1_9696:
+	from act2_1_9693
+	if (S = '#)
+		goto write_1_9699
+		else act2_1_9699
+
+write_1_9699:
+	from act2_1_9696
+	S ^= '#
+	S ^= '#
+	goto act2_1_9681
+
+act2_1_9699:
+	from act2_1_9696
+	if (S = 'S)
+		goto write_1_9702
+		else act2_1_9702
+
+write_1_9702:
+	from act2_1_9699
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_9682
+
+act2_1_9702:
+	from act2_1_9699
+	if (S = 'M)
+		goto write_1_9705
+		else act2_1_9705
+
+write_1_9705:
+	from act2_1_9702
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_9683
+
+act2_1_9705:
+	from act2_1_9702
+	if (S = 'BLANK)
+		goto write_1_9708
+		else act2_1_9708
+
+write_1_9708:
+	from act2_1_9705
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_9684
+
+act2_1_9708:
+	from act2_1_9705
+	if (S = 'P)
+		goto write_1_9711
+		else act2_1_9711
+
+write_1_9711:
+	from act2_1_9708
+	S ^= 'P
+	S ^= 'P
+	goto act2_1_9685
+
+act2_1_9711:
+	from act2_1_9708
+	if (S = 'p)
+		goto write_1_9714
+		else act2_1_9714
+
+write_1_9714:
+	from act2_1_9711
+	S ^= 'p
+	S ^= 'p
+	goto act2_1_9686
+
+act2_1_9714:
+	from act2_1_9711
+	if (S = 'H)
+		goto write_1_9717
+		else act2_1_9717
+
+write_1_9717:
+	from act2_1_9714
+	S ^= 'H
+	S ^= 'H
+	goto act2_1_9687
+
+act2_1_9717:
+	from act2_1_9714
+	if (S = 'O)
+		goto write_1_9720
+		else act2_1_9720
+
+write_1_9720:
+	from act2_1_9717
+	S ^= 'O
+	S ^= 'O
+	goto act2_1_9688
+
+act2_1_9720:
+	from act2_1_9717
+	if (S = 'I)
+		goto write_1_9723
+		else act2_1_9723
+
+write_1_9723:
+	from act2_1_9720
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_9689
+
+act2_1_9723:
+	from act2_1_9720
+	if (S = 'Z)
+		goto write_1_9726
+		else act2_1_9726
+
+write_1_9726:
+	from act2_1_9723
+	S ^= 'Z
+	S ^= 'Z
+	goto act2_1_9690
+
+act2_1_9726:
+	from act2_1_9723
+	if (S = 'W)
+		goto write_1_9729
+		else act2_1_9729
+
+write_1_9729:
+	from act2_1_9726
+	S ^= 'W
+	S ^= 'W
+	goto act2_1_9691
+
+act2_1_9729:
+	from act2_1_9726
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	assert((S = '$))
+	assert(!((S = 'SLASH)))
+	if ((S_right = 'nil) && (S = 'BLANK))
+		goto left_1b_1_10486
+		else left_1p_1_10486
+
+left_1b_1_10486:
+	from act2_1_9729
+	S ^= 'BLANK
+	goto left1_1_10486
+
+left1_1_10486:
+	fi (S_right = 'nil)
+		from left_1b_1_10486
+		else left_1p_1_10486
+	if (S_left = 'nil)
+		goto left_2b_1_10486
+		else left_2p_1_10486
+
+left_2b_1_10486:
+	from left1_1_10486
+	S ^= 'BLANK
+	goto left2_1_10486
+
+left2_1_10486:
+	fi ((S_left = 'nil) && (S = 'BLANK))
+		from left_2b_1_10486
+		else left_2p_1_10486
+	assert((S = 'BLANK))
+	S ^= 'BLANK
+	S ^= 'BLANK
+	assert((S = 'BLANK))
+	'BLANK <- S
+	exit
+
+left_2p_1_10486:
+	from left1_1_10486
+	(S . S_left) <- S_left
+	goto left2_1_10486
+
+left_1p_1_10486:
+	from act2_1_9729
+	S_right <- (S . S_right)
+	goto left1_1_10486
+
+left_2p_1_9674:
+	from left1_1_9674
+	(S . S_left) <- S_left
+	goto left2_1_9674
+
+left_1p_1_9674:
+	from act2_1_9296
+	S_right <- (S . S_right)
+	goto left1_1_9674
+
+left_2p_1_8890:
+	from left1_1_8890
+	(S . S_left) <- S_left
+	goto left2_1_8890
+
+left_1p_1_8890:
+	from act2_1_8517
+	S_right <- (S . S_right)
+	goto left1_1_8890
+
+act2_1_8503:
+	from act2_1_8119
+	if (S = 'p)
+		goto write_1_11270
+		else act2_1_11270
+
+write_1_11270:
+	from act2_1_8503
+	S ^= 'p
+	S ^= 'p
+	goto act2_1_8507
+
+act2_1_11270:
+	from act2_1_8503
+	if (S = 'H)
+		goto write_1_11272
+		else act2_1_11272
+
+write_1_11272:
+	from act2_1_11270
+	S ^= 'H
+	S ^= 'H
+	goto act2_1_8509
+
+act2_1_11272:
+	from act2_1_11270
+	if (S = 'O)
+		goto write_1_11274
+		else act2_1_11274
+
+write_1_11274:
+	from act2_1_11272
+	S ^= 'O
+	S ^= 'O
+	goto act2_1_8511
+
+act2_1_11274:
+	from act2_1_11272
+	if (S = 'I)
+		goto write_1_11276
+		else act2_1_11276
+
+write_1_11276:
+	from act2_1_11274
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_8513
+
+act2_1_11276:
+	from act2_1_11274
+	if (S = 'Z)
+		goto write_1_11278
+		else act2_1_11278
+
+write_1_11278:
+	from act2_1_11276
+	S ^= 'Z
+	S ^= 'Z
+	goto act2_1_8515
+
+act2_1_11278:
+	from act2_1_11276
+	if (S = 'W)
+		goto write_1_11280
+		else act2_1_8119
+
+write_1_11280:
+	from act2_1_11278
+	S ^= 'W
+	S ^= 'W
+	goto act2_1_8517
+
+right_2p_1_7711:
+	from right1_1_7711
+	(S . S_right) <- S_right
+	goto right2_1_7711
+
+right_1p_1_7711:
+	from act2_1_7327
+	S_left <- (S . S_left)
+	goto right1_1_7711
+
+left_2p_1_6919:
+	from left1_1_6919
+	(S . S_left) <- S_left
+	goto left2_1_6919
+
+left_1p_1_6919:
+	from act2_1_6535
+	S_right <- (S . S_right)
+	goto left1_1_6919
+
+left_2p_1_6127:
+	from left1_1_6127
+	(S . S_left) <- S_left
+	goto left2_1_6127
+
+left_1p_1_6127:
+	from act2_1_5743
+	S_right <- (S . S_right)
+	goto left1_1_6127
+
+act2_1_5349:
+	from right2_1_4967
+	if (S = '0)
+		goto write_1_11282
+		else act2_1_11282
+
+write_1_11282:
+	from act2_1_5349
+	S ^= '0
+	S ^= '0
+	goto act2_1_4957
+
+act2_1_11282:
+	from act2_1_5349
+	if (S = '1)
+		goto write_1_11284
+		else act2_1_11284
+
+write_1_11284:
+	from act2_1_11282
+	S ^= '1
+	S ^= '1
+	goto act2_1_4958
+
+act2_1_11284:
+	from act2_1_11282
+	if (S = 'B)
+		goto write_1_11286
+		else act2_1_11286
+
+write_1_11286:
+	from act2_1_11284
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_4959
+
+act2_1_11286:
+	from act2_1_11284
+	if (S = '#)
+		goto write_1_11288
+		else act2_1_11288
+
+write_1_11288:
+	from act2_1_11286
+	S ^= '#
+	S ^= '#
+	goto act2_1_4960
+
+act2_1_11288:
+	from act2_1_11286
+	if (S = 'S)
+		goto write_1_11290
+		else act2_1_11290
+
+write_1_11290:
+	from act2_1_11288
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_4961
+
+act2_1_11290:
+	from act2_1_11288
+	if (S = 'M)
+		goto write_1_11292
+		else act2_1_11292
+
+write_1_11292:
+	from act2_1_11290
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_4962
+
+act2_1_11292:
+	from act2_1_11290
+	if (S = 'BLANK)
+		goto write_1_11294
+		else act2_1_11294
+
+write_1_11294:
+	from act2_1_11292
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_4963
+
+act2_1_11294:
+	from act2_1_11292
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_4964
+
+right_2p_1_4967:
+	from right1_1_4967
+	(S . S_right) <- S_right
+	goto right2_1_4967
+
+right_1p_1_4967:
+	from act2_1_4964
+	S_left <- (S . S_left)
+	goto right1_1_4967
+
+act2_1_4573:
+	from right2_1_4191
+	if (S = '0)
+		goto write_1_11298
+		else act2_1_11298
+
+write_1_11298:
+	from act2_1_4573
+	S ^= '0
+	S ^= '0
+	goto act2_1_4181
+
+act2_1_11298:
+	from act2_1_4573
+	if (S = '1)
+		goto write_1_11300
+		else act2_1_11300
+
+write_1_11300:
+	from act2_1_11298
+	S ^= '1
+	S ^= '1
+	goto act2_1_4182
+
+act2_1_11300:
+	from act2_1_11298
+	if (S = 'B)
+		goto write_1_11302
+		else act2_1_11302
+
+write_1_11302:
+	from act2_1_11300
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_4183
+
+act2_1_11302:
+	from act2_1_11300
+	if (S = '#)
+		goto write_1_11304
+		else act2_1_11304
+
+write_1_11304:
+	from act2_1_11302
+	S ^= '#
+	S ^= '#
+	goto act2_1_4184
+
+act2_1_11304:
+	from act2_1_11302
+	if (S = 'S)
+		goto write_1_11306
+		else act2_1_11306
+
+write_1_11306:
+	from act2_1_11304
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_4185
+
+act2_1_11306:
+	from act2_1_11304
+	if (S = 'M)
+		goto write_1_11308
+		else act2_1_11308
+
+write_1_11308:
+	from act2_1_11306
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_4186
+
+act2_1_11308:
+	from act2_1_11306
+	if (S = 'BLANK)
+		goto write_1_11310
+		else act2_1_11310
+
+write_1_11310:
+	from act2_1_11308
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_4187
+
+act2_1_11310:
+	from act2_1_11308
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_4188
+
+right_2p_1_4191:
+	from right1_1_4191
+	(S . S_right) <- S_right
+	goto right2_1_4191
+
+right_1p_1_4191:
+	from act2_1_4188
+	S_left <- (S . S_left)
+	goto right1_1_4191
+
+act2_1_3797:
+	from left2_1_3415
+	if (S = '0)
+		goto write_1_11314
+		else act2_1_11314
+
+write_1_11314:
+	from act2_1_3797
+	S ^= '0
+	S ^= '0
+	goto act2_1_3405
+
+act2_1_11314:
+	from act2_1_3797
+	if (S = '1)
+		goto write_1_11316
+		else act2_1_11316
+
+write_1_11316:
+	from act2_1_11314
+	S ^= '1
+	S ^= '1
+	goto act2_1_3406
+
+act2_1_11316:
+	from act2_1_11314
+	if (S = 'B)
+		goto write_1_11318
+		else act2_1_11318
+
+write_1_11318:
+	from act2_1_11316
+	S ^= 'B
+	S ^= 'B
+	goto act2_1_3407
+
+act2_1_11318:
+	from act2_1_11316
+	if (S = '#)
+		goto write_1_11320
+		else act2_1_11320
+
+write_1_11320:
+	from act2_1_11318
+	S ^= '#
+	S ^= '#
+	goto act2_1_3408
+
+act2_1_11320:
+	from act2_1_11318
+	if (S = 'S)
+		goto write_1_11322
+		else act2_1_11322
+
+write_1_11322:
+	from act2_1_11320
+	S ^= 'S
+	S ^= 'S
+	goto act2_1_3409
+
+act2_1_11322:
+	from act2_1_11320
+	if (S = 'M)
+		goto write_1_11324
+		else act2_1_11324
+
+write_1_11324:
+	from act2_1_11322
+	S ^= 'M
+	S ^= 'M
+	goto act2_1_3410
+
+act2_1_11324:
+	from act2_1_11322
+	if (S = 'BLANK)
+		goto write_1_11326
+		else act2_1_11326
+
+write_1_11326:
+	from act2_1_11324
+	S ^= 'BLANK
+	S ^= 'BLANK
+	goto act2_1_3411
+
+act2_1_11326:
+	from act2_1_11324
+	assert((S = '$))
+	S ^= '$
+	S ^= '$
+	goto act2_1_3412
+
+left_2p_1_3415:
+	from left1_1_3415
+	(S . S_left) <- S_left
+	goto left2_1_3415
+
+left_1p_1_3415:
+	from act2_1_3412
+	S_right <- (S . S_right)
+	goto left1_1_3415
+
+act2_1_2629:
+	from act2_1_2258
+	if (S = 'p)
+		goto write_1_11330
+		else act2_1_11330
+
+write_1_11330:
+	from act2_1_2629
+	S ^= 'p
+	S ^= 'p
+	goto act2_1_2633
+
+act2_1_11330:
+	from act2_1_2629
+	if (S = 'H)
+		goto write_1_11332
+		else act2_1_11332
+
+write_1_11332:
+	from act2_1_11330
+	S ^= 'H
+	S ^= 'H
+	goto act2_1_2635
+
+act2_1_11332:
+	from act2_1_11330
+	if (S = 'O)
+		goto write_1_11334
+		else act2_1_11334
+
+write_1_11334:
+	from act2_1_11332
+	S ^= 'O
+	S ^= 'O
+	goto act2_1_2637
+
+act2_1_11334:
+	from act2_1_11332
+	if (S = 'I)
+		goto write_1_11336
+		else act2_1_11336
+
+write_1_11336:
+	from act2_1_11334
+	S ^= 'I
+	S ^= 'I
+	goto act2_1_2639
+
+act2_1_11336:
+	from act2_1_11334
+	if (S = 'Z)
+		goto write_1_11338
+		else act2_1_11338
+
+write_1_11338:
+	from act2_1_11336
+	S ^= 'Z
+	S ^= 'Z
+	goto act2_1_2641
+
+act2_1_11338:
+	from act2_1_11336
+	assert((S = 'W))
+	S ^= 'W
+	S ^= 'W
+	goto act2_1_2643
+
+right_2p_1_2231:
+	from right1_1_2231
+	(S . S_right) <- S_right
+	goto right2_1_2231
+
+right_1p_1_2231:
+	from act2_1_1846
+	S_left <- (S . S_left)
+	goto right1_1_2231
+
+right_2p_1_1426:
+	from right1_1_1426
+	(S . S_right) <- S_right
+	goto right2_1_1426
+
+right_1p_1_1426:
+	from act2_1_1048
+	S_left <- (S . S_left)
+	goto right1_1_1426
+
+right_2p_1_656:
+	from right1_1_656
+	(S . S_right) <- S_right
+	goto right2_1_656
+
+right_1p_1_656:
+	from init_1
+	S_left <- (S . S_left)
+	goto right1_1_656

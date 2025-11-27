@@ -5,8 +5,8 @@ Interpreter:
     TODO:
         - Interpret the URTM -> to ensure the translated URTM works
 
-    Interpretation of URTM - Total Steps: 0, Total Jumps: 2832192305, Combined Total: 5664384610
-    Interpretation of URTM^-1 - Total Steps: 0, Total Jumps: 3330242695, Combined Total: 6660485390
+    Interpretation of URTM - Total Steps: 0, Total Jumps: 2_832_192_305, Combined Total: 5_664_384_610
+    Interpretation of URTM^-1 - Total Steps: 0, Total Jumps: 3_330_242_695, Combined Total: 6_660_485_390
 
 Partial evaluation:
 
