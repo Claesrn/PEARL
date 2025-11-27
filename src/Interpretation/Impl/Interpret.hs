@@ -1,7 +1,6 @@
 {-# LANGUAGE BangPatterns #-}
 module Interpretation.Impl.Interpret where
 
-
 import Utils.Error
 import Utils.Maps
 
@@ -10,7 +9,6 @@ import RL.Operators
 import RL.Values
 import RL.Variables
 import RL.Program
-import Debug.Trace (trace)
 
 import qualified Control.Monad.State as S
 
@@ -65,9 +63,7 @@ runProgram' (_, _) _ = undefined
 -- verifies that input store is wellformed
 createStore :: VariableDecl -> Store -> EM Store
 createStore decl store =
-  let decl' = trace ("decl = " ++ show decl) decl
-      store' = trace ("store = " ++ show (keys store)) store
-      anyTemp = any (\n -> n `elem` temp decl) (keys store)
+  let anyTemp = any (\n -> n `elem` temp decl) (keys store)
       anyOut = any (\n -> n `elem` output decl
                        && n `notElem` output decl) (keys store)
       allPresent = all (`elem` keys store) (input decl)
