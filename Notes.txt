@@ -29,3 +29,6 @@ Partial evaluation:
 Overall TODO:
     - Fix the reversiblity problems
 
+
+Zoom call the 7. of january:
+    Need to flip the order of the program to get same amount of steps (Sequentially scanning through)

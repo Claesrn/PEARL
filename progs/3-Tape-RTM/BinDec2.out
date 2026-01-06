@@ -13,45 +13,45 @@ init_1:
 	S_t1 ^= 'BLANK
 	S_t1 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	goto act1_1_27
+	goto act1_1_54
 
-act1_1_27:
+act1_1_54:
 	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from act1_1_78
+		from write_1_155
 		else init_1
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto left_2b_t1_1_29
-		else left_2p_t1_1_29
+		goto left_2b_t1_1_56
+		else left_2p_t1_1_56
 
-left_2b_t1_1_29:
-	from act1_1_27
+left_2b_t1_1_56:
+	from act1_1_54
 	S_t1 ^= 'BLANK
-	goto left1_t1_1_29
+	goto left1_t1_1_56
 
-left1_t1_1_29:
+left1_t1_1_56:
 	fi (S_left_t1 = 'nil)
-		from left_2b_t1_1_29
-		else left_2p_t1_1_29
+		from left_2b_t1_1_56
+		else left_2p_t1_1_56
 	if (S_right_t1 = 'nil)
-		goto left_1b_t1_1_29
-		else left_1p_t1_1_29
+		goto left_1b_t1_1_56
+		else left_1p_t1_1_56
 
-left_1b_t1_1_29:
-	from left1_t1_1_29
+left_1b_t1_1_56:
+	from left1_t1_1_56
 	S_t1 ^= 'BLANK
-	goto left_t1_1_29
+	goto left_t1_1_56
 
-left_t1_1_29:
+left_t1_1_56:
 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		from left_1b_t1_1_29
-		else left_1p_t1_1_29
+		from left_1b_t1_1_56
+		else left_1p_t1_1_56
 	assert(!((((S_t1 = 'SLASH) && (S_t2 = 'SLASH)) && (S_t3 = 'SLASH))))
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		goto write_1_33
-		else act1_1_33
+		goto write_1_80
+		else act1_1_80
 
-write_1_33:
-	from left_t1_1_29
+write_1_80:
+	from left_t1_1_56
 	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -59,51 +59,51 @@ write_1_33:
 	S_t1 ^= 'BLANK
 	S_t1 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	goto act1_1_37
+	goto act1_1_86
 
-act1_1_37:
+act1_1_86:
 	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from act1_1_45
-		else write_1_33
-	goto act1_1_39
+		from act1_1_155
+		else write_1_80
+	goto act1_1_105
 
-act1_1_39:
+act1_1_105:
 	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from write_1_78
-		else act1_1_37
+		from act1_1_131
+		else act1_1_86
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto right_2b_t1_1_41
-		else right_2p_t1_1_41
+		goto right_2b_t1_1_106
+		else right_2p_t1_1_106
 
-right_2b_t1_1_41:
-	from act1_1_39
+right_2b_t1_1_106:
+	from act1_1_105
 	S_t1 ^= 'BLANK
-	goto right1_t1_1_41
+	goto right1_t1_1_106
 
-right1_t1_1_41:
+right1_t1_1_106:
 	fi (S_right_t1 = 'nil)
-		from right_2b_t1_1_41
-		else right_2p_t1_1_41
+		from right_2b_t1_1_106
+		else right_2p_t1_1_106
 	if (S_left_t1 = 'nil)
-		goto right_1b_t1_1_41
-		else right_1p_t1_1_41
+		goto right_1b_t1_1_106
+		else right_1p_t1_1_106
 
-right_1b_t1_1_41:
-	from right1_t1_1_41
+right_1b_t1_1_106:
+	from right1_t1_1_106
 	S_t1 ^= 'BLANK
-	goto right_t1_1_41
+	goto right_t1_1_106
 
-right_t1_1_41:
+right_t1_1_106:
 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		from right_1b_t1_1_41
-		else right_1p_t1_1_41
+		from right_1b_t1_1_106
+		else right_1p_t1_1_106
 	assert(!((((S_t1 = 'SLASH) && (S_t2 = 'SLASH)) && (S_t3 = 'SLASH))))
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		goto write_1_45
-		else act1_1_45
+		goto write_1_131
+		else act1_1_131
 
-write_1_45:
-	from right_t1_1_41
+write_1_131:
+	from right_t1_1_106
 	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -116,60 +116,60 @@ write_1_45:
 	'BLANK <- S_t1
 	exit
 
-act1_1_45:
-	from right_t1_1_41
+act1_1_131:
+	from right_t1_1_106
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= '0
-	S_t1 ^= '1
-	goto act1_1_37
+	S_t1 ^= '0
+	goto act1_1_105
 
-right_1p_t1_1_41:
-	from right1_t1_1_41
+right_1p_t1_1_106:
+	from right1_t1_1_106
 	(S_t1 . S_left_t1) <- S_left_t1
-	goto right_t1_1_41
+	goto right_t1_1_106
 
-right_2p_t1_1_41:
-	from act1_1_39
+right_2p_t1_1_106:
+	from act1_1_105
 	S_right_t1 <- (S_t1 . S_right_t1)
-	goto right1_t1_1_41
+	goto right1_t1_1_106
 
-act1_1_33:
-	from left_t1_1_29
+act1_1_80:
+	from left_t1_1_56
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		goto write_1_78
-		else act1_1_78
+		goto write_1_155
+		else act1_1_155
 
-write_1_78:
-	from act1_1_33
+write_1_155:
+	from act1_1_80
 	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= '1
 	S_t1 ^= '0
-	goto act1_1_39
+	goto act1_1_54
 
-act1_1_78:
-	from act1_1_33
+act1_1_155:
+	from act1_1_80
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= '0
-	S_t1 ^= '0
-	goto act1_1_27
+	S_t1 ^= '1
+	goto act1_1_86
 
-left_1p_t1_1_29:
-	from left1_t1_1_29
+left_1p_t1_1_56:
+	from left1_t1_1_56
 	(S_t1 . S_right_t1) <- S_right_t1
-	goto left_t1_1_29
+	goto left_t1_1_56
 
-left_2p_t1_1_29:
-	from act1_1_27
+left_2p_t1_1_56:
+	from act1_1_54
 	S_left_t1 <- (S_t1 . S_left_t1)
-	goto left1_t1_1_29
+	goto left1_t1_1_56
