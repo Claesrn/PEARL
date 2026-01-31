@@ -32,3 +32,16 @@ Overall TODO:
 
 Zoom call the 7. of january:
     Need to flip the order of the program to get same amount of steps (Sequentially scanning through)
+
+
+Notes 3. Feb
+        Specialed programs yield same amount of steps :D
+            - Go through experiment with increment
+        
+        Spec(int, p^-1) of the URTM:
+            Before: 3331480 steps
+            After : 22170 steps
+
+        Spec(int^1, p) currently processing. 
+
+        
