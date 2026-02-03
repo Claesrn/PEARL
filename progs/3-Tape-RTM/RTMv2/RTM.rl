@@ -1,8 +1,8 @@
 (Start End Rules S_right_t1 S_right_t2 S_right_t3)
     -> (Start End Rules S_right_t1 S_right_t2 S_right_t3)
-    with (Q Q1 Q2 Q2_temp S1_t1 S2_t1 S1_t2 S2_t2 S1_t3 S2_t3
+    with (Q Q1 Q2 S1_t1 S2_t1 S1_t2 S2_t2 S1_t3 S2_t3
           S_t1 S_t2 S_t3 S_left_t1 S_left_t2 S_left_t3
-          RulesRev Rule R R_t1 R_t2 R_t3 SLASH1 SLASH2)
+          RulesRev Rule)
 
 init: entry
       S_t1 ^= 'BLANK
@@ -14,60 +14,11 @@ init: entry
 act1: fi !RulesRev && Q = Start
          from init else act3
       (Rule . Rules) <- Rules
-      (Q1 . (R . Q2_temp)) <- Rule
-      if R = 'SLASH
-         goto parse_movement else parse_symbol
+      (Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) <- Rule
+      if S1_t1 = 'SLASH && S1_t2 = 'SLASH && S1_t3 = 'SLASH
+         goto shft else symbol
 
-parse_movement: from act1
-                (R_t1 . (SLASH1 . (R_t2 . (SLASH2 . (R_t3 . Q2))))) <- Q2_temp
-                goto shft
-
-parse_symbol: from act1
-              S1_t1 <- R
-              (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))) <- Q2_temp
-              goto symbol
-
-act2: fi R = 'SLASH
-         from shft3 else symbol2
-      if R = 'SLASH goto act2_movement else act2_symbol
-
-act2_movement: from act2
-               SLASH2 <- R_t2
-               SLASH1 <- R_t1
-               Q2_temp <- (R_t1 . (SLASH1 . (R_t2 . (SLASH2 . (R_t3 . Q2)))))
-               R <- 'SLASH
-               goto act2_common
-
-act2_symbol: from act2
-             Q2_temp <- (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2)))))
-             goto act2_common
-
-act2_common: fi R = 'SLASH
-                from act2_movement else act2_symbol
-             Rule <- (Q1 . (R . Q2_temp))
-             RulesRev <- (Rule . RulesRev)
-             if Rules goto act3 else reload
-
-reload: fi Rules
-           from reload else act2_common
-        (Rule . RulesRev) <- RulesRev
-        Rules <- (Rule . Rules)
-        if RulesRev
-           goto reload else act3
-
-act3: fi !RulesRev
-         from reload else act2_common
-      if !RulesRev && Q = End
-         goto stop else act1
-
-stop: from act3
-      Q ^= End
-      S_t1 ^= 'BLANK
-      S_t2 ^= 'BLANK
-      S_t3 ^= 'BLANK
-      exit
-
-symbol: from parse_symbol
+symbol: from act1
         if Q = Q1 && S_t1 = S1_t1 && S_t2 = S1_t2 && S_t3 = S1_t3
            goto symbol1 else symbol2
 
@@ -75,43 +26,36 @@ symbol1: from symbol
          Q ^= Q1
          Q ^= Q2
          S_t1 ^= S1_t1
-         S_t1 ^= S2_t1
          S_t2 ^= S1_t2
-         S_t2 ^= S2_t2
          S_t3 ^= S1_t3
          S_t3 ^= S2_t3
+         S_t2 ^= S2_t2
+         S_t1 ^= S2_t1
          goto symbol2
 
 symbol2: fi Q = Q2 && S_t1 = S2_t1 && S_t2 = S2_t2 && S_t3 = S2_t3
-           from symbol1 else symbol
-         Q2 <- (S2_t3 . Q2)
-         Q2 <- (S1_t3 . Q2)
-         Q2 <- (S2_t2 . Q2)
-         Q2 <- (S1_t2 . Q2)
-         Q2 <- (S2_t1 . Q2)
-         Q2_temp <- Q2
-         R <- S1_t1
+            from symbol1 else symbol
          goto act2
 
-shft: from parse_movement
+shft: from act1
       if Q = Q1 goto shft1 else shft3
 
 shft1: from shft
        Q ^= Q1
        Q ^= Q2
-       goto tape1_move
+       goto move_t1
 
 // Tape 1 movement
-tape1_move: from shft1
-            if R_t1 = 'LEFT goto left_t1 else tape1_check_right
+move_t1: from shft1
+         if S2_t1 = 'LEFT goto left_t1 else right_or_stay_t1
 
-tape1_check_right: from tape1_move
-                   if R_t1 = 'RIGHT goto right_t1 else tape1_stay
+right_or_stay_t1: from move_t1
+                  if S2_t1 = 'RIGHT goto right_t1 else stay_t1
 
-tape1_stay: from tape1_check_right
-            goto tape2_start
+stay_t1: from right_or_stay_t1
+         goto move_t1_done
 
-left_t1: from tape1_move
+left_t1: from move_t1
          if S_right_t1 = 'nil && S_t1 = 'BLANK
             goto left_1b_t1 else left_1p_t1
 
@@ -138,9 +82,12 @@ left_2p_t1: from left1_t1
 
 left2_t1: fi S_left_t1 = 'nil && S_t1 = 'BLANK
              from left_2b_t1 else left_2p_t1
-          goto tape1_moved
+          goto move_t1_left_done
 
-right_t1: from tape1_check_right
+move_t1_left_done: from left2_t1
+                   goto move_t2
+
+right_t1: from right_or_stay_t1
           if S_left_t1 = 'nil && S_t1 = 'BLANK
              goto right_1b_t1 else right_1p_t1
 
@@ -154,8 +101,8 @@ right_1p_t1: from right_t1
 
 right1_t1: fi S_left_t1 = 'nil
               from right_1b_t1 else right_1p_t1
-           if S_right_t1 = 'nil goto right_2b_t1
-              else right_2p_t1
+           if S_right_t1 = 'nil
+              goto right_2b_t1 else right_2p_t1
 
 right_2b_t1: from right1_t1
              S_t1 ^= 'BLANK
@@ -167,27 +114,27 @@ right_2p_t1: from right1_t1
 
 right2_t1: fi S_right_t1 = 'nil && S_t1 = 'BLANK
               from right_2b_t1 else right_2p_t1
-           goto tape1_moved
+           goto move_t1_right_done
 
-tape1_moved: fi R_t1 = 'LEFT
-                from left2_t1 else right2_t1
-             goto tape2_start
+move_t1_right_done: from right2_t1
+                    goto move_t1_done
+
+move_t1_done: fi S2_t1 = 'RIGHT
+                 from move_t1_right_done else stay_t1
+              goto move_t2
 
 // Tape 2 movement
-tape2_start: fi R_t1 = 'STAY
-                from tape1_stay else tape1_moved
-             goto tape2_move
+move_t2: fi S2_t1 = 'LEFT
+            from move_t1_left_done else move_t1_done
+         if S2_t2 = 'LEFT goto left_t2 else right_or_stay_t2
 
-tape2_move: from tape2_start
-            if R_t2 = 'LEFT goto left_t2 else tape2_check_right
+right_or_stay_t2: from move_t2
+                  if S2_t2 = 'RIGHT goto right_t2 else stay_t2
 
-tape2_check_right: from tape2_move
-                   if R_t2 = 'RIGHT goto right_t2 else tape2_stay
+stay_t2: from right_or_stay_t2
+         goto move_t2_done
 
-tape2_stay: from tape2_check_right
-            goto tape3_start
-
-left_t2: from tape2_move
+left_t2: from move_t2
          if S_right_t2 = 'nil && S_t2 = 'BLANK
             goto left_1b_t2 else left_1p_t2
 
@@ -214,9 +161,12 @@ left_2p_t2: from left1_t2
 
 left2_t2: fi S_left_t2 = 'nil && S_t2 = 'BLANK
              from left_2b_t2 else left_2p_t2
-          goto tape2_moved
+          goto move_t2_left_done
 
-right_t2: from tape2_check_right
+move_t2_left_done: from left2_t2
+                   goto move_t3
+
+right_t2: from right_or_stay_t2
           if S_left_t2 = 'nil && S_t2 = 'BLANK
              goto right_1b_t2 else right_1p_t2
 
@@ -230,8 +180,8 @@ right_1p_t2: from right_t2
 
 right1_t2: fi S_left_t2 = 'nil
               from right_1b_t2 else right_1p_t2
-           if S_right_t2 = 'nil goto right_2b_t2
-              else right_2p_t2
+           if S_right_t2 = 'nil
+              goto right_2b_t2 else right_2p_t2
 
 right_2b_t2: from right1_t2
              S_t2 ^= 'BLANK
@@ -243,27 +193,27 @@ right_2p_t2: from right1_t2
 
 right2_t2: fi S_right_t2 = 'nil && S_t2 = 'BLANK
               from right_2b_t2 else right_2p_t2
-           goto tape2_moved
+           goto move_t2_right_done
 
-tape2_moved: fi R_t2 = 'LEFT
-                from left2_t2 else right2_t2
-             goto tape3_start
+move_t2_right_done: from right2_t2
+                    goto move_t2_done
+
+move_t2_done: fi S2_t2 = 'RIGHT
+                 from move_t2_right_done else stay_t2
+              goto move_t3
 
 // Tape 3 movement
-tape3_start: fi R_t2 = 'STAY
-                from tape2_stay else tape2_moved
-             goto tape3_move
+move_t3: fi S2_t2 = 'LEFT
+            from move_t2_left_done else move_t2_done
+         if S2_t3 = 'LEFT goto left_t3 else right_or_stay_t3
 
-tape3_move: from tape3_start
-            if R_t3 = 'LEFT goto left_t3 else tape3_check_right
+right_or_stay_t3: from move_t3
+                  if S2_t3 = 'RIGHT goto right_t3 else stay_t3
 
-tape3_check_right: from tape3_move
-                   if R_t3 = 'RIGHT goto right_t3 else tape3_stay
+stay_t3: from right_or_stay_t3
+         goto move_t3_done
 
-tape3_stay: from tape3_check_right
-            goto shft2
-
-left_t3: from tape3_move
+left_t3: from move_t3
          if S_right_t3 = 'nil && S_t3 = 'BLANK
             goto left_1b_t3 else left_1p_t3
 
@@ -290,9 +240,12 @@ left_2p_t3: from left1_t3
 
 left2_t3: fi S_left_t3 = 'nil && S_t3 = 'BLANK
              from left_2b_t3 else left_2p_t3
-          goto tape3_moved
+          goto move_t3_left_done
 
-right_t3: from tape3_check_right
+move_t3_left_done: from left2_t3
+                   goto shft2
+
+right_t3: from right_or_stay_t3
           if S_left_t3 = 'nil && S_t3 = 'BLANK
              goto right_1b_t3 else right_1p_t3
 
@@ -306,8 +259,8 @@ right_1p_t3: from right_t3
 
 right1_t3: fi S_left_t3 = 'nil
               from right_1b_t3 else right_1p_t3
-           if S_right_t3 = 'nil goto right_2b_t3
-              else right_2p_t3
+           if S_right_t3 = 'nil
+              goto right_2b_t3 else right_2p_t3
 
 right_2b_t3: from right1_t3
              S_t3 ^= 'BLANK
@@ -317,32 +270,46 @@ right_2p_t3: from right1_t3
              (S_t3 . S_right_t3) <- S_right_t3
              goto right2_t3
 
-right2_t3: fi S_right_t3 = 'nil && S_t3 = 'BLANK from right_2b_t3 else right_2p_t3
-        goto move1_right_or_stay_t3
+right2_t3: fi S_right_t3 = 'nil && S_t3 = 'BLANK
+              from right_2b_t3 else right_2p_t3
+           goto move_t3_right_done
 
-stay_t3: from right_or_stay_t3
-      if S_left_t3 = 'nil goto stay_1b_t3 else stay_1p_t3
+move_t3_right_done: from right2_t3
+                    goto move_t3_done
 
-stay_1b_t3: from stay_t3
-      goto stay1_t3
+move_t3_done: fi S2_t3 = 'RIGHT
+                 from move_t3_right_done else stay_t3
+              goto shft2
 
-stay_1p_t3: from stay_t3
-      goto stay1_t3
+shft2: fi S2_t3 = 'LEFT
+          from move_t3_left_done else move_t3_done
+       goto shft3
 
-stay1_t3: fi S_left_t3 = 'nil from stay_1b_t3 else stay_1p_t3
-      if S_right_t3 = 'nil goto stay_2b_t3 else stay_2p_t3
+shft3: fi Q = Q2
+          from shft2 else shft
+       goto act2
 
-stay_2b_t3: from stay1_t3
-      goto stay2_t3
+act2: fi S1_t1 = 'SLASH && S1_t2 = 'SLASH && S1_t3 = 'SLASH
+         from shft3 else symbol2
+      Rule <- (Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2)))))))
+      RulesRev <- (Rule . RulesRev)
+      if Rules goto act3 else reload
 
-stay_2p_t3: from stay1_t3
-      goto stay2_t3
+reload: fi Rules
+           from reload else act2
+        (Rule . RulesRev) <- RulesRev
+        Rules <- (Rule . Rules)
+        if RulesRev
+           goto reload else act3
 
-stay2_t3: fi S_right_t3 = 'nil from stay_2b_t3 else stay_2p_t3
-      goto move1_right_or_stay_t3
+act3: fi !RulesRev
+         from reload else act2
+      if !RulesRev && Q = End
+         goto stop else act1
 
-move1_right_or_stay_t3: fi S2_t3 = 'RIGHT from right2_t3 else stay2_t3
-      goto move1
-
-move1: fi S2_t3 = 'LEFT from move_t3_left_or_other else move1_right_or_stay_t3
-       goto act3
+stop: from act3
+      Q ^= End
+      S_t3 ^= 'BLANK
+      S_t2 ^= 'BLANK
+      S_t1 ^= 'BLANK
+      exit

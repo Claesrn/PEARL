@@ -13,6 +13,6 @@ nil))))))))
 
 
 // Tape for full specialization
-S_right_t1 = '(0 . (0 . (1 . nil)))
-S_right_t2 = 'nil
-S_right_t3 = 'nil
+// S_right_t1 = '(0 . (0 . (1 . nil)))
+// S_right_t2 = 'nil
+// S_right_t3 = 'nil

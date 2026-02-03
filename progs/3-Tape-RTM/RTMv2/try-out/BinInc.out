@@ -1,0 +1,173 @@
+(S_right_t1 S_right_t2 S_right_t3) -> (S_right_t1 S_right_t2 S_right_t3) with (S_t1 S_t2 S_t3 S_left_t1 S_left_t2 S_left_t3)
+
+init_1:
+	entry
+	S_t1 <- 'BLANK
+	S_t2 <- 'BLANK
+	S_t3 <- 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	goto symbol_1_28
+
+symbol_1_28:
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from symbol_1_86
+		else init_1
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto left_2b_t1_1_31
+		else left_2p_t1_1_31
+
+left_2b_t1_1_31:
+	from symbol_1_28
+	S_t1 ^= 'BLANK
+	goto left1_t1_1_31
+
+left1_t1_1_31:
+	fi (S_left_t1 = 'nil)
+		from left_2b_t1_1_31
+		else left_2p_t1_1_31
+	if (S_right_t1 = 'nil)
+		goto left_1b_t1_1_31
+		else left_1p_t1_1_31
+
+left_1b_t1_1_31:
+	from left1_t1_1_31
+	S_t1 ^= 'BLANK
+	goto left_t1_1_31
+
+left_t1_1_31:
+	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		from left_1b_t1_1_31
+		else left_1p_t1_1_31
+	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto symbol1_1_37
+		else symbol_1_37
+
+symbol1_1_37:
+	from left_t1_1_31
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	goto symbol_1_43
+
+symbol_1_43:
+	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from symbol_1_55
+		else symbol1_1_37
+	goto symbol_1_46
+
+symbol_1_46:
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from symbol1_1_86
+		else symbol_1_43
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto right_2b_t1_1_49
+		else right_2p_t1_1_49
+
+right_2b_t1_1_49:
+	from symbol_1_46
+	S_t1 ^= 'BLANK
+	goto right1_t1_1_49
+
+right1_t1_1_49:
+	fi (S_right_t1 = 'nil)
+		from right_2b_t1_1_49
+		else right_2p_t1_1_49
+	if (S_left_t1 = 'nil)
+		goto right_1b_t1_1_49
+		else right_1p_t1_1_49
+
+right_1b_t1_1_49:
+	from right1_t1_1_49
+	S_t1 ^= 'BLANK
+	goto right_t1_1_49
+
+right_t1_1_49:
+	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		from right_1b_t1_1_49
+		else right_1p_t1_1_49
+	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto symbol1_1_55
+		else symbol_1_55
+
+symbol1_1_55:
+	from right_t1_1_49
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	exit
+
+symbol_1_55:
+	from right_t1_1_49
+	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= '1
+	goto symbol_1_43
+
+right_1p_t1_1_49:
+	from right1_t1_1_49
+	(S_t1 . S_left_t1) <- S_left_t1
+	goto right_t1_1_49
+
+right_2p_t1_1_49:
+	from symbol_1_46
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto right1_t1_1_49
+
+symbol_1_37:
+	from left_t1_1_31
+	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto symbol1_1_86
+		else symbol_1_86
+
+symbol1_1_86:
+	from symbol_1_37
+	S_t1 ^= '1
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= '0
+	goto symbol_1_46
+
+symbol_1_86:
+	from symbol_1_37
+	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= '0
+	goto symbol_1_28
+
+left_1p_t1_1_31:
+	from left1_t1_1_31
+	(S_t1 . S_right_t1) <- S_right_t1
+	goto left_t1_1_31
+
+left_2p_t1_1_31:
+	from symbol_1_28
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto left1_t1_1_31

@@ -1,0 +1,175 @@
+(S_right_t1 S_right_t2 S_right_t3) -> (S_right_t1 S_right_t2 S_right_t3) with (S_t1 S_t2 S_t3 S_left_t1 S_left_t2 S_left_t3)
+
+act2_1_37:
+	from left2_t1_1_33
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	exit
+
+left2_t1_1_33:
+	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		from left_2b_t1_1_33
+		else left_2p_t1_1_33
+	if (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto write_1_37
+		else act2_1_37
+
+left_2b_t1_1_33:
+	from left1_t1_1_33
+	S_t1 ^= 'BLANK
+	goto left2_t1_1_33
+
+left1_t1_1_33:
+	fi (S_right_t1 = 'nil)
+		from left_1b_t1_1_33
+		else left_1p_t1_1_33
+	if (S_left_t1 = 'nil)
+		goto left_2b_t1_1_33
+		else left_2p_t1_1_33
+
+left_1b_t1_1_33:
+	from act2_1_28
+	S_t1 ^= 'BLANK
+	goto left1_t1_1_33
+
+act2_1_28:
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from write_1_81
+		else act2_1_24
+	assert(!((((S_t1 = 'SLASH) && (S_t2 = 'SLASH)) && (S_t3 = 'SLASH))))
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto left_1b_t1_1_33
+		else left_1p_t1_1_33
+
+write_1_81:
+	from act2_1_22
+	S_t1 ^= '1
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	goto act2_1_28
+
+act2_1_22:
+	from right2_t1_1_18
+	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto write_1_81
+		else act2_1_81
+
+right2_t1_1_18:
+	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		from right_2b_t1_1_18
+		else right_2p_t1_1_18
+	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		goto write_1_22
+		else act2_1_22
+
+right_2b_t1_1_18:
+	from right1_t1_1_18
+	S_t1 ^= 'BLANK
+	goto right2_t1_1_18
+
+right1_t1_1_18:
+	fi (S_left_t1 = 'nil)
+		from right_1b_t1_1_18
+		else right_1p_t1_1_18
+	if (S_right_t1 = 'nil)
+		goto right_2b_t1_1_18
+		else right_2p_t1_1_18
+
+right_1b_t1_1_18:
+	from act2_1_13
+	S_t1 ^= 'BLANK
+	goto right1_t1_1_18
+
+act2_1_13:
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from act2_1_81
+		else init_1
+	assert(!((((S_t1 = 'SLASH) && (S_t2 = 'SLASH)) && (S_t3 = 'SLASH))))
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto right_1b_t1_1_18
+		else right_1p_t1_1_18
+
+act2_1_81:
+	from act2_1_22
+	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= '0
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	goto act2_1_13
+
+init_1:
+	entry
+	S_t1 <- 'BLANK
+	S_t2 <- 'BLANK
+	S_t3 <- 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	goto act2_1_13
+
+right_1p_t1_1_18:
+	from act2_1_13
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto right1_t1_1_18
+
+right_2p_t1_1_18:
+	from right1_t1_1_18
+	(S_t1 . S_right_t1) <- S_right_t1
+	goto right2_t1_1_18
+
+act2_1_24:
+	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from write_1_22
+		else write_1_37
+	goto act2_1_28
+
+write_1_22:
+	from right2_t1_1_18
+	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	goto act2_1_24
+
+write_1_37:
+	from left2_t1_1_33
+	S_t1 ^= '0
+	S_t1 ^= '1
+	S_t2 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	S_t3 ^= 'BLANK
+	assert((((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	goto act2_1_24
+
+left_1p_t1_1_33:
+	from act2_1_28
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto left1_t1_1_33
+
+left_2p_t1_1_33:
+	from left1_t1_1_33
+	(S_t1 . S_left_t1) <- S_left_t1
+	goto left2_t1_1_33

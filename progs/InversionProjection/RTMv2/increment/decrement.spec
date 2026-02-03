@@ -14,4 +14,4 @@ Rules =
    nil))))))))
 
 // Tape for full specialization
-// S_right = '(0 . (0 . (1 .  nil)))
+S_right = '(0 . (0 . (1 .  nil)))

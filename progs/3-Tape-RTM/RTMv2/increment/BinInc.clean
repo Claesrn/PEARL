@@ -1,0 +1,397 @@
+(Rules S_right_t1 S_right_t2 S_right_t3) -> (Rules S_right_t1 S_right_t2 S_right_t3) with (Q Q1 Q2 S1_t1 S2_t1 S1_t2 S2_t2 S1_t3 S2_t3 S_t1 S_t2 S_t3 S_left_t1 S_left_t2 S_left_t3 RulesRev Rule)
+
+init_1_1:
+	from act1_1_1
+	Q ^= '1
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	exit
+
+act1_1_1:
+	fi (((S1_t1 = 'SLASH) && (S1_t2 = 'SLASH)) && (S1_t3 = 'SLASH))
+		from shft_1_1
+		else symbol_1_1
+	Rule <- (Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2)))))))
+	Rules <- (Rule . Rules)
+	if (!(RulesRev) && (Q = '1))
+		goto init_1_1
+		else act3_1_1
+
+shft_1_1:
+	fi (Q = Q1)
+		from move_t1_1_1
+		else shft3_1_1
+	goto act1_1_1
+
+move_t1_1_1:
+	fi (S2_t1 = 'LEFT)
+		from left_t1_1_1
+		else right_or_stay_t1_1_1
+	Q ^= Q2
+	Q ^= Q1
+	goto shft_1_1
+
+left_t1_1_1:
+	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		from left_1b_t1_1_1
+		else left_1p_t1_1_1
+	goto move_t1_1_1
+
+left_1b_t1_1_1:
+	from left1_t1_1_1
+	S_t1 ^= 'BLANK
+	goto left_t1_1_1
+
+left1_t1_1_1:
+	fi (S_left_t1 = 'nil)
+		from left_2b_t1_1_1
+		else left_2p_t1_1_1
+	if (S_right_t1 = 'nil)
+		goto left_1b_t1_1_1
+		else left_1p_t1_1_1
+
+left_2b_t1_1_1:
+	from move_t1_left_done_1_1
+	S_t1 ^= 'BLANK
+	goto left1_t1_1_1
+
+move_t1_left_done_1_1:
+	from move_t2_1_1
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto left_2b_t1_1_1
+		else left_2p_t1_1_1
+
+move_t2_1_1:
+	fi (S2_t2 = 'LEFT)
+		from left_t2_1_1
+		else right_or_stay_t2_1_1
+	if (S2_t1 = 'LEFT)
+		goto move_t1_left_done_1_1
+		else move_t1_done_1_1
+
+left_t2_1_1:
+	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		from left_1b_t2_1_1
+		else left_1p_t2_1_1
+	goto move_t2_1_1
+
+left_1b_t2_1_1:
+	from left1_t2_1_1
+	S_t2 ^= 'BLANK
+	goto left_t2_1_1
+
+left1_t2_1_1:
+	fi (S_left_t2 = 'nil)
+		from left_2b_t2_1_1
+		else left_2p_t2_1_1
+	if (S_right_t2 = 'nil)
+		goto left_1b_t2_1_1
+		else left_1p_t2_1_1
+
+left_2b_t2_1_1:
+	from move_t2_left_done_1_1
+	S_t2 ^= 'BLANK
+	goto left1_t2_1_1
+
+move_t2_left_done_1_1:
+	from move_t3_1_1
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto left_2b_t2_1_1
+		else left_2p_t2_1_1
+
+move_t3_1_1:
+	fi (S2_t3 = 'LEFT)
+		from left_t3_1_1
+		else right_or_stay_t3_1_1
+	if (S2_t2 = 'LEFT)
+		goto move_t2_left_done_1_1
+		else move_t2_done_1_1
+
+left_t3_1_1:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from left_1b_t3_1_1
+		else left_1p_t3_1_1
+	goto move_t3_1_1
+
+left_1b_t3_1_1:
+	from left1_t3_1_1
+	S_t3 ^= 'BLANK
+	goto left_t3_1_1
+
+left1_t3_1_1:
+	fi (S_left_t3 = 'nil)
+		from left_2b_t3_1_1
+		else left_2p_t3_1_1
+	if (S_right_t3 = 'nil)
+		goto left_1b_t3_1_1
+		else left_1p_t3_1_1
+
+left_2b_t3_1_1:
+	from move_t3_left_done_1_1
+	S_t3 ^= 'BLANK
+	goto left1_t3_1_1
+
+move_t3_left_done_1_1:
+	from shft2_1_1
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto left_2b_t3_1_1
+		else left_2p_t3_1_1
+
+shft2_1_1:
+	from shft3_1_1
+	if (S2_t3 = 'LEFT)
+		goto move_t3_left_done_1_1
+		else move_t3_done_1_1
+
+shft3_1_1:
+	from act2_1_1
+	if (Q = Q2)
+		goto shft2_1_1
+		else shft_1_1
+
+act2_1_1:
+	fi Rules
+		from act3_1_1
+		else reload_1_1
+	(Rule . RulesRev) <- RulesRev
+	(Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) <- Rule
+	if (((S1_t1 = 'SLASH) && (S1_t2 = 'SLASH)) && (S1_t3 = 'SLASH))
+		goto shft3_1_1
+		else symbol2_1_1
+
+act3_1_1:
+	fi (!(RulesRev) && (Q = '6))
+		from init_1
+		else act1_1_1
+	if !(RulesRev)
+		goto reload_1_1
+		else act2_1_1
+
+init_1:
+	entry
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	Q ^= '6
+	goto act3_1_1
+
+reload_1_1:
+	fi RulesRev
+		from reload_1_1
+		else act3_1_1
+	(Rule . Rules) <- Rules
+	RulesRev <- (Rule . RulesRev)
+	if Rules
+		goto reload_1_1
+		else act2_1_1
+
+left_2p_t3_1_1:
+	from move_t3_left_done_1_1
+	S_left_t3 <- (S_t3 . S_left_t3)
+	goto left1_t3_1_1
+
+left_1p_t3_1_1:
+	from left1_t3_1_1
+	(S_t3 . S_right_t3) <- S_right_t3
+	goto left_t3_1_1
+
+right_or_stay_t3_1_1:
+	fi (S2_t3 = 'RIGHT)
+		from right_t3_1_1
+		else move_t3_done_1_1
+	goto move_t3_1_1
+
+right_t3_1_1:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from right_1b_t3_1_1
+		else right_1p_t3_1_1
+	goto right_or_stay_t3_1_1
+
+right_1b_t3_1_1:
+	from right1_t3_1_1
+	S_t3 ^= 'BLANK
+	goto right_t3_1_1
+
+right1_t3_1_1:
+	fi (S_right_t3 = 'nil)
+		from right_2b_t3_1_1
+		else right_2p_t3_1_1
+	if (S_left_t3 = 'nil)
+		goto right_1b_t3_1_1
+		else right_1p_t3_1_1
+
+right_2b_t3_1_1:
+	from move_t3_right_done_1_1
+	S_t3 ^= 'BLANK
+	goto right1_t3_1_1
+
+move_t3_right_done_1_1:
+	from move_t3_done_1_1
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto right_2b_t3_1_1
+		else right_2p_t3_1_1
+
+move_t3_done_1_1:
+	from shft2_1_1
+	if (S2_t3 = 'RIGHT)
+		goto move_t3_right_done_1_1
+		else right_or_stay_t3_1_1
+
+right_2p_t3_1_1:
+	from move_t3_right_done_1_1
+	S_right_t3 <- (S_t3 . S_right_t3)
+	goto right1_t3_1_1
+
+right_1p_t3_1_1:
+	from right1_t3_1_1
+	(S_t3 . S_left_t3) <- S_left_t3
+	goto right_t3_1_1
+
+left_2p_t2_1_1:
+	from move_t2_left_done_1_1
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto left1_t2_1_1
+
+left_1p_t2_1_1:
+	from left1_t2_1_1
+	(S_t2 . S_right_t2) <- S_right_t2
+	goto left_t2_1_1
+
+right_or_stay_t2_1_1:
+	fi (S2_t2 = 'RIGHT)
+		from right_t2_1_1
+		else move_t2_done_1_1
+	goto move_t2_1_1
+
+right_t2_1_1:
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		from right_1b_t2_1_1
+		else right_1p_t2_1_1
+	goto right_or_stay_t2_1_1
+
+right_1b_t2_1_1:
+	from right1_t2_1_1
+	S_t2 ^= 'BLANK
+	goto right_t2_1_1
+
+right1_t2_1_1:
+	fi (S_right_t2 = 'nil)
+		from right_2b_t2_1_1
+		else right_2p_t2_1_1
+	if (S_left_t2 = 'nil)
+		goto right_1b_t2_1_1
+		else right_1p_t2_1_1
+
+right_2b_t2_1_1:
+	from move_t2_right_done_1_1
+	S_t2 ^= 'BLANK
+	goto right1_t2_1_1
+
+move_t2_right_done_1_1:
+	from move_t2_done_1_1
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto right_2b_t2_1_1
+		else right_2p_t2_1_1
+
+move_t2_done_1_1:
+	from move_t3_1_1
+	if (S2_t2 = 'RIGHT)
+		goto move_t2_right_done_1_1
+		else right_or_stay_t2_1_1
+
+right_2p_t2_1_1:
+	from move_t2_right_done_1_1
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto right1_t2_1_1
+
+right_1p_t2_1_1:
+	from right1_t2_1_1
+	(S_t2 . S_left_t2) <- S_left_t2
+	goto right_t2_1_1
+
+left_2p_t1_1_1:
+	from move_t1_left_done_1_1
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto left1_t1_1_1
+
+left_1p_t1_1_1:
+	from left1_t1_1_1
+	(S_t1 . S_right_t1) <- S_right_t1
+	goto left_t1_1_1
+
+right_or_stay_t1_1_1:
+	fi (S2_t1 = 'RIGHT)
+		from right_t1_1_1
+		else move_t1_done_1_1
+	goto move_t1_1_1
+
+right_t1_1_1:
+	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		from right_1b_t1_1_1
+		else right_1p_t1_1_1
+	goto right_or_stay_t1_1_1
+
+right_1b_t1_1_1:
+	from right1_t1_1_1
+	S_t1 ^= 'BLANK
+	goto right_t1_1_1
+
+right1_t1_1_1:
+	fi (S_right_t1 = 'nil)
+		from right_2b_t1_1_1
+		else right_2p_t1_1_1
+	if (S_left_t1 = 'nil)
+		goto right_1b_t1_1_1
+		else right_1p_t1_1_1
+
+right_2b_t1_1_1:
+	from move_t1_right_done_1_1
+	S_t1 ^= 'BLANK
+	goto right1_t1_1_1
+
+move_t1_right_done_1_1:
+	from move_t1_done_1_1
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto right_2b_t1_1_1
+		else right_2p_t1_1_1
+
+move_t1_done_1_1:
+	from move_t2_1_1
+	if (S2_t1 = 'RIGHT)
+		goto move_t1_right_done_1_1
+		else right_or_stay_t1_1_1
+
+right_2p_t1_1_1:
+	from move_t1_right_done_1_1
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto right1_t1_1_1
+
+right_1p_t1_1_1:
+	from right1_t1_1_1
+	(S_t1 . S_left_t1) <- S_left_t1
+	goto right_t1_1_1
+
+symbol_1_1:
+	fi ((((Q = Q1) && (S_t1 = S1_t1)) && (S_t2 = S1_t2)) && (S_t3 = S1_t3))
+		from symbol1_1_1
+		else symbol2_1_1
+	goto act1_1_1
+
+symbol1_1_1:
+	from symbol2_1_1
+	S_t3 ^= S2_t3
+	S_t3 ^= S1_t3
+	S_t2 ^= S2_t2
+	S_t2 ^= S1_t2
+	S_t1 ^= S2_t1
+	S_t1 ^= S1_t1
+	Q ^= Q2
+	Q ^= Q1
+	goto symbol_1_1
+
+symbol2_1_1:
+	from act2_1_1
+	if ((((Q = Q2) && (S_t1 = S2_t1)) && (S_t2 = S2_t2)) && (S_t3 = S2_t3))
+		goto symbol1_1_1
+		else symbol_1_1

@@ -1,0 +1,397 @@
+(Rules S_right_t1 S_right_t2 S_right_t3) -> (Rules S_right_t1 S_right_t2 S_right_t3) with (Q Q1 Q2 Rule RulesRev S1_t1 S1_t2 S1_t3 S2_t1 S2_t2 S2_t3 S_left_t1 S_left_t2 S_left_t3 S_t1 S_t2 S_t3)
+
+Block_0:
+	entry
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	Q ^= '6
+	goto Block_1
+
+Block_1:
+	fi (!(RulesRev) && (Q = '6))
+		from Block_0
+		else Block_12
+	if !(RulesRev)
+		goto Block_2
+		else Block_3
+
+Block_2:
+	fi RulesRev
+		from Block_2
+		else Block_1
+	(Rule . Rules) <- Rules
+	RulesRev <- (Rule . RulesRev)
+	if Rules
+		goto Block_2
+		else Block_3
+
+Block_3:
+	fi Rules
+		from Block_1
+		else Block_2
+	(Rule . RulesRev) <- RulesRev
+	(Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2))))))) <- Rule
+	if (((S1_t1 = 'SLASH) && (S1_t2 = 'SLASH)) && (S1_t3 = 'SLASH))
+		goto Block_4
+		else Block_5
+
+Block_4:
+	from Block_3
+	if (Q = Q2)
+		goto Block_6
+		else Block_7
+
+Block_5:
+	from Block_3
+	if ((((Q = Q2) && (S_t1 = S2_t1)) && (S_t2 = S2_t2)) && (S_t3 = S2_t3))
+		goto Block_8
+		else Block_9
+
+Block_6:
+	from Block_4
+	if (S2_t3 = 'LEFT)
+		goto Block_10
+		else Block_11
+
+Block_7:
+	fi (Q = Q1)
+		from Block_55
+		else Block_4
+	goto Block_12
+
+Block_8:
+	from Block_5
+	S_t3 ^= S2_t3
+	S_t3 ^= S1_t3
+	S_t2 ^= S2_t2
+	S_t2 ^= S1_t2
+	S_t1 ^= S2_t1
+	S_t1 ^= S1_t1
+	Q ^= Q2
+	Q ^= Q1
+	goto Block_9
+
+Block_9:
+	fi ((((Q = Q1) && (S_t1 = S1_t1)) && (S_t2 = S1_t2)) && (S_t3 = S1_t3))
+		from Block_8
+		else Block_5
+	goto Block_12
+
+Block_10:
+	from Block_6
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto Block_13
+		else Block_14
+
+Block_11:
+	from Block_6
+	if (S2_t3 = 'RIGHT)
+		goto Block_15
+		else Block_16
+
+Block_12:
+	fi (((S1_t1 = 'SLASH) && (S1_t2 = 'SLASH)) && (S1_t3 = 'SLASH))
+		from Block_7
+		else Block_9
+	Rule <- (Q1 . (S1_t1 . (S2_t1 . (S1_t2 . (S2_t2 . (S1_t3 . (S2_t3 . Q2)))))))
+	Rules <- (Rule . Rules)
+	if (!(RulesRev) && (Q = '1))
+		goto Block_17
+		else Block_1
+
+Block_13:
+	from Block_10
+	S_t3 ^= 'BLANK
+	goto Block_18
+
+Block_14:
+	from Block_10
+	S_left_t3 <- (S_t3 . S_left_t3)
+	goto Block_18
+
+Block_15:
+	from Block_11
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto Block_19
+		else Block_20
+
+Block_16:
+	fi (S2_t3 = 'RIGHT)
+		from Block_34
+		else Block_11
+	goto Block_21
+
+Block_17:
+	from Block_12
+	Q ^= '1
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	exit
+
+Block_18:
+	fi (S_left_t3 = 'nil)
+		from Block_13
+		else Block_14
+	if (S_right_t3 = 'nil)
+		goto Block_22
+		else Block_23
+
+Block_19:
+	from Block_15
+	S_t3 ^= 'BLANK
+	goto Block_24
+
+Block_20:
+	from Block_15
+	S_right_t3 <- (S_t3 . S_right_t3)
+	goto Block_24
+
+Block_21:
+	fi (S2_t3 = 'LEFT)
+		from Block_27
+		else Block_16
+	if (S2_t2 = 'LEFT)
+		goto Block_25
+		else Block_26
+
+Block_22:
+	from Block_18
+	S_t3 ^= 'BLANK
+	goto Block_27
+
+Block_23:
+	from Block_18
+	(S_t3 . S_right_t3) <- S_right_t3
+	goto Block_27
+
+Block_24:
+	fi (S_right_t3 = 'nil)
+		from Block_19
+		else Block_20
+	if (S_left_t3 = 'nil)
+		goto Block_28
+		else Block_29
+
+Block_25:
+	from Block_21
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto Block_30
+		else Block_31
+
+Block_26:
+	from Block_21
+	if (S2_t2 = 'RIGHT)
+		goto Block_32
+		else Block_33
+
+Block_27:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from Block_22
+		else Block_23
+	goto Block_21
+
+Block_28:
+	from Block_24
+	S_t3 ^= 'BLANK
+	goto Block_34
+
+Block_29:
+	from Block_24
+	(S_t3 . S_left_t3) <- S_left_t3
+	goto Block_34
+
+Block_30:
+	from Block_25
+	S_t2 ^= 'BLANK
+	goto Block_35
+
+Block_31:
+	from Block_25
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto Block_35
+
+Block_32:
+	from Block_26
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto Block_36
+		else Block_37
+
+Block_33:
+	fi (S2_t2 = 'RIGHT)
+		from Block_51
+		else Block_26
+	goto Block_38
+
+Block_34:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from Block_28
+		else Block_29
+	goto Block_16
+
+Block_35:
+	fi (S_left_t2 = 'nil)
+		from Block_30
+		else Block_31
+	if (S_right_t2 = 'nil)
+		goto Block_39
+		else Block_40
+
+Block_36:
+	from Block_32
+	S_t2 ^= 'BLANK
+	goto Block_41
+
+Block_37:
+	from Block_32
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto Block_41
+
+Block_38:
+	fi (S2_t2 = 'LEFT)
+		from Block_44
+		else Block_33
+	if (S2_t1 = 'LEFT)
+		goto Block_42
+		else Block_43
+
+Block_39:
+	from Block_35
+	S_t2 ^= 'BLANK
+	goto Block_44
+
+Block_40:
+	from Block_35
+	(S_t2 . S_right_t2) <- S_right_t2
+	goto Block_44
+
+Block_41:
+	fi (S_right_t2 = 'nil)
+		from Block_36
+		else Block_37
+	if (S_left_t2 = 'nil)
+		goto Block_45
+		else Block_46
+
+Block_42:
+	from Block_38
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto Block_47
+		else Block_48
+
+Block_43:
+	from Block_38
+	if (S2_t1 = 'RIGHT)
+		goto Block_49
+		else Block_50
+
+Block_44:
+	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		from Block_39
+		else Block_40
+	goto Block_38
+
+Block_45:
+	from Block_41
+	S_t2 ^= 'BLANK
+	goto Block_51
+
+Block_46:
+	from Block_41
+	(S_t2 . S_left_t2) <- S_left_t2
+	goto Block_51
+
+Block_47:
+	from Block_42
+	S_t1 ^= 'BLANK
+	goto Block_52
+
+Block_48:
+	from Block_42
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto Block_52
+
+Block_49:
+	from Block_43
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto Block_53
+		else Block_54
+
+Block_50:
+	fi (S2_t1 = 'RIGHT)
+		from Block_62
+		else Block_43
+	goto Block_55
+
+Block_51:
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		from Block_45
+		else Block_46
+	goto Block_33
+
+Block_52:
+	fi (S_left_t1 = 'nil)
+		from Block_47
+		else Block_48
+	if (S_right_t1 = 'nil)
+		goto Block_56
+		else Block_57
+
+Block_53:
+	from Block_49
+	S_t1 ^= 'BLANK
+	goto Block_58
+
+Block_54:
+	from Block_49
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto Block_58
+
+Block_55:
+	fi (S2_t1 = 'LEFT)
+		from Block_59
+		else Block_50
+	Q ^= Q2
+	Q ^= Q1
+	goto Block_7
+
+Block_56:
+	from Block_52
+	S_t1 ^= 'BLANK
+	goto Block_59
+
+Block_57:
+	from Block_52
+	(S_t1 . S_right_t1) <- S_right_t1
+	goto Block_59
+
+Block_58:
+	fi (S_right_t1 = 'nil)
+		from Block_53
+		else Block_54
+	if (S_left_t1 = 'nil)
+		goto Block_60
+		else Block_61
+
+Block_59:
+	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		from Block_56
+		else Block_57
+	goto Block_55
+
+Block_60:
+	from Block_58
+	S_t1 ^= 'BLANK
+	goto Block_62
+
+Block_61:
+	from Block_58
+	(S_t1 . S_left_t1) <- S_left_t1
+	goto Block_62
+
+Block_62:
+	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		from Block_60
+		else Block_61
+	goto Block_50
