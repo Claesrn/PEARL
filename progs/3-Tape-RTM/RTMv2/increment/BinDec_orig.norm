@@ -12,12 +12,13 @@ Block_0:
 	S_t1 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto Block_1
 
 Block_1:
-	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_0
-		else Block_12
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_12
+		else Block_0
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_2
 		else Block_3
@@ -66,6 +67,7 @@ Block_8:
 	S_t1 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto Block_10
 
 Block_9:
@@ -75,9 +77,9 @@ Block_9:
 		else Block_12
 
 Block_10:
-	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_8
-		else Block_21
+	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_21
+		else Block_8
 	goto Block_13
 
 Block_11:
@@ -102,9 +104,9 @@ Block_12:
 	goto Block_1
 
 Block_13:
-	fi !((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-		from Block_10
-		else Block_11
+	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_11
+		else Block_10
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_14
 		else Block_15

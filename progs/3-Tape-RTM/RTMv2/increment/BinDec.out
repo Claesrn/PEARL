@@ -17,7 +17,7 @@ init_1:
 
 symbol2_1_13:
 	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from symbol2_1_81
+		from symbol2_1_86
 		else init_1
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto right_1b_t1_1_18
@@ -57,50 +57,51 @@ symbol1_1_22:
 	S_t1 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
-	goto symbol2_1_24
-
-symbol2_1_24:
-	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from symbol1_1_22
-		else symbol2_1_37
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto symbol2_1_28
 
 symbol2_1_28:
+	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from symbol2_1_40
+		else symbol1_1_22
+	goto symbol2_1_31
+
+symbol2_1_31:
 	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from symbol1_1_81
-		else symbol2_1_24
+		from symbol1_1_86
+		else symbol2_1_28
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto left_1b_t1_1_33
-		else left_1p_t1_1_33
+		goto left_1b_t1_1_36
+		else left_1p_t1_1_36
 
-left_1b_t1_1_33:
-	from symbol2_1_28
+left_1b_t1_1_36:
+	from symbol2_1_31
 	S_t1 ^= 'BLANK
-	goto left1_t1_1_33
+	goto left1_t1_1_36
 
-left1_t1_1_33:
+left1_t1_1_36:
 	fi (S_right_t1 = 'nil)
-		from left_1b_t1_1_33
-		else left_1p_t1_1_33
+		from left_1b_t1_1_36
+		else left_1p_t1_1_36
 	if (S_left_t1 = 'nil)
-		goto left_2b_t1_1_33
-		else left_2p_t1_1_33
+		goto left_2b_t1_1_36
+		else left_2p_t1_1_36
 
-left_2b_t1_1_33:
-	from left1_t1_1_33
+left_2b_t1_1_36:
+	from left1_t1_1_36
 	S_t1 ^= 'BLANK
-	goto left2_t1_1_33
+	goto left2_t1_1_36
 
-left2_t1_1_33:
+left2_t1_1_36:
 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		from left_2b_t1_1_33
-		else left_2p_t1_1_33
+		from left_2b_t1_1_36
+		else left_2p_t1_1_36
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		goto symbol1_1_37
-		else symbol2_1_37
+		goto symbol1_1_40
+		else symbol2_1_40
 
-symbol1_1_37:
-	from left2_t1_1_33
+symbol1_1_40:
+	from left2_t1_1_36
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -113,8 +114,8 @@ symbol1_1_37:
 	S_t1 ^= 'BLANK
 	exit
 
-symbol2_1_37:
-	from left2_t1_1_33
+symbol2_1_40:
+	from left2_t1_1_36
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -122,26 +123,25 @@ symbol2_1_37:
 	S_t1 ^= '1
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
-	assert((((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	goto symbol2_1_24
+	goto symbol2_1_28
 
-left_2p_t1_1_33:
-	from left1_t1_1_33
+left_2p_t1_1_36:
+	from left1_t1_1_36
 	(S_t1 . S_left_t1) <- S_left_t1
-	goto left2_t1_1_33
+	goto left2_t1_1_36
 
-left_1p_t1_1_33:
-	from symbol2_1_28
+left_1p_t1_1_36:
+	from symbol2_1_31
 	S_right_t1 <- (S_t1 . S_right_t1)
-	goto left1_t1_1_33
+	goto left1_t1_1_36
 
 symbol2_1_22:
 	from right2_t1_1_18
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		goto symbol1_1_81
-		else symbol2_1_81
+		goto symbol1_1_86
+		else symbol2_1_86
 
-symbol1_1_81:
+symbol1_1_86:
 	from symbol2_1_22
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -149,9 +149,9 @@ symbol1_1_81:
 	S_t1 ^= '0
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
-	goto symbol2_1_28
+	goto symbol2_1_31
 
-symbol2_1_81:
+symbol2_1_86:
 	from symbol2_1_22
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK

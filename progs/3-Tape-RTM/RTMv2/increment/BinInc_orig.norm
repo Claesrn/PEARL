@@ -67,6 +67,7 @@ Block_8:
 	S_t1 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
+	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto Block_10
 
 Block_9:
@@ -76,9 +77,9 @@ Block_9:
 		else Block_12
 
 Block_10:
-	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_8
-		else Block_21
+	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_21
+		else Block_8
 	goto Block_13
 
 Block_11:
@@ -169,5 +170,4 @@ Block_21:
 	S_t1 ^= '1
 	S_t2 ^= 'BLANK
 	S_t3 ^= 'BLANK
-	assert((((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto Block_10
