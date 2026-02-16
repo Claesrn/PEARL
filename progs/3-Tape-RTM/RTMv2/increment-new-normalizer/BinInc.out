@@ -6,12 +6,12 @@ init_1:
 	S_t2 <- 'BLANK
 	S_t3 <- 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto symbol_1_28
 
@@ -51,12 +51,12 @@ left_t1_1_31:
 
 symbol1_1_37:
 	from left_t1_1_31
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	goto symbol_1_43
 
@@ -102,12 +102,12 @@ right_t1_1_49:
 
 symbol1_1_55:
 	from right_t1_1_49
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -117,12 +117,12 @@ symbol1_1_55:
 symbol_1_55:
 	from right_t1_1_49
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	S_t1 ^= '0
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t2 ^= 'BLANK
 	S_t1 ^= '1
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto symbol_1_43
 
 right_1p_t1_1_49:
@@ -143,23 +143,23 @@ symbol_1_37:
 
 symbol1_1_86:
 	from symbol_1_37
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	S_t1 ^= '1
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t2 ^= 'BLANK
 	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto symbol_1_46
 
 symbol_1_86:
 	from symbol_1_37
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	S_t1 ^= '0
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= '0
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto symbol_1_28
 
 left_1p_t1_1_31:

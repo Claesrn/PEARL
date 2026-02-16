@@ -25,12 +25,12 @@ symbol: from act1
 symbol1: from symbol
          Q ^= Q1
          Q ^= Q2
-         S_t3 ^= S1_t3
-         S_t2 ^= S1_t2
          S_t1 ^= S1_t1
-         S_t1 ^= S2_t1
-         S_t2 ^= S2_t2
+         S_t2 ^= S1_t2
+         S_t3 ^= S1_t3
          S_t3 ^= S2_t3
+         S_t2 ^= S2_t2
+         S_t1 ^= S2_t1
          goto symbol2
 
 symbol2: fi Q = Q2 && S_t1 = S2_t1 && S_t2 = S2_t2 && S_t3 = S2_t3

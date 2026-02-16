@@ -26,12 +26,12 @@ symbol:
 
 symbol1:
 	from symbol2
-	S_t1 ^= S2_t1
-	S_t2 ^= S2_t2
 	S_t3 ^= S2_t3
-	S_t3 ^= S1_t3
-	S_t2 ^= S1_t2
+	S_t2 ^= S2_t2
+	S_t1 ^= S2_t1
 	S_t1 ^= S1_t1
+	S_t2 ^= S1_t2
+	S_t3 ^= S1_t3
 	Q ^= Q2
 	Q ^= Q1
 	goto symbol

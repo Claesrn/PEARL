@@ -6,19 +6,18 @@ Block_0:
 	S_t2 <- 'BLANK
 	S_t3 <- 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
-	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1
 
 Block_1:
-	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_12
-		else Block_0
+	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_0
+		else Block_12
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_2
 		else Block_3
@@ -61,13 +60,12 @@ Block_7:
 
 Block_8:
 	from Block_7
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
-	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_10
 
 Block_9:
@@ -77,36 +75,36 @@ Block_9:
 		else Block_12
 
 Block_10:
-	fi (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_21
-		else Block_8
+	fi (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
+		from Block_8
+		else Block_21
 	goto Block_13
 
 Block_11:
 	from Block_9
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	S_t1 ^= '1
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t2 ^= 'BLANK
 	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_13
 
 Block_12:
 	from Block_9
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
-	S_t1 ^= '0
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= '0
+	S_t1 ^= '0
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1
 
 Block_13:
-	fi (((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
-		from Block_11
-		else Block_10
+	fi !((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+		from Block_10
+		else Block_11
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_14
 		else Block_15
@@ -149,12 +147,12 @@ Block_19:
 
 Block_20:
 	from Block_19
-	S_t1 ^= 'BLANK
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
+	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -164,10 +162,10 @@ Block_20:
 Block_21:
 	from Block_19
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
+	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	S_t1 ^= '0
-	S_t2 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t3 ^= 'BLANK
-	S_t2 ^= 'BLANK
 	S_t1 ^= '1
+	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_10
