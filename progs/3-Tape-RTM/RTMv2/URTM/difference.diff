@@ -1,0 +1,1152 @@
+1778c1778
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+1812c1812
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+1817c1817
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+1849c1849
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+1852c1852
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+1886c1886
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+1891c1891
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+1898c1898
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+1925c1925
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+1928c1928
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+1934c1934
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+1939c1939
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+1966c1966
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+1971c1971
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+1975c1975
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+1978c1978
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+2005c2005
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+2008c2008
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+2014c2014
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+2019c2019
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+2046c2046
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+2051c2051
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+2055c2055
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+2058c2058
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+2085c2085
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+2094c2094
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+2099c2099
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+2142c2142
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+2145c2145
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+2195c2195
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+2200c2200
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+2248c2248
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+3666c3666
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+3756c3756
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+3761c3761
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+3843c3843
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+3846c3846
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+3925c3925
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+3930c3930
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+3943c3943
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+3996c3996
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+3999c3999
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+4011c4011
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+4016c4016
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+4061c4061
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+4066c4066
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+4076c4076
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+4079c4079
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+4136c4136
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+4139c4139
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+4151c4151
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+4156c4156
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+4199c4199
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+4204c4204
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+4216c4216
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+4219c4219
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+4268c4268
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+4287c4287
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+4292c4292
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+4359c4359
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+4362c4362
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+4436c4436
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+4441c4441
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+4515c4515
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+5635c5635
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+5721c5721
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+5726c5726
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+5815c5815
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+5818c5818
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+5906c5906
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+5911c5911
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+5997c5997
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+6000c6000
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+6092c6092
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+6097c6097
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+6188c6188
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+6191c6191
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+6269c6269
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+6274c6274
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+6348c6348
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+8176c8176
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+8244c8244
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+8249c8249
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+8320c8320
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+8323c8323
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+8377c8377
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+8382c8382
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+8430c8430
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+8433c8433
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+8481c8481
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+8486c8486
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+8534c8534
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+8537c8537
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+8585c8585
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+8590c8590
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+8647c8647
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+9628c9628
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+9674c9674
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+9766c9766
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+9771c9771
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+9816c9816
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t1 ^= 'BLANK
+9821c9821
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t1 <- (S_t1 . S_right_t1)
+9904c9904
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+9907c9907
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+9961c9961
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t1 = 'nil)
+9964c9964
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t1 = 'nil)
+10053c10053
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+10058c10058
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+10117c10117
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t1 ^= 'BLANK
+10122c10122
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t1 . S_left_t1) <- S_left_t1
+10216c10216
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+10219c10219
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+10272c10272
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+10275c10275
+< 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+10374c10374
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+10379c10379
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+10422c10422
+< 	S_t1 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+10427c10427
+< 	S_right_t1 <- (S_t1 . S_right_t1)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+10532c10532
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+10535c10535
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+10578c10578
+< 	fi (S_right_t1 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+10581c10581
+< 	if (S_left_t1 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+10599c10599
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+10671c10671
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+10676c10676
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+10719c10719
+< 	S_t1 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+10724c10724
+< 	(S_t1 . S_left_t1) <- S_left_t1
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+10737c10737
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t1 ^= 'BLANK
+10742c10742
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t1 <- (S_t1 . S_left_t1)
+10812c10812
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+10858c10858
+< 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+10882c10882
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t1 = 'nil)
+10885c10885
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t1 = 'nil)
+11056c11056
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t1 ^= 'BLANK
+11061c11061
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t1 . S_right_t1) <- S_right_t1
+11237c11237
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+11240c11240
+< 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+11275c11275
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+11381c11381
+< 	S_t1 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+11386c11386
+< 	S_left_t1 <- (S_t1 . S_left_t1)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+11397c11397
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+11402c11402
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+11501c11501
+< 	fi (S_left_t1 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+11504c11504
+< 	if (S_right_t1 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+11509c11509
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+11512c11512
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+11620c11620
+< 	S_t1 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+11625c11625
+< 	(S_t1 . S_right_t1) <- S_right_t1
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+11630c11630
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+11635c11635
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+11748c11748
+< 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+11756c11756
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+11759c11759
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+11879c11879
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+11884c11884
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+12002c12002
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+12005c12005
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+12117c12117
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+12122c12122
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+12200c12200
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+12381c12381
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+12473c12473
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+12478c12478
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+12569c12569
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+12572c12572
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+12657c12657
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+12662c12662
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+12755c12755
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+12758c12758
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+12840c12840
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+12845c12845
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+12935c12935
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+12938c12938
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+13026c13026
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+13031c13031
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+13135c13135
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+13548c13548
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+13645c13645
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+13650c13650
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+13759c13759
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+13762c13762
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+13878c13878
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+13883c13883
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+13996c13996
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+13999c13999
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+14007c14007
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+14085c14085
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+14090c14090
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+14095c14095
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+14100c14100
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+14170c14170
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+14173c14173
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+14178c14178
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+14181c14181
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+14253c14253
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+14258c14258
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+14263c14263
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+14268c14268
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+14338c14338
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+14346c14346
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+14349c14349
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+14437c14437
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+14442c14442
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+14541c14541
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+14544c14544
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+14626c14626
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+14631c14631
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+14717c14717
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+16681c16681
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+16737c16737
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+16742c16742
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+16801c16801
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+16804c16804
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+16844c16844
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+16849c16849
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+16887c16887
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+16890c16890
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+16932c16932
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+16937c16937
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+16966c16966
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+16981c16981
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+16984c16984
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+17012c17012
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+17017c17017
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+17030c17030
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+17035c17035
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+17066c17066
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+17069c17069
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+17084c17084
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+17099c17099
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+17104c17104
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+17139c17139
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+17142c17142
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+17192c17192
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+17197c17197
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+17251c17251
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+17254c17254
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+17310c17310
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+17315c17315
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+17371c17371
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+18685c18685
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+18741c18741
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+18746c18746
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+18800c18800
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+18803c18803
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+18871c18871
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+18876c18876
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+18934c18934
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+18937c18937
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+19008c19008
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+19013c19013
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+19067c19067
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+19070c19070
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+19125c19125
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+19130c19130
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+19162c19162
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+19273c19273
+< 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+19301c19301
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+19306c19306
+< 	S_right_t3 <- (S_t3 . S_right_t3)
+---
+> 	S_right_t2 <- (S_t2 . S_right_t2)
+19332c19332
+< 	fi (S_right_t3 = 'nil)
+---
+> 	fi (S_right_t2 = 'nil)
+19335c19335
+< 	if (S_left_t3 = 'nil)
+---
+> 	if (S_left_t2 = 'nil)
+19363c19363
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+19368c19368
+< 	(S_t3 . S_left_t3) <- S_left_t3
+---
+> 	(S_t2 . S_left_t2) <- S_left_t2
+19394c19394
+< 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+19397c19397
+< 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+19430c19430
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+19435c19435
+< 	S_right_t2 <- (S_t2 . S_right_t2)
+---
+> 	S_right_t3 <- (S_t3 . S_right_t3)
+19447c19447
+< 	fi (S_right_t2 = 'nil)
+---
+> 	fi (S_right_t3 = 'nil)
+19450c19450
+< 	if (S_left_t2 = 'nil)
+---
+> 	if (S_left_t3 = 'nil)
+19466c19466
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+19471c19471
+< 	(S_t2 . S_left_t2) <- S_left_t2
+---
+> 	(S_t3 . S_left_t3) <- S_left_t3
+19483c19483
+< 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+20631c20631
+< 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+20637c20637
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+20642c20642
+< 	S_left_t3 <- (S_t3 . S_left_t3)
+---
+> 	S_left_t2 <- (S_t2 . S_left_t2)
+20646c20646
+< 	fi (S_left_t3 = 'nil)
+---
+> 	fi (S_left_t2 = 'nil)
+20649c20649
+< 	if (S_right_t3 = 'nil)
+---
+> 	if (S_right_t2 = 'nil)
+20655c20655
+< 	S_t3 ^= 'BLANK
+---
+> 	S_t2 ^= 'BLANK
+20660c20660
+< 	(S_t3 . S_right_t3) <- S_right_t3
+---
+> 	(S_t2 . S_right_t2) <- S_right_t2
+20664c20664
+< 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+---
+> 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+20667c20667
+< 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+20673c20673
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+20678c20678
+< 	S_left_t2 <- (S_t2 . S_left_t2)
+---
+> 	S_left_t3 <- (S_t3 . S_left_t3)
+20682c20682
+< 	fi (S_left_t2 = 'nil)
+---
+> 	fi (S_left_t3 = 'nil)
+20685c20685
+< 	if (S_right_t2 = 'nil)
+---
+> 	if (S_right_t3 = 'nil)
+20691c20691
+< 	S_t2 ^= 'BLANK
+---
+> 	S_t3 ^= 'BLANK
+20696c20696
+< 	(S_t2 . S_right_t2) <- S_right_t2
+---
+> 	(S_t3 . S_right_t3) <- S_right_t3
+20700c20700
+< 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+---
+> 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
