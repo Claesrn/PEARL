@@ -4,6 +4,9 @@ set -e
 
 cd "$(dirname "$0")"
 
+#0 
+stack run -- invert RTM.rl RTMinv.rl
+
 # 1. Run BinInc and BinDec (if needed)
 stack run -- interpret RTMinv.rl increment_all_tapes/BinInc.spec
 stack run -- interpret RTM.rl increment_all_tapes/BinDec.spec

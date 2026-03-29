@@ -20,37 +20,37 @@ symbol2_1_13:
 		from symbol2_1_86
 		else init_1
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto right_1b_t1_1_18
-		else right_1p_t1_1_18
+		goto save_right_1b_t1_1_18
+		else save_right_1p_t1_1_18
 
-right_1b_t1_1_18:
+save_right_1b_t1_1_18:
 	from symbol2_1_13
 	S_t1 ^= 'BLANK
-	goto right1_t1_1_18
+	goto save_right_d_t1_1_18
 
-right1_t1_1_18:
+save_right_d_t1_1_18:
 	fi (S_left_t1 = 'nil)
-		from right_1b_t1_1_18
-		else right_1p_t1_1_18
+		from save_right_1b_t1_1_18
+		else save_right_1p_t1_1_18
 	if (S_right_t1 = 'nil)
-		goto right_2b_t1_1_18
-		else right_2p_t1_1_18
+		goto load_right_2b_t1_1_18
+		else load_right_2p_t1_1_18
 
-right_2b_t1_1_18:
-	from right1_t1_1_18
+load_right_2b_t1_1_18:
+	from save_right_d_t1_1_18
 	S_t1 ^= 'BLANK
-	goto right2_t1_1_18
+	goto load_right_d_t1_1_18
 
-right2_t1_1_18:
+load_right_d_t1_1_18:
 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		from right_2b_t1_1_18
-		else right_2p_t1_1_18
+		from load_right_2b_t1_1_18
+		else load_right_2p_t1_1_18
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
 		goto symbol1_1_22
 		else symbol2_1_22
 
 symbol1_1_22:
-	from right2_t1_1_18
+	from load_right_d_t1_1_18
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -71,37 +71,37 @@ symbol2_1_31:
 		from symbol1_1_86
 		else symbol2_1_28
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto left_1b_t1_1_36
-		else left_1p_t1_1_36
+		goto save_left_1b_t1_1_36
+		else save_left_1p_t1_1_36
 
-left_1b_t1_1_36:
+save_left_1b_t1_1_36:
 	from symbol2_1_31
 	S_t1 ^= 'BLANK
-	goto left1_t1_1_36
+	goto save_left_d_t1_1_36
 
-left1_t1_1_36:
+save_left_d_t1_1_36:
 	fi (S_right_t1 = 'nil)
-		from left_1b_t1_1_36
-		else left_1p_t1_1_36
+		from save_left_1b_t1_1_36
+		else save_left_1p_t1_1_36
 	if (S_left_t1 = 'nil)
-		goto left_2b_t1_1_36
-		else left_2p_t1_1_36
+		goto load_left_2b_t1_1_36
+		else load_left_2p_t1_1_36
 
-left_2b_t1_1_36:
-	from left1_t1_1_36
+load_left_2b_t1_1_36:
+	from save_left_d_t1_1_36
 	S_t1 ^= 'BLANK
-	goto left2_t1_1_36
+	goto load_left_d_t1_1_36
 
-left2_t1_1_36:
+load_left_d_t1_1_36:
 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		from left_2b_t1_1_36
-		else left_2p_t1_1_36
+		from load_left_2b_t1_1_36
+		else load_left_2p_t1_1_36
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
 		goto symbol1_1_40
 		else symbol2_1_40
 
 symbol1_1_40:
-	from left2_t1_1_36
+	from load_left_d_t1_1_36
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -115,7 +115,7 @@ symbol1_1_40:
 	exit
 
 symbol2_1_40:
-	from left2_t1_1_36
+	from load_left_d_t1_1_36
 	assert((((S_t1 = '0) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -125,18 +125,18 @@ symbol2_1_40:
 	S_t3 ^= 'BLANK
 	goto symbol2_1_28
 
-left_2p_t1_1_36:
-	from left1_t1_1_36
+load_left_2p_t1_1_36:
+	from save_left_d_t1_1_36
 	(S_t1 . S_left_t1) <- S_left_t1
-	goto left2_t1_1_36
+	goto load_left_d_t1_1_36
 
-left_1p_t1_1_36:
+save_left_1p_t1_1_36:
 	from symbol2_1_31
 	S_right_t1 <- (S_t1 . S_right_t1)
-	goto left1_t1_1_36
+	goto save_left_d_t1_1_36
 
 symbol2_1_22:
-	from right2_t1_1_18
+	from load_right_d_t1_1_18
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
 		goto symbol1_1_86
 		else symbol2_1_86
@@ -162,12 +162,12 @@ symbol2_1_86:
 	S_t3 ^= 'BLANK
 	goto symbol2_1_13
 
-right_2p_t1_1_18:
-	from right1_t1_1_18
+load_right_2p_t1_1_18:
+	from save_right_d_t1_1_18
 	(S_t1 . S_right_t1) <- S_right_t1
-	goto right2_t1_1_18
+	goto load_right_d_t1_1_18
 
-right_1p_t1_1_18:
+save_right_1p_t1_1_18:
 	from symbol2_1_13
 	S_left_t1 <- (S_t1 . S_left_t1)
-	goto right1_t1_1_18
+	goto save_right_d_t1_1_18

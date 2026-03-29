@@ -49,350 +49,474 @@ shft:
 	goto act1
 
 shft1:
-	from move_t1
+	from save_t1
 	Q ^= Q2
 	Q ^= Q1
 	goto shft
 
-move_t1:
+save_t1:
 	fi (S2_t1 = 'LEFT)
-		from left_t1
-		else right_or_stay_t1
+		from save_left_t1
+		else save_right_or_stay_t1
 	goto shft1
 
-right_or_stay_t1:
+save_right_or_stay_t1:
 	fi (S2_t1 = 'RIGHT)
-		from right_t1
-		else stay_t1
-	goto move_t1
+		from save_right_t1
+		else save_stay_t1
+	goto save_t1
 
-stay_t1:
-	from move_t1_done
-	goto right_or_stay_t1
+save_stay_t1:
+	from save_t1_done
+	goto save_right_or_stay_t1
 
-left_t1:
+save_left_t1:
 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		from left_1b_t1
-		else left_1p_t1
-	goto move_t1
+		from save_left_1b_t1
+		else save_left_1p_t1
+	goto save_t1
 
-left_1b_t1:
-	from left1_t1
+save_left_1b_t1:
+	from save_left_d_t1
 	S_t1 ^= 'BLANK
-	goto left_t1
+	goto save_left_t1
 
-left_1p_t1:
-	from left1_t1
+save_left_1p_t1:
+	from save_left_d_t1
 	(S_t1 . S_right_t1) <- S_right_t1
-	goto left_t1
+	goto save_left_t1
 
-left1_t1:
-	fi (S_left_t1 = 'nil)
-		from left_2b_t1
-		else left_2p_t1
+save_left_d_t1:
+	from save_t1_left_done
 	if (S_right_t1 = 'nil)
-		goto left_1b_t1
-		else left_1p_t1
+		goto save_left_1b_t1
+		else save_left_1p_t1
 
-left_2b_t1:
-	from left2_t1
-	S_t1 ^= 'BLANK
-	goto left1_t1
+save_t1_left_done:
+	from save_t2
+	goto save_left_d_t1
 
-left_2p_t1:
-	from left2_t1
-	S_left_t1 <- (S_t1 . S_left_t1)
-	goto left1_t1
-
-left2_t1:
-	from move_t1_left_done
-	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto left_2b_t1
-		else left_2p_t1
-
-move_t1_left_done:
-	from move_t2
-	goto left2_t1
-
-right_t1:
+save_right_t1:
 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		from right_1b_t1
-		else right_1p_t1
-	goto right_or_stay_t1
+		from save_right_1b_t1
+		else save_right_1p_t1
+	goto save_right_or_stay_t1
 
-right_1b_t1:
-	from right1_t1
+save_right_1b_t1:
+	from save_right_d_t1
 	S_t1 ^= 'BLANK
-	goto right_t1
+	goto save_right_t1
 
-right_1p_t1:
-	from right1_t1
+save_right_1p_t1:
+	from save_right_d_t1
 	(S_t1 . S_left_t1) <- S_left_t1
-	goto right_t1
+	goto save_right_t1
 
-right1_t1:
-	fi (S_right_t1 = 'nil)
-		from right_2b_t1
-		else right_2p_t1
+save_right_d_t1:
+	from save_t1_right_done
 	if (S_left_t1 = 'nil)
-		goto right_1b_t1
-		else right_1p_t1
+		goto save_right_1b_t1
+		else save_right_1p_t1
 
-right_2b_t1:
-	from right2_t1
-	S_t1 ^= 'BLANK
-	goto right1_t1
+save_t1_right_done:
+	from save_t1_done
+	goto save_right_d_t1
 
-right_2p_t1:
-	from right2_t1
-	S_right_t1 <- (S_t1 . S_right_t1)
-	goto right1_t1
-
-right2_t1:
-	from move_t1_right_done
-	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto right_2b_t1
-		else right_2p_t1
-
-move_t1_right_done:
-	from move_t1_done
-	goto right2_t1
-
-move_t1_done:
-	from move_t2
+save_t1_done:
+	from save_t2
 	if (S2_t1 = 'RIGHT)
-		goto move_t1_right_done
-		else stay_t1
+		goto save_t1_right_done
+		else save_stay_t1
 
-move_t2:
+save_t2:
 	fi (S2_t2 = 'LEFT)
-		from left_t2
-		else right_or_stay_t2
+		from save_left_t2
+		else save_right_or_stay_t2
 	if (S2_t1 = 'LEFT)
-		goto move_t1_left_done
-		else move_t1_done
+		goto save_t1_left_done
+		else save_t1_done
 
-right_or_stay_t2:
+save_right_or_stay_t2:
 	fi (S2_t2 = 'RIGHT)
-		from right_t2
-		else stay_t2
-	goto move_t2
+		from save_right_t2
+		else save_stay_t2
+	goto save_t2
 
-stay_t2:
-	from move_t2_done
-	goto right_or_stay_t2
+save_stay_t2:
+	from save_t2_done
+	goto save_right_or_stay_t2
 
-left_t2:
+save_left_t2:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2
-		else left_1p_t2
-	goto move_t2
+		from save_left_1b_t2
+		else save_left_1p_t2
+	goto save_t2
 
-left_1b_t2:
-	from left1_t2
+save_left_1b_t2:
+	from save_left_d_t2
 	S_t2 ^= 'BLANK
-	goto left_t2
+	goto save_left_t2
 
-left_1p_t2:
-	from left1_t2
+save_left_1p_t2:
+	from save_left_d_t2
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2
+	goto save_left_t2
 
-left1_t2:
-	fi (S_left_t2 = 'nil)
-		from left_2b_t2
-		else left_2p_t2
+save_left_d_t2:
+	from save_t2_left_done
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2
-		else left_1p_t2
+		goto save_left_1b_t2
+		else save_left_1p_t2
 
-left_2b_t2:
-	from left2_t2
-	S_t2 ^= 'BLANK
-	goto left1_t2
+save_t2_left_done:
+	from save_t3
+	goto save_left_d_t2
 
-left_2p_t2:
-	from left2_t2
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2
-
-left2_t2:
-	from move_t2_left_done
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2
-		else left_2p_t2
-
-move_t2_left_done:
-	from move_t3
-	goto left2_t2
-
-right_t2:
+save_right_t2:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2
-		else right_1p_t2
-	goto right_or_stay_t2
+		from save_right_1b_t2
+		else save_right_1p_t2
+	goto save_right_or_stay_t2
 
-right_1b_t2:
-	from right1_t2
+save_right_1b_t2:
+	from save_right_d_t2
 	S_t2 ^= 'BLANK
-	goto right_t2
+	goto save_right_t2
 
-right_1p_t2:
-	from right1_t2
+save_right_1p_t2:
+	from save_right_d_t2
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2
+	goto save_right_t2
 
-right1_t2:
-	fi (S_right_t2 = 'nil)
-		from right_2b_t2
-		else right_2p_t2
+save_right_d_t2:
+	from save_t2_right_done
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2
-		else right_1p_t2
+		goto save_right_1b_t2
+		else save_right_1p_t2
 
-right_2b_t2:
-	from right2_t2
-	S_t2 ^= 'BLANK
-	goto right1_t2
+save_t2_right_done:
+	from save_t2_done
+	goto save_right_d_t2
 
-right_2p_t2:
-	from right2_t2
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2
-
-right2_t2:
-	from move_t2_right_done
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2
-		else right_2p_t2
-
-move_t2_right_done:
-	from move_t2_done
-	goto right2_t2
-
-move_t2_done:
-	from move_t3
+save_t2_done:
+	from save_t3
 	if (S2_t2 = 'RIGHT)
-		goto move_t2_right_done
-		else stay_t2
+		goto save_t2_right_done
+		else save_stay_t2
 
-move_t3:
+save_t3:
 	fi (S2_t3 = 'LEFT)
-		from left_t3
-		else right_or_stay_t3
+		from save_left_t3
+		else save_right_or_stay_t3
 	if (S2_t2 = 'LEFT)
-		goto move_t2_left_done
-		else move_t2_done
+		goto save_t2_left_done
+		else save_t2_done
 
-right_or_stay_t3:
+save_right_or_stay_t3:
 	fi (S2_t3 = 'RIGHT)
-		from right_t3
-		else stay_t3
-	goto move_t3
+		from save_right_t3
+		else save_stay_t3
+	goto save_t3
 
-stay_t3:
-	from move_t3_done
-	goto right_or_stay_t3
+save_stay_t3:
+	from save_t3_done
+	goto save_right_or_stay_t3
 
-left_t3:
+save_left_t3:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3
-		else left_1p_t3
-	goto move_t3
+		from save_left_1b_t3
+		else save_left_1p_t3
+	goto save_t3
 
-left_1b_t3:
-	from left1_t3
+save_left_1b_t3:
+	from save_left_d_t3
 	S_t3 ^= 'BLANK
-	goto left_t3
+	goto save_left_t3
 
-left_1p_t3:
-	from left1_t3
+save_left_1p_t3:
+	from save_left_d_t3
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3
+	goto save_left_t3
 
-left1_t3:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3
-		else left_2p_t3
+save_left_d_t3:
+	from save_t3_left_done
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3
-		else left_1p_t3
+		goto save_left_1b_t3
+		else save_left_1p_t3
 
-left_2b_t3:
-	from left2_t3
-	S_t3 ^= 'BLANK
-	goto left1_t3
+save_t3_left_done:
+	from save_t3_final
+	goto save_left_d_t3
 
-left_2p_t3:
-	from left2_t3
-	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3
-
-left2_t3:
-	from move_t3_left_done
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3
-		else left_2p_t3
-
-move_t3_left_done:
-	from shft2
-	goto left2_t3
-
-right_t3:
+save_right_t3:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3
-		else right_1p_t3
-	goto right_or_stay_t3
+		from save_right_1b_t3
+		else save_right_1p_t3
+	goto save_right_or_stay_t3
 
-right_1b_t3:
-	from right1_t3
+save_right_1b_t3:
+	from save_right_d_t3
 	S_t3 ^= 'BLANK
-	goto right_t3
+	goto save_right_t3
 
-right_1p_t3:
-	from right1_t3
+save_right_1p_t3:
+	from save_right_d_t3
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3
+	goto save_right_t3
 
-right1_t3:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3
-		else right_2p_t3
+save_right_d_t3:
+	from save_t3_right_done
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3
-		else right_1p_t3
+		goto save_right_1b_t3
+		else save_right_1p_t3
 
-right_2b_t3:
-	from right2_t3
-	S_t3 ^= 'BLANK
-	goto right1_t3
+save_t3_right_done:
+	from save_t3_done
+	goto save_right_d_t3
 
-right_2p_t3:
-	from right2_t3
-	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3
-
-right2_t3:
-	from move_t3_right_done
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3
-		else right_2p_t3
-
-move_t3_right_done:
-	from move_t3_done
-	goto right2_t3
-
-move_t3_done:
-	from shft2
+save_t3_done:
+	from save_t3_final
 	if (S2_t3 = 'RIGHT)
-		goto move_t3_right_done
-		else stay_t3
+		goto save_t3_right_done
+		else save_stay_t3
+
+save_t3_final:
+	from load_t3
+	if (S2_t3 = 'LEFT)
+		goto save_t3_left_done
+		else save_t3_done
+
+load_t3:
+	fi (S2_t3 = 'LEFT)
+		from load_left_t3
+		else load_right_or_stay_t3
+	goto save_t3_final
+
+load_right_or_stay_t3:
+	fi (S2_t3 = 'RIGHT)
+		from load_right_t3
+		else load_stay_t3
+	goto load_t3
+
+load_stay_t3:
+	from load_t3_done
+	goto load_right_or_stay_t3
+
+load_left_t3:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3
+		else load_left_2p_t3
+	goto load_t3
+
+load_left_2b_t3:
+	from load_left_d_t3
+	S_t3 ^= 'BLANK
+	goto load_left_t3
+
+load_left_2p_t3:
+	from load_left_d_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
+	goto load_left_t3
+
+load_left_d_t3:
+	from load_t3_left_done
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3
+		else load_left_2p_t3
+
+load_t3_left_done:
+	from load_t2
+	goto load_left_d_t3
+
+load_right_t3:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3
+		else load_right_2p_t3
+	goto load_right_or_stay_t3
+
+load_right_2b_t3:
+	from load_right_d_t3
+	S_t3 ^= 'BLANK
+	goto load_right_t3
+
+load_right_2p_t3:
+	from load_right_d_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
+	goto load_right_t3
+
+load_right_d_t3:
+	from load_t3_right_done
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3
+		else load_right_2p_t3
+
+load_t3_right_done:
+	from load_t3_done
+	goto load_right_d_t3
+
+load_t3_done:
+	from load_t2
+	if (S2_t3 = 'RIGHT)
+		goto load_t3_right_done
+		else load_stay_t3
+
+load_t2:
+	fi (S2_t2 = 'LEFT)
+		from load_left_t2
+		else load_right_or_stay_t2
+	if (S2_t3 = 'LEFT)
+		goto load_t3_left_done
+		else load_t3_done
+
+load_right_or_stay_t2:
+	fi (S2_t2 = 'RIGHT)
+		from load_right_t2
+		else load_stay_t2
+	goto load_t2
+
+load_stay_t2:
+	from load_t2_done
+	goto load_right_or_stay_t2
+
+load_left_t2:
+	fi (S_left_t2 = 'nil)
+		from load_left_2b_t2
+		else load_left_2p_t2
+	goto load_t2
+
+load_left_2b_t2:
+	from load_left_d_t2
+	S_t2 ^= 'BLANK
+	goto load_left_t2
+
+load_left_2p_t2:
+	from load_left_d_t2
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2
+
+load_left_d_t2:
+	from load_t2_left_done
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto load_left_2b_t2
+		else load_left_2p_t2
+
+load_t2_left_done:
+	from load_t1
+	goto load_left_d_t2
+
+load_right_t2:
+	fi (S_right_t2 = 'nil)
+		from load_right_2b_t2
+		else load_right_2p_t2
+	goto load_right_or_stay_t2
+
+load_right_2b_t2:
+	from load_right_d_t2
+	S_t2 ^= 'BLANK
+	goto load_right_t2
+
+load_right_2p_t2:
+	from load_right_d_t2
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2
+
+load_right_d_t2:
+	from load_t2_right_done
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto load_right_2b_t2
+		else load_right_2p_t2
+
+load_t2_right_done:
+	from load_t2_done
+	goto load_right_d_t2
+
+load_t2_done:
+	from load_t1
+	if (S2_t2 = 'RIGHT)
+		goto load_t2_right_done
+		else load_stay_t2
+
+load_t1:
+	fi (S2_t1 = 'LEFT)
+		from load_left_t1
+		else load_right_or_stay_t1
+	if (S2_t2 = 'LEFT)
+		goto load_t2_left_done
+		else load_t2_done
+
+load_right_or_stay_t1:
+	fi (S2_t1 = 'RIGHT)
+		from load_right_t1
+		else load_stay_t1
+	goto load_t1
+
+load_stay_t1:
+	from load_t1_done
+	goto load_right_or_stay_t1
+
+load_left_t1:
+	fi (S_left_t1 = 'nil)
+		from load_left_2b_t1
+		else load_left_2p_t1
+	goto load_t1
+
+load_left_2b_t1:
+	from load_left_d_t1
+	S_t1 ^= 'BLANK
+	goto load_left_t1
+
+load_left_2p_t1:
+	from load_left_d_t1
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto load_left_t1
+
+load_left_d_t1:
+	from load_t1_left_done
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto load_left_2b_t1
+		else load_left_2p_t1
+
+load_t1_left_done:
+	from shft2
+	goto load_left_d_t1
+
+load_right_t1:
+	fi (S_right_t1 = 'nil)
+		from load_right_2b_t1
+		else load_right_2p_t1
+	goto load_right_or_stay_t1
+
+load_right_2b_t1:
+	from load_right_d_t1
+	S_t1 ^= 'BLANK
+	goto load_right_t1
+
+load_right_2p_t1:
+	from load_right_d_t1
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto load_right_t1
+
+load_right_d_t1:
+	from load_t1_right_done
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+		goto load_right_2b_t1
+		else load_right_2p_t1
+
+load_t1_right_done:
+	from load_t1_done
+	goto load_right_d_t1
+
+load_t1_done:
+	from shft2
+	if (S2_t1 = 'RIGHT)
+		goto load_t1_right_done
+		else load_stay_t1
 
 shft2:
 	from shft3
-	if (S2_t3 = 'LEFT)
-		goto move_t3_left_done
-		else move_t3_done
+	if (S2_t1 = 'LEFT)
+		goto load_t1_left_done
+		else load_t1_done
 
 shft3:
 	from act2
