@@ -139,37 +139,37 @@ symbol_1_1949:
 		from symbol_1_252873
 		else symbol_1_1946
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_1952
-		else left_2p_t2_1_1952
+		goto load_left_2b_t2_1_1952
+		else load_left_2p_t2_1_1952
 
-left_2b_t2_1_1952:
+load_left_2b_t2_1_1952:
 	from symbol_1_1949
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_1952
+	goto load_left_t2_1_1952
 
-left1_t2_1_1952:
+load_left_t2_1_1952:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_1952
-		else left_2p_t2_1_1952
+		from load_left_2b_t2_1_1952
+		else load_left_2p_t2_1_1952
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_1952
-		else left_1p_t2_1_1952
+		goto save_left_1b_t2_1_1952
+		else save_left_1p_t2_1_1952
 
-left_1b_t2_1_1952:
-	from left1_t2_1_1952
+save_left_1b_t2_1_1952:
+	from load_left_t2_1_1952
 	S_t2 ^= 'BLANK
-	goto left_t2_1_1952
+	goto save_left_t2_1_1952
 
-left_t2_1_1952:
+save_left_t2_1_1952:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_1952
-		else left_1p_t2_1_1952
+		from save_left_1b_t2_1_1952
+		else save_left_1p_t2_1_1952
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
 		goto symbol1_1_1958
 		else symbol_1_1958
 
 symbol1_1_1958:
-	from left_t2_1_1952
+	from save_left_t2_1_1952
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -208,31 +208,31 @@ symbol1_1_1970:
 	S_t3 ^= '#
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#)))
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_1976
-		else left_2p_t3_1_1976
+		goto load_left_2b_t3_1_1976
+		else load_left_2p_t3_1_1976
 
-left_2b_t3_1_1976:
+load_left_2b_t3_1_1976:
 	from symbol1_1_1970
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_1976
+	goto load_left_t3_1_1976
 
-left1_t3_1_1976:
+load_left_t3_1_1976:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_1976
-		else left_2p_t3_1_1976
+		from load_left_2b_t3_1_1976
+		else load_left_2p_t3_1_1976
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_1976
-		else left_1p_t3_1_1976
+		goto save_left_1b_t3_1_1976
+		else save_left_1p_t3_1_1976
 
-left_1b_t3_1_1976:
-	from left1_t3_1_1976
+save_left_1b_t3_1_1976:
+	from load_left_t3_1_1976
 	S_t3 ^= 'BLANK
-	goto left_t3_1_1976
+	goto save_left_t3_1_1976
 
-left_t3_1_1976:
+save_left_t3_1_1976:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_1976
-		else left_1p_t3_1_1976
+		from save_left_1b_t3_1_1976
+		else save_left_1p_t3_1_1976
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -242,31 +242,31 @@ left_t3_1_1976:
 	S_t3 ^= '0
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '0)))
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_1988
-		else left_2p_t3_1_1988
+		goto load_left_2b_t3_1_1988
+		else load_left_2p_t3_1_1988
 
-left_2b_t3_1_1988:
-	from left_t3_1_1976
+load_left_2b_t3_1_1988:
+	from save_left_t3_1_1976
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_1988
+	goto load_left_t3_1_1988
 
-left1_t3_1_1988:
+load_left_t3_1_1988:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_1988
-		else left_2p_t3_1_1988
+		from load_left_2b_t3_1_1988
+		else load_left_2p_t3_1_1988
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_1988
-		else left_1p_t3_1_1988
+		goto save_left_1b_t3_1_1988
+		else save_left_1p_t3_1_1988
 
-left_1b_t3_1_1988:
-	from left1_t3_1_1988
+save_left_1b_t3_1_1988:
+	from load_left_t3_1_1988
 	S_t3 ^= 'BLANK
-	goto left_t3_1_1988
+	goto save_left_t3_1_1988
 
-left_t3_1_1988:
+save_left_t3_1_1988:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_1988
-		else left_1p_t3_1_1988
+		from save_left_1b_t3_1_1988
+		else save_left_1p_t3_1_1988
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'BLANK
@@ -276,63 +276,63 @@ left_t3_1_1988:
 	S_t3 ^= '#
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#)))
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_2000
-		else right_2p_t3_1_2000
+		goto load_right_2b_t3_1_2000
+		else load_right_2p_t3_1_2000
 
-right_2b_t3_1_2000:
-	from left_t3_1_1988
+load_right_2b_t3_1_2000:
+	from save_left_t3_1_1988
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_2000
+	goto load_right_t3_1_2000
 
-right1_t3_1_2000:
+load_right_t3_1_2000:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_2000
-		else right_2p_t3_1_2000
+		from load_right_2b_t3_1_2000
+		else load_right_2p_t3_1_2000
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_2000
-		else right_1p_t3_1_2000
+		goto save_right_1b_t3_1_2000
+		else save_right_1p_t3_1_2000
 
-right_1b_t3_1_2000:
-	from right1_t3_1_2000
+save_right_1b_t3_1_2000:
+	from load_right_t3_1_2000
 	S_t3 ^= 'BLANK
-	goto right_t3_1_2000
+	goto save_right_t3_1_2000
 
-right_t3_1_2000:
+save_right_t3_1_2000:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_2000
-		else right_1p_t3_1_2000
+		from save_right_1b_t3_1_2000
+		else save_right_1p_t3_1_2000
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_2006
-		else right_2p_t3_1_2006
+		goto load_right_2b_t3_1_2006
+		else load_right_2p_t3_1_2006
 
-right_2b_t3_1_2006:
-	from right_t3_1_2000
+load_right_2b_t3_1_2006:
+	from save_right_t3_1_2000
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_2006
+	goto load_right_t3_1_2006
 
-right1_t3_1_2006:
+load_right_t3_1_2006:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_2006
-		else right_2p_t3_1_2006
+		from load_right_2b_t3_1_2006
+		else load_right_2p_t3_1_2006
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_2006
-		else right_1p_t3_1_2006
+		goto save_right_1b_t3_1_2006
+		else save_right_1p_t3_1_2006
 
-right_1b_t3_1_2006:
-	from right1_t3_1_2006
+save_right_1b_t3_1_2006:
+	from load_right_t3_1_2006
 	S_t3 ^= 'BLANK
-	goto right_t3_1_2006
+	goto save_right_t3_1_2006
 
-right_t3_1_2006:
+save_right_t3_1_2006:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_2006
-		else right_1p_t3_1_2006
+		from save_right_1b_t3_1_2006
+		else save_right_1p_t3_1_2006
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_2156
 		else symbol_1_2156
 
 symbol1_1_2156:
-	from right_t3_1_2006
+	from save_right_t3_1_2006
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -353,63 +353,63 @@ symbol_1_2165:
 		from symbol_1_247243
 		else symbol_1_2162
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_2168
-		else left_2p_t3_1_2168
+		goto load_left_2b_t3_1_2168
+		else load_left_2p_t3_1_2168
 
-left_2b_t3_1_2168:
+load_left_2b_t3_1_2168:
 	from symbol_1_2165
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_2168
+	goto load_left_t3_1_2168
 
-left1_t3_1_2168:
+load_left_t3_1_2168:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_2168
-		else left_2p_t3_1_2168
+		from load_left_2b_t3_1_2168
+		else load_left_2p_t3_1_2168
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_2168
-		else left_1p_t3_1_2168
+		goto save_left_1b_t3_1_2168
+		else save_left_1p_t3_1_2168
 
-left_1b_t3_1_2168:
-	from left1_t3_1_2168
+save_left_1b_t3_1_2168:
+	from load_left_t3_1_2168
 	S_t3 ^= 'BLANK
-	goto left_t3_1_2168
+	goto save_left_t3_1_2168
 
-left_t3_1_2168:
+save_left_t3_1_2168:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_2168
-		else left_1p_t3_1_2168
+		from save_left_1b_t3_1_2168
+		else save_left_1p_t3_1_2168
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_2174
-		else left_2p_t3_1_2174
+		goto load_left_2b_t3_1_2174
+		else load_left_2p_t3_1_2174
 
-left_2b_t3_1_2174:
-	from left_t3_1_2168
+load_left_2b_t3_1_2174:
+	from save_left_t3_1_2168
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_2174
+	goto load_left_t3_1_2174
 
-left1_t3_1_2174:
+load_left_t3_1_2174:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_2174
-		else left_2p_t3_1_2174
+		from load_left_2b_t3_1_2174
+		else load_left_2p_t3_1_2174
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_2174
-		else left_1p_t3_1_2174
+		goto save_left_1b_t3_1_2174
+		else save_left_1p_t3_1_2174
 
-left_1b_t3_1_2174:
-	from left1_t3_1_2174
+save_left_1b_t3_1_2174:
+	from load_left_t3_1_2174
 	S_t3 ^= 'BLANK
-	goto left_t3_1_2174
+	goto save_left_t3_1_2174
 
-left_t3_1_2174:
+save_left_t3_1_2174:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_2174
-		else left_1p_t3_1_2174
+		from save_left_1b_t3_1_2174
+		else save_left_1p_t3_1_2174
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_2180
 		else symbol_1_2180
 
 symbol1_1_2180:
-	from left_t3_1_2174
+	from save_left_t3_1_2174
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -435,63 +435,63 @@ symbol_1_2189:
 		from symbol_1_247235
 		else symbol_1_2186
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_2192
-		else right_2p_t3_1_2192
+		goto load_right_2b_t3_1_2192
+		else load_right_2p_t3_1_2192
 
-right_2b_t3_1_2192:
+load_right_2b_t3_1_2192:
 	from symbol_1_2189
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_2192
+	goto load_right_t3_1_2192
 
-right1_t3_1_2192:
+load_right_t3_1_2192:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_2192
-		else right_2p_t3_1_2192
+		from load_right_2b_t3_1_2192
+		else load_right_2p_t3_1_2192
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_2192
-		else right_1p_t3_1_2192
+		goto save_right_1b_t3_1_2192
+		else save_right_1p_t3_1_2192
 
-right_1b_t3_1_2192:
-	from right1_t3_1_2192
+save_right_1b_t3_1_2192:
+	from load_right_t3_1_2192
 	S_t3 ^= 'BLANK
-	goto right_t3_1_2192
+	goto save_right_t3_1_2192
 
-right_t3_1_2192:
+save_right_t3_1_2192:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_2192
-		else right_1p_t3_1_2192
+		from save_right_1b_t3_1_2192
+		else save_right_1p_t3_1_2192
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_2198
-		else right_2p_t3_1_2198
+		goto load_right_2b_t3_1_2198
+		else load_right_2p_t3_1_2198
 
-right_2b_t3_1_2198:
-	from right_t3_1_2192
+load_right_2b_t3_1_2198:
+	from save_right_t3_1_2192
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_2198
+	goto load_right_t3_1_2198
 
-right1_t3_1_2198:
+load_right_t3_1_2198:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_2198
-		else right_2p_t3_1_2198
+		from load_right_2b_t3_1_2198
+		else load_right_2p_t3_1_2198
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_2198
-		else right_1p_t3_1_2198
+		goto save_right_1b_t3_1_2198
+		else save_right_1p_t3_1_2198
 
-right_1b_t3_1_2198:
-	from right1_t3_1_2198
+save_right_1b_t3_1_2198:
+	from load_right_t3_1_2198
 	S_t3 ^= 'BLANK
-	goto right_t3_1_2198
+	goto save_right_t3_1_2198
 
-right_t3_1_2198:
+save_right_t3_1_2198:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_2198
-		else right_1p_t3_1_2198
+		from save_right_1b_t3_1_2198
+		else save_right_1p_t3_1_2198
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_2204
 		else symbol_1_2204
 
 symbol1_1_2204:
-	from right_t3_1_2198
+	from save_right_t3_1_2198
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -578,37 +578,37 @@ symbol_1_4604:
 		from symbol_1_172714
 		else symbol_1_4601
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_4607
-		else right_2p_t2_1_4607
+		goto load_right_2b_t2_1_4607
+		else load_right_2p_t2_1_4607
 
-right_2b_t2_1_4607:
+load_right_2b_t2_1_4607:
 	from symbol_1_4604
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_4607
+	goto load_right_t2_1_4607
 
-right1_t2_1_4607:
+load_right_t2_1_4607:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_4607
-		else right_2p_t2_1_4607
+		from load_right_2b_t2_1_4607
+		else load_right_2p_t2_1_4607
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_4607
-		else right_1p_t2_1_4607
+		goto save_right_1b_t2_1_4607
+		else save_right_1p_t2_1_4607
 
-right_1b_t2_1_4607:
-	from right1_t2_1_4607
+save_right_1b_t2_1_4607:
+	from load_right_t2_1_4607
 	S_t2 ^= 'BLANK
-	goto right_t2_1_4607
+	goto save_right_t2_1_4607
 
-right_t2_1_4607:
+save_right_t2_1_4607:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_4607
-		else right_1p_t2_1_4607
+		from save_right_1b_t2_1_4607
+		else save_right_1p_t2_1_4607
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_4721
 		else symbol_1_4721
 
 symbol1_1_4721:
-	from right_t2_1_4607
+	from save_right_t2_1_4607
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -659,63 +659,63 @@ symbol_1_7541:
 		from symbol1_1_41658
 		else symbol_1_7538
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_10345
-		else left_2p_t3_1_10345
+		goto load_left_2b_t3_1_10345
+		else load_left_2p_t3_1_10345
 
-left_2b_t3_1_10345:
+load_left_2b_t3_1_10345:
 	from symbol_1_7541
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_10345
+	goto load_left_t3_1_10345
 
-left1_t3_1_10345:
+load_left_t3_1_10345:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_10345
-		else left_2p_t3_1_10345
+		from load_left_2b_t3_1_10345
+		else load_left_2p_t3_1_10345
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_10345
-		else left_1p_t3_1_10345
+		goto save_left_1b_t3_1_10345
+		else save_left_1p_t3_1_10345
 
-left_1b_t3_1_10345:
-	from left1_t3_1_10345
+save_left_1b_t3_1_10345:
+	from load_left_t3_1_10345
 	S_t3 ^= 'BLANK
-	goto left_t3_1_10345
+	goto save_left_t3_1_10345
 
-left_t3_1_10345:
+save_left_t3_1_10345:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_10345
-		else left_1p_t3_1_10345
+		from save_left_1b_t3_1_10345
+		else save_left_1p_t3_1_10345
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_13158
-		else left_2p_t3_1_13158
+		goto load_left_2b_t3_1_13158
+		else load_left_2p_t3_1_13158
 
-left_2b_t3_1_13158:
-	from left_t3_1_10345
+load_left_2b_t3_1_13158:
+	from save_left_t3_1_10345
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_13158
+	goto load_left_t3_1_13158
 
-left1_t3_1_13158:
+load_left_t3_1_13158:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_13158
-		else left_2p_t3_1_13158
+		from load_left_2b_t3_1_13158
+		else load_left_2p_t3_1_13158
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_13158
-		else left_1p_t3_1_13158
+		goto save_left_1b_t3_1_13158
+		else save_left_1p_t3_1_13158
 
-left_1b_t3_1_13158:
-	from left1_t3_1_13158
+save_left_1b_t3_1_13158:
+	from load_left_t3_1_13158
 	S_t3 ^= 'BLANK
-	goto left_t3_1_13158
+	goto save_left_t3_1_13158
 
-left_t3_1_13158:
+save_left_t3_1_13158:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_13158
-		else left_1p_t3_1_13158
+		from save_left_1b_t3_1_13158
+		else save_left_1p_t3_1_13158
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'M))
 		goto symbol1_1_15946
 		else symbol_1_15946
 
 symbol1_1_15946:
-	from left_t3_1_13158
+	from save_left_t3_1_13158
 	S_t3 ^= 'M
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -826,63 +826,63 @@ symbol_1_16000:
 		from symbol1_1_33111
 		else symbol_1_15997
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_18759
-		else right_2p_t3_1_18759
+		goto load_right_2b_t3_1_18759
+		else load_right_2p_t3_1_18759
 
-right_2b_t3_1_18759:
+load_right_2b_t3_1_18759:
 	from symbol_1_16000
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_18759
+	goto load_right_t3_1_18759
 
-right1_t3_1_18759:
+load_right_t3_1_18759:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_18759
-		else right_2p_t3_1_18759
+		from load_right_2b_t3_1_18759
+		else load_right_2p_t3_1_18759
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_18759
-		else right_1p_t3_1_18759
+		goto save_right_1b_t3_1_18759
+		else save_right_1p_t3_1_18759
 
-right_1b_t3_1_18759:
-	from right1_t3_1_18759
+save_right_1b_t3_1_18759:
+	from load_right_t3_1_18759
 	S_t3 ^= 'BLANK
-	goto right_t3_1_18759
+	goto save_right_t3_1_18759
 
-right_t3_1_18759:
+save_right_t3_1_18759:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_18759
-		else right_1p_t3_1_18759
+		from save_right_1b_t3_1_18759
+		else save_right_1p_t3_1_18759
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_21572
-		else right_2p_t3_1_21572
+		goto load_right_2b_t3_1_21572
+		else load_right_2p_t3_1_21572
 
-right_2b_t3_1_21572:
-	from right_t3_1_18759
+load_right_2b_t3_1_21572:
+	from save_right_t3_1_18759
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_21572
+	goto load_right_t3_1_21572
 
-right1_t3_1_21572:
+load_right_t3_1_21572:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_21572
-		else right_2p_t3_1_21572
+		from load_right_2b_t3_1_21572
+		else load_right_2p_t3_1_21572
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_21572
-		else right_1p_t3_1_21572
+		goto save_right_1b_t3_1_21572
+		else save_right_1p_t3_1_21572
 
-right_1b_t3_1_21572:
-	from right1_t3_1_21572
+save_right_1b_t3_1_21572:
+	from load_right_t3_1_21572
 	S_t3 ^= 'BLANK
-	goto right_t3_1_21572
+	goto save_right_t3_1_21572
 
-right_t3_1_21572:
+save_right_t3_1_21572:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_21572
-		else right_1p_t3_1_21572
+		from save_right_1b_t3_1_21572
+		else save_right_1p_t3_1_21572
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_24383
 		else symbol_1_24383
 
 symbol1_1_24383:
-	from right_t3_1_21572
+	from save_right_t3_1_21572
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -1041,37 +1041,37 @@ symbol_1_26402:
 		from symbol_1_32212
 		else symbol_1_26399
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_26405
-		else left_2p_t2_1_26405
+		goto load_left_2b_t2_1_26405
+		else load_left_2p_t2_1_26405
 
-left_2b_t2_1_26405:
+load_left_2b_t2_1_26405:
 	from symbol_1_26402
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_26405
+	goto load_left_t2_1_26405
 
-left1_t2_1_26405:
+load_left_t2_1_26405:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_26405
-		else left_2p_t2_1_26405
+		from load_left_2b_t2_1_26405
+		else load_left_2p_t2_1_26405
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_26405
-		else left_1p_t2_1_26405
+		goto save_left_1b_t2_1_26405
+		else save_left_1p_t2_1_26405
 
-left_1b_t2_1_26405:
-	from left1_t2_1_26405
+save_left_1b_t2_1_26405:
+	from load_left_t2_1_26405
 	S_t2 ^= 'BLANK
-	goto left_t2_1_26405
+	goto save_left_t2_1_26405
 
-left_t2_1_26405:
+save_left_t2_1_26405:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_26405
-		else left_1p_t2_1_26405
+		from save_left_1b_t2_1_26405
+		else save_left_1p_t2_1_26405
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_26411
 		else symbol_1_26411
 
 symbol1_1_26411:
-	from left_t2_1_26405
+	from save_left_t2_1_26405
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -1122,63 +1122,63 @@ symbol_1_26432:
 		from symbol1_1_26592
 		else symbol_1_26429
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_26435
-		else left_2p_t3_1_26435
+		goto load_left_2b_t3_1_26435
+		else load_left_2p_t3_1_26435
 
-left_2b_t3_1_26435:
+load_left_2b_t3_1_26435:
 	from symbol_1_26432
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_26435
+	goto load_left_t3_1_26435
 
-left1_t3_1_26435:
+load_left_t3_1_26435:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_26435
-		else left_2p_t3_1_26435
+		from load_left_2b_t3_1_26435
+		else load_left_2p_t3_1_26435
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_26435
-		else left_1p_t3_1_26435
+		goto save_left_1b_t3_1_26435
+		else save_left_1p_t3_1_26435
 
-left_1b_t3_1_26435:
-	from left1_t3_1_26435
+save_left_1b_t3_1_26435:
+	from load_left_t3_1_26435
 	S_t3 ^= 'BLANK
-	goto left_t3_1_26435
+	goto save_left_t3_1_26435
 
-left_t3_1_26435:
+save_left_t3_1_26435:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_26435
-		else left_1p_t3_1_26435
+		from save_left_1b_t3_1_26435
+		else save_left_1p_t3_1_26435
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_26441
-		else left_2p_t3_1_26441
+		goto load_left_2b_t3_1_26441
+		else load_left_2p_t3_1_26441
 
-left_2b_t3_1_26441:
-	from left_t3_1_26435
+load_left_2b_t3_1_26441:
+	from save_left_t3_1_26435
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_26441
+	goto load_left_t3_1_26441
 
-left1_t3_1_26441:
+load_left_t3_1_26441:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_26441
-		else left_2p_t3_1_26441
+		from load_left_2b_t3_1_26441
+		else load_left_2p_t3_1_26441
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_26441
-		else left_1p_t3_1_26441
+		goto save_left_1b_t3_1_26441
+		else save_left_1p_t3_1_26441
 
-left_1b_t3_1_26441:
-	from left1_t3_1_26441
+save_left_1b_t3_1_26441:
+	from load_left_t3_1_26441
 	S_t3 ^= 'BLANK
-	goto left_t3_1_26441
+	goto save_left_t3_1_26441
 
-left_t3_1_26441:
+save_left_t3_1_26441:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_26441
-		else left_1p_t3_1_26441
+		from save_left_1b_t3_1_26441
+		else save_left_1p_t3_1_26441
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'M))
 		goto symbol1_1_26447
 		else symbol_1_26447
 
 symbol1_1_26447:
-	from left_t3_1_26441
+	from save_left_t3_1_26441
 	S_t3 ^= 'M
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -1291,7 +1291,7 @@ symbol_1_26501:
 	goto symbol_1_2182
 
 symbol_1_26447:
-	from left_t3_1_26441
+	from save_left_t3_1_26441
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'S))
 		goto symbol1_1_26520
 		else symbol_1_26520
@@ -1557,25 +1557,25 @@ symbol_1_26580:
 	S_t3 ^= '0
 	goto symbol_1_26501
 
-left_1p_t3_1_26441:
-	from left1_t3_1_26441
+save_left_1p_t3_1_26441:
+	from load_left_t3_1_26441
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_26441
+	goto save_left_t3_1_26441
 
-left_2p_t3_1_26441:
-	from left_t3_1_26435
+load_left_2p_t3_1_26441:
+	from save_left_t3_1_26435
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_26441
+	goto load_left_t3_1_26441
 
-left_1p_t3_1_26435:
-	from left1_t3_1_26435
+save_left_1p_t3_1_26435:
+	from load_left_t3_1_26435
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_26435
+	goto save_left_t3_1_26435
 
-left_2p_t3_1_26435:
+load_left_2p_t3_1_26435:
 	from symbol_1_26432
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_26435
+	goto load_left_t3_1_26435
 
 symbol_1_26423:
 	from symbol_1_26420
@@ -1610,7 +1610,7 @@ symbol1_1_26592:
 	goto symbol_1_26432
 
 symbol_1_26411:
-	from left_t2_1_26405
+	from save_left_t2_1_26405
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_29391
 		else symbol_1_29391
@@ -1924,15 +1924,15 @@ symbol_1_32212:
 	S_t3 ^= '#
 	goto symbol_1_26402
 
-left_1p_t2_1_26405:
-	from left1_t2_1_26405
+save_left_1p_t2_1_26405:
+	from load_left_t2_1_26405
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_26405
+	goto save_left_t2_1_26405
 
-left_2p_t2_1_26405:
+load_left_2p_t2_1_26405:
 	from symbol_1_26402
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_26405
+	goto load_left_t2_1_26405
 
 symbol_1_26339:
 	from symbol_1_24392
@@ -1967,7 +1967,7 @@ symbol1_1_32218:
 	goto symbol_1_26348
 
 symbol_1_24383:
-	from right_t3_1_21572
+	from save_right_t3_1_21572
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_33075
 		else symbol_1_33075
@@ -1993,28 +1993,28 @@ symbol_1_33075:
 	S_t3 ^= '#
 	goto symbol_1_24392
 
-right_1p_t3_1_21572:
-	from right1_t3_1_21572
+save_right_1p_t3_1_21572:
+	from load_right_t3_1_21572
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_21572
+	goto save_right_t3_1_21572
 
-right_2p_t3_1_21572:
-	from right_t3_1_18759
+load_right_2p_t3_1_21572:
+	from save_right_t3_1_18759
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_21572
+	goto load_right_t3_1_21572
 
-right_1p_t3_1_18759:
-	from right1_t3_1_18759
+save_right_1p_t3_1_18759:
+	from load_right_t3_1_18759
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_18759
+	goto save_right_t3_1_18759
 
-right_2p_t3_1_18759:
+load_right_2p_t3_1_18759:
 	from symbol_1_16000
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_18759
+	goto load_right_t3_1_18759
 
 symbol_1_15946:
-	from left_t3_1_13158
+	from save_left_t3_1_13158
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'S))
 		goto symbol1_1_33079
 		else symbol_1_33079
@@ -2313,63 +2313,63 @@ symbol_1_33127:
 		from symbol_1_41652
 		else symbol_1_33124
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_35931
-		else right_2p_t3_1_35931
+		goto load_right_2b_t3_1_35931
+		else load_right_2p_t3_1_35931
 
-right_2b_t3_1_35931:
+load_right_2b_t3_1_35931:
 	from symbol_1_33127
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_35931
+	goto load_right_t3_1_35931
 
-right1_t3_1_35931:
+load_right_t3_1_35931:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_35931
-		else right_2p_t3_1_35931
+		from load_right_2b_t3_1_35931
+		else load_right_2p_t3_1_35931
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_35931
-		else right_1p_t3_1_35931
+		goto save_right_1b_t3_1_35931
+		else save_right_1p_t3_1_35931
 
-right_1b_t3_1_35931:
-	from right1_t3_1_35931
+save_right_1b_t3_1_35931:
+	from load_right_t3_1_35931
 	S_t3 ^= 'BLANK
-	goto right_t3_1_35931
+	goto save_right_t3_1_35931
 
-right_t3_1_35931:
+save_right_t3_1_35931:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_35931
-		else right_1p_t3_1_35931
+		from save_right_1b_t3_1_35931
+		else save_right_1p_t3_1_35931
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_38744
-		else right_2p_t3_1_38744
+		goto load_right_2b_t3_1_38744
+		else load_right_2p_t3_1_38744
 
-right_2b_t3_1_38744:
-	from right_t3_1_35931
+load_right_2b_t3_1_38744:
+	from save_right_t3_1_35931
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_38744
+	goto load_right_t3_1_38744
 
-right1_t3_1_38744:
+load_right_t3_1_38744:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_38744
-		else right_2p_t3_1_38744
+		from load_right_2b_t3_1_38744
+		else load_right_2p_t3_1_38744
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_38744
-		else right_1p_t3_1_38744
+		goto save_right_1b_t3_1_38744
+		else save_right_1p_t3_1_38744
 
-right_1b_t3_1_38744:
-	from right1_t3_1_38744
+save_right_1b_t3_1_38744:
+	from load_right_t3_1_38744
 	S_t3 ^= 'BLANK
-	goto right_t3_1_38744
+	goto save_right_t3_1_38744
 
-right_t3_1_38744:
+save_right_t3_1_38744:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_38744
-		else right_1p_t3_1_38744
+		from save_right_1b_t3_1_38744
+		else save_right_1p_t3_1_38744
 	if (((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_41555
 		else symbol_1_41555
 
 symbol1_1_41555:
-	from right_t3_1_38744
+	from save_right_t3_1_38744
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
 	S_t1 ^= 'BLANK
@@ -2390,57 +2390,57 @@ symbol_1_41564:
 		from symbol_1_41648
 		else symbol_1_41561
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_41606
-		else left_2p_t3_1_41606
+		goto load_left_2b_t3_1_41606
+		else load_left_2p_t3_1_41606
 
-left_2b_t3_1_41606:
+load_left_2b_t3_1_41606:
 	from symbol_1_41564
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_41606
+	goto load_left_t3_1_41606
 
-left1_t3_1_41606:
+load_left_t3_1_41606:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_41606
-		else left_2p_t3_1_41606
+		from load_left_2b_t3_1_41606
+		else load_left_2p_t3_1_41606
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_41606
-		else left_1p_t3_1_41606
+		goto save_left_1b_t3_1_41606
+		else save_left_1p_t3_1_41606
 
-left_1b_t3_1_41606:
-	from left1_t3_1_41606
+save_left_1b_t3_1_41606:
+	from load_left_t3_1_41606
 	S_t3 ^= 'BLANK
-	goto left_t3_1_41606
+	goto save_left_t3_1_41606
 
-left_t3_1_41606:
+save_left_t3_1_41606:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_41606
-		else left_1p_t3_1_41606
+		from save_left_1b_t3_1_41606
+		else save_left_1p_t3_1_41606
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_41612
-		else left_2p_t3_1_41612
+		goto load_left_2b_t3_1_41612
+		else load_left_2p_t3_1_41612
 
-left_2b_t3_1_41612:
-	from left_t3_1_41606
+load_left_2b_t3_1_41612:
+	from save_left_t3_1_41606
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_41612
+	goto load_left_t3_1_41612
 
-left1_t3_1_41612:
+load_left_t3_1_41612:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_41612
-		else left_2p_t3_1_41612
+		from load_left_2b_t3_1_41612
+		else load_left_2p_t3_1_41612
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_41612
-		else left_1p_t3_1_41612
+		goto save_left_1b_t3_1_41612
+		else save_left_1p_t3_1_41612
 
-left_1b_t3_1_41612:
-	from left1_t3_1_41612
+save_left_1b_t3_1_41612:
+	from load_left_t3_1_41612
 	S_t3 ^= 'BLANK
-	goto left_t3_1_41612
+	goto save_left_t3_1_41612
 
-left_t3_1_41612:
+save_left_t3_1_41612:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_41612
-		else left_1p_t3_1_41612
+		from save_left_1b_t3_1_41612
+		else save_left_1p_t3_1_41612
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#)))
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
@@ -2450,31 +2450,31 @@ left_t3_1_41612:
 	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_41624
-		else right_2p_t3_1_41624
+		goto load_right_2b_t3_1_41624
+		else load_right_2p_t3_1_41624
 
-right_2b_t3_1_41624:
-	from left_t3_1_41612
+load_right_2b_t3_1_41624:
+	from save_left_t3_1_41612
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_41624
+	goto load_right_t3_1_41624
 
-right1_t3_1_41624:
+load_right_t3_1_41624:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_41624
-		else right_2p_t3_1_41624
+		from load_right_2b_t3_1_41624
+		else load_right_2p_t3_1_41624
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_41624
-		else right_1p_t3_1_41624
+		goto save_right_1b_t3_1_41624
+		else save_right_1p_t3_1_41624
 
-right_1b_t3_1_41624:
-	from right1_t3_1_41624
+save_right_1b_t3_1_41624:
+	from load_right_t3_1_41624
 	S_t3 ^= 'BLANK
-	goto right_t3_1_41624
+	goto save_right_t3_1_41624
 
-right_t3_1_41624:
+save_right_t3_1_41624:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_41624
-		else right_1p_t3_1_41624
+		from save_right_1b_t3_1_41624
+		else save_right_1p_t3_1_41624
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '1)))
 	S_t3 ^= '1
 	S_t2 ^= 'BLANK
@@ -2484,31 +2484,31 @@ right_t3_1_41624:
 	S_t3 ^= 'BLANK
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK)))
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_41636
-		else right_2p_t3_1_41636
+		goto load_right_2b_t3_1_41636
+		else load_right_2p_t3_1_41636
 
-right_2b_t3_1_41636:
-	from right_t3_1_41624
+load_right_2b_t3_1_41636:
+	from save_right_t3_1_41624
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_41636
+	goto load_right_t3_1_41636
 
-right1_t3_1_41636:
+load_right_t3_1_41636:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_41636
-		else right_2p_t3_1_41636
+		from load_right_2b_t3_1_41636
+		else load_right_2p_t3_1_41636
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_41636
-		else right_1p_t3_1_41636
+		goto save_right_1b_t3_1_41636
+		else save_right_1p_t3_1_41636
 
-right_1b_t3_1_41636:
-	from right1_t3_1_41636
+save_right_1b_t3_1_41636:
+	from load_right_t3_1_41636
 	S_t3 ^= 'BLANK
-	goto right_t3_1_41636
+	goto save_right_t3_1_41636
 
-right_t3_1_41636:
+save_right_t3_1_41636:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_41636
-		else right_1p_t3_1_41636
+		from save_right_1b_t3_1_41636
+		else save_right_1p_t3_1_41636
 	assert((((S_t1 = 'BLANK) && (S_t2 = 'BLANK)) && (S_t3 = '#)))
 	S_t3 ^= '#
 	S_t2 ^= 'BLANK
@@ -2522,48 +2522,48 @@ right_t3_1_41636:
 	S_t1 ^= 'BLANK
 	exit
 
-right_1p_t3_1_41636:
-	from right1_t3_1_41636
+save_right_1p_t3_1_41636:
+	from load_right_t3_1_41636
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_41636
+	goto save_right_t3_1_41636
 
-right_2p_t3_1_41636:
-	from right_t3_1_41624
+load_right_2p_t3_1_41636:
+	from save_right_t3_1_41624
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_41636
+	goto load_right_t3_1_41636
 
-right_1p_t3_1_41624:
-	from right1_t3_1_41624
+save_right_1p_t3_1_41624:
+	from load_right_t3_1_41624
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_41624
+	goto save_right_t3_1_41624
 
-right_2p_t3_1_41624:
-	from left_t3_1_41612
+load_right_2p_t3_1_41624:
+	from save_left_t3_1_41612
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_41624
+	goto load_right_t3_1_41624
 
-left_1p_t3_1_41612:
-	from left1_t3_1_41612
+save_left_1p_t3_1_41612:
+	from load_left_t3_1_41612
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_41612
+	goto save_left_t3_1_41612
 
-left_2p_t3_1_41612:
-	from left_t3_1_41606
+load_left_2p_t3_1_41612:
+	from save_left_t3_1_41606
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_41612
+	goto load_left_t3_1_41612
 
-left_1p_t3_1_41606:
-	from left1_t3_1_41606
+save_left_1p_t3_1_41606:
+	from load_left_t3_1_41606
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_41606
+	goto save_left_t3_1_41606
 
-left_2p_t3_1_41606:
+load_left_2p_t3_1_41606:
 	from symbol_1_41564
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_41606
+	goto load_left_t3_1_41606
 
 symbol_1_41555:
-	from right_t3_1_38744
+	from save_right_t3_1_38744
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_41648
 		else symbol_1_41648
@@ -2589,25 +2589,25 @@ symbol_1_41648:
 	S_t3 ^= '#
 	goto symbol_1_41564
 
-right_1p_t3_1_38744:
-	from right1_t3_1_38744
+save_right_1p_t3_1_38744:
+	from load_right_t3_1_38744
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_38744
+	goto save_right_t3_1_38744
 
-right_2p_t3_1_38744:
-	from right_t3_1_35931
+load_right_2p_t3_1_38744:
+	from save_right_t3_1_35931
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_38744
+	goto load_right_t3_1_38744
 
-right_1p_t3_1_35931:
-	from right1_t3_1_35931
+save_right_1p_t3_1_35931:
+	from load_right_t3_1_35931
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_35931
+	goto save_right_t3_1_35931
 
-right_2p_t3_1_35931:
+load_right_2p_t3_1_35931:
 	from symbol_1_33127
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_35931
+	goto load_right_t3_1_35931
 
 symbol_1_33118:
 	from symbol_1_33111
@@ -2636,25 +2636,25 @@ symbol_1_41652:
 	S_t3 ^= '#
 	goto symbol_1_33127
 
-left_1p_t3_1_13158:
-	from left1_t3_1_13158
+save_left_1p_t3_1_13158:
+	from load_left_t3_1_13158
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_13158
+	goto save_left_t3_1_13158
 
-left_2p_t3_1_13158:
-	from left_t3_1_10345
+load_left_2p_t3_1_13158:
+	from save_left_t3_1_10345
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_13158
+	goto load_left_t3_1_13158
 
-left_1p_t3_1_10345:
-	from left1_t3_1_10345
+save_left_1p_t3_1_10345:
+	from load_left_t3_1_10345
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_10345
+	goto save_left_t3_1_10345
 
-left_2p_t3_1_10345:
+load_left_2p_t3_1_10345:
 	from symbol_1_7541
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_10345
+	goto load_left_t3_1_10345
 
 symbol_1_7532:
 	from symbol_1_4730
@@ -2689,7 +2689,7 @@ symbol1_1_41658:
 	goto symbol_1_7541
 
 symbol_1_4721:
-	from right_t2_1_4607
+	from save_right_t2_1_4607
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_41662
 		else symbol_1_41662
@@ -2748,37 +2748,37 @@ symbol_1_43574:
 		from symbol1_1_122376
 		else symbol_1_43571
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_43577
-		else right_2p_t2_1_43577
+		goto load_right_2b_t2_1_43577
+		else load_right_2p_t2_1_43577
 
-right_2b_t2_1_43577:
+load_right_2b_t2_1_43577:
 	from symbol_1_43574
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_43577
+	goto load_right_t2_1_43577
 
-right1_t2_1_43577:
+load_right_t2_1_43577:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_43577
-		else right_2p_t2_1_43577
+		from load_right_2b_t2_1_43577
+		else load_right_2p_t2_1_43577
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_43577
-		else right_1p_t2_1_43577
+		goto save_right_1b_t2_1_43577
+		else save_right_1p_t2_1_43577
 
-right_1b_t2_1_43577:
-	from right1_t2_1_43577
+save_right_1b_t2_1_43577:
+	from load_right_t2_1_43577
 	S_t2 ^= 'BLANK
-	goto right_t2_1_43577
+	goto save_right_t2_1_43577
 
-right_t2_1_43577:
+save_right_t2_1_43577:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_43577
-		else right_1p_t2_1_43577
+		from save_right_1b_t2_1_43577
+		else save_right_1p_t2_1_43577
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_43838
 		else symbol_1_43838
 
 symbol1_1_43838:
-	from right_t2_1_43577
+	from save_right_t2_1_43577
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -2834,64 +2834,64 @@ symbol_1_46650:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_122362
 		else symbol_1_46649
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_46651
-		else left_2p_t3_1_46651
-
-left_2b_t3_1_46651:
-	from symbol_1_46650
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_46651
-
-left1_t3_1_46651:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_46651
-		else left_2p_t3_1_46651
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_46651
-		else left_1p_t3_1_46651
-
-left_1b_t3_1_46651:
-	from left1_t3_1_46651
-	S_t3 ^= 'BLANK
-	goto left_t3_1_46651
-
-left_t3_1_46651:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_46651
-		else left_1p_t3_1_46651
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_46651
-		else right_2p_t2_1_46651
+		goto load_right_2b_t2_1_46651
+		else load_right_2p_t2_1_46651
 
-right_2b_t2_1_46651:
-	from left_t3_1_46651
+load_right_2b_t2_1_46651:
+	from symbol_1_46650
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_46651
+	goto load_right_t2_1_46651
 
-right1_t2_1_46651:
+load_right_t2_1_46651:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_46651
-		else right_2p_t2_1_46651
+		from load_right_2b_t2_1_46651
+		else load_right_2p_t2_1_46651
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_46651
+		else load_left_2p_t3_1_46651
+
+load_left_2b_t3_1_46651:
+	from load_right_t2_1_46651
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_46651
+
+load_left_t3_1_46651:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_46651
+		else load_left_2p_t3_1_46651
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_46651
+		else save_left_1p_t3_1_46651
+
+save_left_1b_t3_1_46651:
+	from load_left_t3_1_46651
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_46651
+
+save_left_t3_1_46651:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_46651
+		else save_left_1p_t3_1_46651
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_46651
-		else right_1p_t2_1_46651
+		goto save_right_1b_t2_1_46651
+		else save_right_1p_t2_1_46651
 
-right_1b_t2_1_46651:
-	from right1_t2_1_46651
+save_right_1b_t2_1_46651:
+	from save_left_t3_1_46651
 	S_t2 ^= 'BLANK
-	goto right_t2_1_46651
+	goto save_right_t2_1_46651
 
-right_t2_1_46651:
+save_right_t2_1_46651:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_46651
-		else right_1p_t2_1_46651
+		from save_right_1b_t2_1_46651
+		else save_right_1p_t2_1_46651
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_49438
 		else symbol_1_49438
 
 symbol1_1_49438:
-	from right_t2_1_46651
+	from save_right_t2_1_46651
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -3037,64 +3037,64 @@ symbol_1_52250:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_87830
 		else symbol_1_52249
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_52251
-		else right_2p_t3_1_52251
-
-right_2b_t3_1_52251:
-	from symbol_1_52250
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_52251
-
-right1_t3_1_52251:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_52251
-		else right_2p_t3_1_52251
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_52251
-		else right_1p_t3_1_52251
-
-right_1b_t3_1_52251:
-	from right1_t3_1_52251
-	S_t3 ^= 'BLANK
-	goto right_t3_1_52251
-
-right_t3_1_52251:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_52251
-		else right_1p_t3_1_52251
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_52251
-		else left_2p_t2_1_52251
+		goto load_left_2b_t2_1_52251
+		else load_left_2p_t2_1_52251
 
-left_2b_t2_1_52251:
-	from right_t3_1_52251
+load_left_2b_t2_1_52251:
+	from symbol_1_52250
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_52251
+	goto load_left_t2_1_52251
 
-left1_t2_1_52251:
+load_left_t2_1_52251:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_52251
-		else left_2p_t2_1_52251
+		from load_left_2b_t2_1_52251
+		else load_left_2p_t2_1_52251
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_52251
+		else load_right_2p_t3_1_52251
+
+load_right_2b_t3_1_52251:
+	from load_left_t2_1_52251
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_52251
+
+load_right_t3_1_52251:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_52251
+		else load_right_2p_t3_1_52251
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_52251
+		else save_right_1p_t3_1_52251
+
+save_right_1b_t3_1_52251:
+	from load_right_t3_1_52251
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_52251
+
+save_right_t3_1_52251:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_52251
+		else save_right_1p_t3_1_52251
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_52251
-		else left_1p_t2_1_52251
+		goto save_left_1b_t2_1_52251
+		else save_left_1p_t2_1_52251
 
-left_1b_t2_1_52251:
-	from left1_t2_1_52251
+save_left_1b_t2_1_52251:
+	from save_right_t3_1_52251
 	S_t2 ^= 'BLANK
-	goto left_t2_1_52251
+	goto save_left_t2_1_52251
 
-left_t2_1_52251:
+save_left_t2_1_52251:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_52251
-		else left_1p_t2_1_52251
+		from save_left_1b_t2_1_52251
+		else save_left_1p_t2_1_52251
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_55056
 		else symbol_1_55056
 
 symbol1_1_55056:
-	from left_t2_1_52251
+	from save_left_t2_1_52251
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3151,37 +3151,37 @@ symbol_1_57868:
 		from symbol_1_87814
 		else symbol_1_57867
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_57869
-		else left_2p_t3_1_57869
+		goto load_left_2b_t3_1_57869
+		else load_left_2p_t3_1_57869
 
-left_2b_t3_1_57869:
+load_left_2b_t3_1_57869:
 	from symbol_1_57868
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_57869
+	goto load_left_t3_1_57869
 
-left1_t3_1_57869:
+load_left_t3_1_57869:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_57869
-		else left_2p_t3_1_57869
+		from load_left_2b_t3_1_57869
+		else load_left_2p_t3_1_57869
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_57869
-		else left_1p_t3_1_57869
+		goto save_left_1b_t3_1_57869
+		else save_left_1p_t3_1_57869
 
-left_1b_t3_1_57869:
-	from left1_t3_1_57869
+save_left_1b_t3_1_57869:
+	from load_left_t3_1_57869
 	S_t3 ^= 'BLANK
-	goto left_t3_1_57869
+	goto save_left_t3_1_57869
 
-left_t3_1_57869:
+save_left_t3_1_57869:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_57869
-		else left_1p_t3_1_57869
+		from save_left_1b_t3_1_57869
+		else save_left_1p_t3_1_57869
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_60674
 		else symbol_1_60674
 
 symbol1_1_60674:
-	from left_t3_1_57869
+	from save_left_t3_1_57869
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3238,37 +3238,37 @@ symbol_1_63486:
 		from symbol_1_87798
 		else symbol_1_63485
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_63487
-		else right_2p_t2_1_63487
+		goto load_right_2b_t2_1_63487
+		else load_right_2p_t2_1_63487
 
-right_2b_t2_1_63487:
+load_right_2b_t2_1_63487:
 	from symbol_1_63486
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_63487
+	goto load_right_t2_1_63487
 
-right1_t2_1_63487:
+load_right_t2_1_63487:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_63487
-		else right_2p_t2_1_63487
+		from load_right_2b_t2_1_63487
+		else load_right_2p_t2_1_63487
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_63487
-		else right_1p_t2_1_63487
+		goto save_right_1b_t2_1_63487
+		else save_right_1p_t2_1_63487
 
-right_1b_t2_1_63487:
-	from right1_t2_1_63487
+save_right_1b_t2_1_63487:
+	from load_right_t2_1_63487
 	S_t2 ^= 'BLANK
-	goto right_t2_1_63487
+	goto save_right_t2_1_63487
 
-right_t2_1_63487:
+save_right_t2_1_63487:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_63487
-		else right_1p_t2_1_63487
+		from save_right_1b_t2_1_63487
+		else save_right_1p_t2_1_63487
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_66292
 		else symbol_1_66292
 
 symbol1_1_66292:
-	from right_t2_1_63487
+	from save_right_t2_1_63487
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3427,37 +3427,37 @@ symbol_1_69144:
 		from symbol_1_87756
 		else symbol_1_69141
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_69147
-		else right_2p_t2_1_69147
+		goto load_right_2b_t2_1_69147
+		else load_right_2p_t2_1_69147
 
-right_2b_t2_1_69147:
+load_right_2b_t2_1_69147:
 	from symbol_1_69144
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_69147
+	goto load_right_t2_1_69147
 
-right1_t2_1_69147:
+load_right_t2_1_69147:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_69147
-		else right_2p_t2_1_69147
+		from load_right_2b_t2_1_69147
+		else load_right_2p_t2_1_69147
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_69147
-		else right_1p_t2_1_69147
+		goto save_right_1b_t2_1_69147
+		else save_right_1p_t2_1_69147
 
-right_1b_t2_1_69147:
-	from right1_t2_1_69147
+save_right_1b_t2_1_69147:
+	from load_right_t2_1_69147
 	S_t2 ^= 'BLANK
-	goto right_t2_1_69147
+	goto save_right_t2_1_69147
 
-right_t2_1_69147:
+save_right_t2_1_69147:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_69147
-		else right_1p_t2_1_69147
+		from save_right_1b_t2_1_69147
+		else save_right_1p_t2_1_69147
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_69153
 		else symbol_1_69153
 
 symbol1_1_69153:
-	from right_t2_1_69147
+	from save_right_t2_1_69147
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3544,37 +3544,37 @@ symbol_1_69822:
 		from symbol_1_82756
 		else symbol_1_69819
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_69825
-		else right_2p_t2_1_69825
+		goto load_right_2b_t2_1_69825
+		else load_right_2p_t2_1_69825
 
-right_2b_t2_1_69825:
+load_right_2b_t2_1_69825:
 	from symbol_1_69822
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_69825
+	goto load_right_t2_1_69825
 
-right1_t2_1_69825:
+load_right_t2_1_69825:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_69825
-		else right_2p_t2_1_69825
+		from load_right_2b_t2_1_69825
+		else load_right_2p_t2_1_69825
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_69825
-		else right_1p_t2_1_69825
+		goto save_right_1b_t2_1_69825
+		else save_right_1p_t2_1_69825
 
-right_1b_t2_1_69825:
-	from right1_t2_1_69825
+save_right_1b_t2_1_69825:
+	from load_right_t2_1_69825
 	S_t2 ^= 'BLANK
-	goto right_t2_1_69825
+	goto save_right_t2_1_69825
 
-right_t2_1_69825:
+save_right_t2_1_69825:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_69825
-		else right_1p_t2_1_69825
+		from save_right_1b_t2_1_69825
+		else save_right_1p_t2_1_69825
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_69831
 		else symbol_1_69831
 
 symbol1_1_69831:
-	from right_t2_1_69825
+	from save_right_t2_1_69825
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3631,37 +3631,37 @@ symbol_1_69858:
 		from symbol_1_79941
 		else symbol_1_69855
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_69861
-		else right_2p_t3_1_69861
+		goto load_right_2b_t3_1_69861
+		else load_right_2p_t3_1_69861
 
-right_2b_t3_1_69861:
+load_right_2b_t3_1_69861:
 	from symbol_1_69858
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_69861
+	goto load_right_t3_1_69861
 
-right1_t3_1_69861:
+load_right_t3_1_69861:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_69861
-		else right_2p_t3_1_69861
+		from load_right_2b_t3_1_69861
+		else load_right_2p_t3_1_69861
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_69861
-		else right_1p_t3_1_69861
+		goto save_right_1b_t3_1_69861
+		else save_right_1p_t3_1_69861
 
-right_1b_t3_1_69861:
-	from right1_t3_1_69861
+save_right_1b_t3_1_69861:
+	from load_right_t3_1_69861
 	S_t3 ^= 'BLANK
-	goto right_t3_1_69861
+	goto save_right_t3_1_69861
 
-right_t3_1_69861:
+save_right_t3_1_69861:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_69861
-		else right_1p_t3_1_69861
+		from save_right_1b_t3_1_69861
+		else save_right_1p_t3_1_69861
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_69867
 		else symbol_1_69867
 
 symbol1_1_69867:
-	from right_t3_1_69861
+	from save_right_t3_1_69861
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -3717,64 +3717,64 @@ symbol_1_69894:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_77126
 		else symbol_1_69891
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_69897
-		else left_2p_t3_1_69897
-
-left_2b_t3_1_69897:
-	from symbol_1_69894
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_69897
-
-left1_t3_1_69897:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_69897
-		else left_2p_t3_1_69897
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_69897
-		else left_1p_t3_1_69897
-
-left_1b_t3_1_69897:
-	from left1_t3_1_69897
-	S_t3 ^= 'BLANK
-	goto left_t3_1_69897
-
-left_t3_1_69897:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_69897
-		else left_1p_t3_1_69897
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_69897
-		else left_2p_t2_1_69897
+		goto load_left_2b_t2_1_69897
+		else load_left_2p_t2_1_69897
 
-left_2b_t2_1_69897:
-	from left_t3_1_69897
+load_left_2b_t2_1_69897:
+	from symbol_1_69894
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_69897
+	goto load_left_t2_1_69897
 
-left1_t2_1_69897:
+load_left_t2_1_69897:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_69897
-		else left_2p_t2_1_69897
+		from load_left_2b_t2_1_69897
+		else load_left_2p_t2_1_69897
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_69897
+		else load_left_2p_t3_1_69897
+
+load_left_2b_t3_1_69897:
+	from load_left_t2_1_69897
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_69897
+
+load_left_t3_1_69897:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_69897
+		else load_left_2p_t3_1_69897
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_69897
+		else save_left_1p_t3_1_69897
+
+save_left_1b_t3_1_69897:
+	from load_left_t3_1_69897
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_69897
+
+save_left_t3_1_69897:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_69897
+		else save_left_1p_t3_1_69897
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_69897
-		else left_1p_t2_1_69897
+		goto save_left_1b_t2_1_69897
+		else save_left_1p_t2_1_69897
 
-left_1b_t2_1_69897:
-	from left1_t2_1_69897
+save_left_1b_t2_1_69897:
+	from save_left_t3_1_69897
 	S_t2 ^= 'BLANK
-	goto left_t2_1_69897
+	goto save_left_t2_1_69897
 
-left_t2_1_69897:
+save_left_t2_1_69897:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_69897
-		else left_1p_t2_1_69897
+		from save_left_1b_t2_1_69897
+		else save_left_1p_t2_1_69897
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_69903
 		else symbol_1_69903
 
 symbol1_1_69903:
-	from left_t2_1_69897
+	from save_left_t2_1_69897
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -3938,64 +3938,64 @@ symbol_1_69984:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_74296
 		else symbol_1_69981
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_69987
-		else right_2p_t3_1_69987
-
-right_2b_t3_1_69987:
-	from symbol_1_69984
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_69987
-
-right1_t3_1_69987:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_69987
-		else right_2p_t3_1_69987
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_69987
-		else right_1p_t3_1_69987
-
-right_1b_t3_1_69987:
-	from right1_t3_1_69987
-	S_t3 ^= 'BLANK
-	goto right_t3_1_69987
-
-right_t3_1_69987:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_69987
-		else right_1p_t3_1_69987
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_69987
-		else right_2p_t2_1_69987
+		goto load_right_2b_t2_1_69987
+		else load_right_2p_t2_1_69987
 
-right_2b_t2_1_69987:
-	from right_t3_1_69987
+load_right_2b_t2_1_69987:
+	from symbol_1_69984
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_69987
+	goto load_right_t2_1_69987
 
-right1_t2_1_69987:
+load_right_t2_1_69987:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_69987
-		else right_2p_t2_1_69987
+		from load_right_2b_t2_1_69987
+		else load_right_2p_t2_1_69987
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_69987
+		else load_right_2p_t3_1_69987
+
+load_right_2b_t3_1_69987:
+	from load_right_t2_1_69987
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_69987
+
+load_right_t3_1_69987:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_69987
+		else load_right_2p_t3_1_69987
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_69987
+		else save_right_1p_t3_1_69987
+
+save_right_1b_t3_1_69987:
+	from load_right_t3_1_69987
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_69987
+
+save_right_t3_1_69987:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_69987
+		else save_right_1p_t3_1_69987
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_69987
-		else right_1p_t2_1_69987
+		goto save_right_1b_t2_1_69987
+		else save_right_1p_t2_1_69987
 
-right_1b_t2_1_69987:
-	from right1_t2_1_69987
+save_right_1b_t2_1_69987:
+	from save_right_t3_1_69987
 	S_t2 ^= 'BLANK
-	goto right_t2_1_69987
+	goto save_right_t2_1_69987
 
-right_t2_1_69987:
+save_right_t2_1_69987:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_69987
-		else right_1p_t2_1_69987
+		from save_right_1b_t2_1_69987
+		else save_right_1p_t2_1_69987
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_69993
 		else symbol_1_69993
 
 symbol1_1_69993:
-	from right_t2_1_69987
+	from save_right_t2_1_69987
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -4016,37 +4016,37 @@ symbol_1_70002:
 		from symbol1_1_71491
 		else symbol_1_69999
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_70005
-		else right_2p_t2_1_70005
+		goto load_right_2b_t2_1_70005
+		else load_right_2p_t2_1_70005
 
-right_2b_t2_1_70005:
+load_right_2b_t2_1_70005:
 	from symbol_1_70002
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_70005
+	goto load_right_t2_1_70005
 
-right1_t2_1_70005:
+load_right_t2_1_70005:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_70005
-		else right_2p_t2_1_70005
+		from load_right_2b_t2_1_70005
+		else load_right_2p_t2_1_70005
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_70005
-		else right_1p_t2_1_70005
+		goto save_right_1b_t2_1_70005
+		else save_right_1p_t2_1_70005
 
-right_1b_t2_1_70005:
-	from right1_t2_1_70005
+save_right_1b_t2_1_70005:
+	from load_right_t2_1_70005
 	S_t2 ^= 'BLANK
-	goto right_t2_1_70005
+	goto save_right_t2_1_70005
 
-right_t2_1_70005:
+save_right_t2_1_70005:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_70005
-		else right_1p_t2_1_70005
+		from save_right_1b_t2_1_70005
+		else save_right_1p_t2_1_70005
 	if (((S_t1 = 'BLANK) && (S_t2 = 'M)) && (S_t3 = '#))
 		goto symbol1_1_71475
 		else symbol_1_71475
 
 symbol1_1_71475:
-	from right_t2_1_70005
+	from save_right_t2_1_70005
 	S_t3 ^= '#
 	S_t2 ^= 'M
 	S_t1 ^= 'BLANK
@@ -4056,7 +4056,7 @@ symbol1_1_71475:
 	goto symbol_1_4589
 
 symbol_1_71475:
-	from right_t2_1_70005
+	from save_right_t2_1_70005
 	if (((S_t1 = '1) && (S_t2 = 'M)) && (S_t3 = '#))
 		goto symbol1_1_71479
 		else symbol_1_71479
@@ -4082,18 +4082,18 @@ symbol_1_71479:
 	S_t3 ^= '#
 	goto symbol_1_4595
 
-right_1p_t2_1_70005:
-	from right1_t2_1_70005
+save_right_1p_t2_1_70005:
+	from load_right_t2_1_70005
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_70005
+	goto save_right_t2_1_70005
 
-right_2p_t2_1_70005:
+load_right_2p_t2_1_70005:
 	from symbol_1_70002
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_70005
+	goto load_right_t2_1_70005
 
 symbol_1_69993:
-	from right_t2_1_69987
+	from save_right_t2_1_69987
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_71487
 		else symbol_1_71487
@@ -4215,28 +4215,28 @@ symbol_1_74296:
 	S_t3 ^= '0
 	goto symbol_1_69984
 
-right_1p_t2_1_69987:
-	from right1_t2_1_69987
+save_right_1p_t2_1_69987:
+	from save_right_t3_1_69987
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_69987
+	goto save_right_t2_1_69987
 
-right_2p_t2_1_69987:
-	from right_t3_1_69987
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_69987
-
-right_1p_t3_1_69987:
-	from right1_t3_1_69987
+save_right_1p_t3_1_69987:
+	from load_right_t3_1_69987
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_69987
+	goto save_right_t3_1_69987
 
-right_2p_t3_1_69987:
-	from symbol_1_69984
+load_right_2p_t3_1_69987:
+	from load_right_t2_1_69987
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_69987
+	goto load_right_t3_1_69987
+
+load_right_2p_t2_1_69987:
+	from symbol_1_69984
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_69987
 
 symbol_1_69903:
-	from left_t2_1_69897
+	from save_left_t2_1_69897
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_74302
 		else symbol_1_74302
@@ -4598,28 +4598,28 @@ symbol_1_77126:
 	S_t3 ^= '0
 	goto symbol_1_69894
 
-left_1p_t2_1_69897:
-	from left1_t2_1_69897
+save_left_1p_t2_1_69897:
+	from save_left_t3_1_69897
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_69897
+	goto save_left_t2_1_69897
 
-left_2p_t2_1_69897:
-	from left_t3_1_69897
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_69897
-
-left_1p_t3_1_69897:
-	from left1_t3_1_69897
+save_left_1p_t3_1_69897:
+	from load_left_t3_1_69897
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_69897
+	goto save_left_t3_1_69897
 
-left_2p_t3_1_69897:
-	from symbol_1_69894
+load_left_2p_t3_1_69897:
+	from load_left_t2_1_69897
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_69897
+	goto load_left_t3_1_69897
+
+load_left_2p_t2_1_69897:
+	from symbol_1_69894
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_69897
 
 symbol_1_69867:
-	from right_t3_1_69861
+	from save_right_t3_1_69861
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_77132
 		else symbol_1_77132
@@ -4741,18 +4741,18 @@ symbol_1_79941:
 	S_t3 ^= '0
 	goto symbol_1_69858
 
-right_1p_t3_1_69861:
-	from right1_t3_1_69861
+save_right_1p_t3_1_69861:
+	from load_right_t3_1_69861
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_69861
+	goto save_right_t3_1_69861
 
-right_2p_t3_1_69861:
+load_right_2p_t3_1_69861:
 	from symbol_1_69858
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_69861
+	goto load_right_t3_1_69861
 
 symbol_1_69831:
-	from right_t2_1_69825
+	from save_right_t2_1_69825
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_79947
 		else symbol_1_79947
@@ -4874,15 +4874,15 @@ symbol_1_82756:
 	S_t3 ^= '#
 	goto symbol_1_69822
 
-right_1p_t2_1_69825:
-	from right1_t2_1_69825
+save_right_1p_t2_1_69825:
+	from load_right_t2_1_69825
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_69825
+	goto save_right_t2_1_69825
 
-right_2p_t2_1_69825:
+load_right_2p_t2_1_69825:
 	from symbol_1_69822
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_69825
+	goto load_right_t2_1_69825
 
 symbol_1_69795:
 	from symbol_1_69162
@@ -4917,7 +4917,7 @@ symbol1_1_82766:
 	goto symbol_1_69804
 
 symbol_1_69153:
-	from right_t2_1_69147
+	from save_right_t2_1_69147
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_84935
 		else symbol_1_84935
@@ -5231,15 +5231,15 @@ symbol_1_87756:
 	S_t3 ^= '#
 	goto symbol_1_69144
 
-right_1p_t2_1_69147:
-	from right1_t2_1_69147
+save_right_1p_t2_1_69147:
+	from load_right_t2_1_69147
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_69147
+	goto save_right_t2_1_69147
 
-right_2p_t2_1_69147:
+load_right_2p_t2_1_69147:
 	from symbol_1_69144
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_69147
+	goto load_right_t2_1_69147
 
 symbol_1_69081:
 	from symbol_1_66301
@@ -5274,7 +5274,7 @@ symbol1_1_87762:
 	goto symbol_1_69090
 
 symbol_1_66292:
-	from right_t2_1_63487
+	from save_right_t2_1_63487
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_87786
 		else symbol_1_87786
@@ -5396,18 +5396,18 @@ symbol_1_87798:
 	S_t3 ^= '#
 	goto symbol_1_63486
 
-right_1p_t2_1_63487:
-	from right1_t2_1_63487
+save_right_1p_t2_1_63487:
+	from load_right_t2_1_63487
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_63487
+	goto save_right_t2_1_63487
 
-right_2p_t2_1_63487:
+load_right_2p_t2_1_63487:
 	from symbol_1_63486
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_63487
+	goto load_right_t2_1_63487
 
 symbol_1_60674:
-	from left_t3_1_57869
+	from save_left_t3_1_57869
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_87802
 		else symbol_1_87802
@@ -5529,18 +5529,18 @@ symbol_1_87814:
 	S_t3 ^= '0
 	goto symbol_1_57868
 
-left_1p_t3_1_57869:
-	from left1_t3_1_57869
+save_left_1p_t3_1_57869:
+	from load_left_t3_1_57869
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_57869
+	goto save_left_t3_1_57869
 
-left_2p_t3_1_57869:
+load_left_2p_t3_1_57869:
 	from symbol_1_57868
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_57869
+	goto load_left_t3_1_57869
 
 symbol_1_55056:
-	from left_t2_1_52251
+	from save_left_t2_1_52251
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_87818
 		else symbol_1_87818
@@ -5662,28 +5662,28 @@ symbol_1_87830:
 	S_t3 ^= '0
 	goto symbol_1_52250
 
-left_1p_t2_1_52251:
-	from left1_t2_1_52251
+save_left_1p_t2_1_52251:
+	from save_right_t3_1_52251
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_52251
+	goto save_left_t2_1_52251
 
-left_2p_t2_1_52251:
-	from right_t3_1_52251
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_52251
-
-right_1p_t3_1_52251:
-	from right1_t3_1_52251
+save_right_1p_t3_1_52251:
+	from load_right_t3_1_52251
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_52251
+	goto save_right_t3_1_52251
 
-right_2p_t3_1_52251:
-	from symbol_1_52250
+load_right_2p_t3_1_52251:
+	from load_left_t2_1_52251
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_52251
+	goto load_right_t3_1_52251
+
+load_left_2p_t2_1_52251:
+	from symbol_1_52250
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_52251
 
 symbol_1_49438:
-	from right_t2_1_46651
+	from save_right_t2_1_46651
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_87834
 		else symbol_1_87834
@@ -6048,37 +6048,37 @@ symbol_1_87937:
 		from symbol_1_119573
 		else symbol_1_87934
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_87940
-		else right_2p_t3_1_87940
+		goto load_right_2b_t3_1_87940
+		else load_right_2p_t3_1_87940
 
-right_2b_t3_1_87940:
+load_right_2b_t3_1_87940:
 	from symbol_1_87937
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_87940
+	goto load_right_t3_1_87940
 
-right1_t3_1_87940:
+load_right_t3_1_87940:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_87940
-		else right_2p_t3_1_87940
+		from load_right_2b_t3_1_87940
+		else load_right_2p_t3_1_87940
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_87940
-		else right_1p_t3_1_87940
+		goto save_right_1b_t3_1_87940
+		else save_right_1p_t3_1_87940
 
-right_1b_t3_1_87940:
-	from right1_t3_1_87940
+save_right_1b_t3_1_87940:
+	from load_right_t3_1_87940
 	S_t3 ^= 'BLANK
-	goto right_t3_1_87940
+	goto save_right_t3_1_87940
 
-right_t3_1_87940:
+save_right_t3_1_87940:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_87940
-		else right_1p_t3_1_87940
+		from save_right_1b_t3_1_87940
+		else save_right_1p_t3_1_87940
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_87946
 		else symbol_1_87946
 
 symbol1_1_87946:
-	from right_t3_1_87940
+	from save_right_t3_1_87940
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6237,37 +6237,37 @@ symbol_1_88021:
 		from symbol_1_113955
 		else symbol_1_88018
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_88024
-		else left_2p_t2_1_88024
+		goto load_left_2b_t2_1_88024
+		else load_left_2p_t2_1_88024
 
-left_2b_t2_1_88024:
+load_left_2b_t2_1_88024:
 	from symbol_1_88021
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_88024
+	goto load_left_t2_1_88024
 
-left1_t2_1_88024:
+load_left_t2_1_88024:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_88024
-		else left_2p_t2_1_88024
+		from load_left_2b_t2_1_88024
+		else load_left_2p_t2_1_88024
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_88024
-		else left_1p_t2_1_88024
+		goto save_left_1b_t2_1_88024
+		else save_left_1p_t2_1_88024
 
-left_1b_t2_1_88024:
-	from left1_t2_1_88024
+save_left_1b_t2_1_88024:
+	from load_left_t2_1_88024
 	S_t2 ^= 'BLANK
-	goto left_t2_1_88024
+	goto save_left_t2_1_88024
 
-left_t2_1_88024:
+save_left_t2_1_88024:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_88024
-		else left_1p_t2_1_88024
+		from save_left_1b_t2_1_88024
+		else save_left_1p_t2_1_88024
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_88030
 		else symbol_1_88030
 
 symbol1_1_88030:
-	from left_t2_1_88024
+	from save_left_t2_1_88024
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6322,64 +6322,64 @@ symbol_1_88105:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		from symbol1_1_108389
 		else symbol_1_88102
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_88108
-		else left_2p_t3_1_88108
-
-left_2b_t3_1_88108:
-	from symbol_1_88105
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_88108
-
-left1_t3_1_88108:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_88108
-		else left_2p_t3_1_88108
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_88108
-		else left_1p_t3_1_88108
-
-left_1b_t3_1_88108:
-	from left1_t3_1_88108
-	S_t3 ^= 'BLANK
-	goto left_t3_1_88108
-
-left_t3_1_88108:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_88108
-		else left_1p_t3_1_88108
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_88108
-		else right_2p_t2_1_88108
+		goto load_right_2b_t2_1_88108
+		else load_right_2p_t2_1_88108
 
-right_2b_t2_1_88108:
-	from left_t3_1_88108
+load_right_2b_t2_1_88108:
+	from symbol_1_88105
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_88108
+	goto load_right_t2_1_88108
 
-right1_t2_1_88108:
+load_right_t2_1_88108:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_88108
-		else right_2p_t2_1_88108
+		from load_right_2b_t2_1_88108
+		else load_right_2p_t2_1_88108
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_88108
+		else load_left_2p_t3_1_88108
+
+load_left_2b_t3_1_88108:
+	from load_right_t2_1_88108
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_88108
+
+load_left_t3_1_88108:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_88108
+		else load_left_2p_t3_1_88108
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_88108
+		else save_left_1p_t3_1_88108
+
+save_left_1b_t3_1_88108:
+	from load_left_t3_1_88108
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_88108
+
+save_left_t3_1_88108:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_88108
+		else save_left_1p_t3_1_88108
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_88108
-		else right_1p_t2_1_88108
+		goto save_right_1b_t2_1_88108
+		else save_right_1p_t2_1_88108
 
-right_1b_t2_1_88108:
-	from right1_t2_1_88108
+save_right_1b_t2_1_88108:
+	from save_left_t3_1_88108
 	S_t2 ^= 'BLANK
-	goto right_t2_1_88108
+	goto save_right_t2_1_88108
 
-right_t2_1_88108:
+save_right_t2_1_88108:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_88108
-		else right_1p_t2_1_88108
+		from save_right_1b_t2_1_88108
+		else save_right_1p_t2_1_88108
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_88114
 		else symbol_1_88114
 
 symbol1_1_88114:
-	from right_t2_1_88108
+	from save_right_t2_1_88108
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6400,37 +6400,37 @@ symbol_1_88123:
 		from symbol1_1_105511
 		else symbol_1_88120
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_88126
-		else right_2p_t2_1_88126
+		goto load_right_2b_t2_1_88126
+		else load_right_2p_t2_1_88126
 
-right_2b_t2_1_88126:
+load_right_2b_t2_1_88126:
 	from symbol_1_88123
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_88126
+	goto load_right_t2_1_88126
 
-right1_t2_1_88126:
+load_right_t2_1_88126:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_88126
-		else right_2p_t2_1_88126
+		from load_right_2b_t2_1_88126
+		else load_right_2p_t2_1_88126
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_88126
-		else right_1p_t2_1_88126
+		goto save_right_1b_t2_1_88126
+		else save_right_1p_t2_1_88126
 
-right_1b_t2_1_88126:
-	from right1_t2_1_88126
+save_right_1b_t2_1_88126:
+	from load_right_t2_1_88126
 	S_t2 ^= 'BLANK
-	goto right_t2_1_88126
+	goto save_right_t2_1_88126
 
-right_t2_1_88126:
+save_right_t2_1_88126:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_88126
-		else right_1p_t2_1_88126
+		from save_right_1b_t2_1_88126
+		else save_right_1p_t2_1_88126
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_88132
 		else symbol_1_88132
 
 symbol1_1_88132:
-	from right_t2_1_88126
+	from save_right_t2_1_88126
 	S_t3 ^= 'BLANK
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -6450,64 +6450,64 @@ symbol_1_88141:
 	fi (((S_t1 = '0) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		from symbol1_1_105379
 		else symbol_1_88138
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_88162
-		else right_2p_t2_1_88162
-
-right_2b_t2_1_88162:
-	from symbol_1_88141
-	S_t2 ^= 'BLANK
-	goto right1_t2_1_88162
-
-right1_t2_1_88162:
-	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_88162
-		else right_2p_t2_1_88162
-	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_88162
-		else right_1p_t2_1_88162
-
-right_1b_t2_1_88162:
-	from right1_t2_1_88162
-	S_t2 ^= 'BLANK
-	goto right_t2_1_88162
-
-right_t2_1_88162:
-	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_88162
-		else right_1p_t2_1_88162
 	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto right_2b_t1_1_88162
-		else right_2p_t1_1_88162
+		goto load_right_2b_t1_1_88162
+		else load_right_2p_t1_1_88162
 
-right_2b_t1_1_88162:
-	from right_t2_1_88162
+load_right_2b_t1_1_88162:
+	from symbol_1_88141
 	S_t1 ^= 'BLANK
-	goto right1_t1_1_88162
+	goto load_right_t1_1_88162
 
-right1_t1_1_88162:
+load_right_t1_1_88162:
 	fi (S_right_t1 = 'nil)
-		from right_2b_t1_1_88162
-		else right_2p_t1_1_88162
+		from load_right_2b_t1_1_88162
+		else load_right_2p_t1_1_88162
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto load_right_2b_t2_1_88162
+		else load_right_2p_t2_1_88162
+
+load_right_2b_t2_1_88162:
+	from load_right_t1_1_88162
+	S_t2 ^= 'BLANK
+	goto load_right_t2_1_88162
+
+load_right_t2_1_88162:
+	fi (S_right_t2 = 'nil)
+		from load_right_2b_t2_1_88162
+		else load_right_2p_t2_1_88162
+	if (S_left_t2 = 'nil)
+		goto save_right_1b_t2_1_88162
+		else save_right_1p_t2_1_88162
+
+save_right_1b_t2_1_88162:
+	from load_right_t2_1_88162
+	S_t2 ^= 'BLANK
+	goto save_right_t2_1_88162
+
+save_right_t2_1_88162:
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		from save_right_1b_t2_1_88162
+		else save_right_1p_t2_1_88162
 	if (S_left_t1 = 'nil)
-		goto right_1b_t1_1_88162
-		else right_1p_t1_1_88162
+		goto save_right_1b_t1_1_88162
+		else save_right_1p_t1_1_88162
 
-right_1b_t1_1_88162:
-	from right1_t1_1_88162
+save_right_1b_t1_1_88162:
+	from save_right_t2_1_88162
 	S_t1 ^= 'BLANK
-	goto right_t1_1_88162
+	goto save_right_t1_1_88162
 
-right_t1_1_88162:
+save_right_t1_1_88162:
 	fi ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		from right_1b_t1_1_88162
-		else right_1p_t1_1_88162
+		from save_right_1b_t1_1_88162
+		else save_right_1p_t1_1_88162
 	if (((S_t1 = 'BLANK) && (S_t2 = '0)) && (S_t3 = 'BLANK))
 		goto symbol1_1_88174
 		else symbol_1_88174
 
 symbol1_1_88174:
-	from right_t1_1_88162
+	from save_right_t1_1_88162
 	S_t3 ^= 'BLANK
 	S_t2 ^= '0
 	S_t1 ^= 'BLANK
@@ -6564,37 +6564,37 @@ symbol_1_88201:
 		from symbol_1_105491
 		else symbol_1_88198
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_88204
-		else right_2p_t2_1_88204
+		goto load_right_2b_t2_1_88204
+		else load_right_2p_t2_1_88204
 
-right_2b_t2_1_88204:
+load_right_2b_t2_1_88204:
 	from symbol_1_88201
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_88204
+	goto load_right_t2_1_88204
 
-right1_t2_1_88204:
+load_right_t2_1_88204:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_88204
-		else right_2p_t2_1_88204
+		from load_right_2b_t2_1_88204
+		else load_right_2p_t2_1_88204
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_88204
-		else right_1p_t2_1_88204
+		goto save_right_1b_t2_1_88204
+		else save_right_1p_t2_1_88204
 
-right_1b_t2_1_88204:
-	from right1_t2_1_88204
+save_right_1b_t2_1_88204:
+	from load_right_t2_1_88204
 	S_t2 ^= 'BLANK
-	goto right_t2_1_88204
+	goto save_right_t2_1_88204
 
-right_t2_1_88204:
+save_right_t2_1_88204:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_88204
-		else right_1p_t2_1_88204
+		from save_right_1b_t2_1_88204
+		else save_right_1p_t2_1_88204
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_88264
 		else symbol_1_88264
 
 symbol1_1_88264:
-	from right_t2_1_88204
+	from save_right_t2_1_88204
 	S_t3 ^= 'BLANK
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6619,64 +6619,64 @@ symbol_1_88273:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = '#))
 		from symbol_1_105359
 		else symbol_1_88270
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_88276
-		else right_2p_t3_1_88276
-
-right_2b_t3_1_88276:
-	from symbol_1_88273
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_88276
-
-right1_t3_1_88276:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_88276
-		else right_2p_t3_1_88276
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_88276
-		else right_1p_t3_1_88276
-
-right_1b_t3_1_88276:
-	from right1_t3_1_88276
-	S_t3 ^= 'BLANK
-	goto right_t3_1_88276
-
-right_t3_1_88276:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_88276
-		else right_1p_t3_1_88276
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_88276
-		else right_2p_t2_1_88276
+		goto load_right_2b_t2_1_88276
+		else load_right_2p_t2_1_88276
 
-right_2b_t2_1_88276:
-	from right_t3_1_88276
+load_right_2b_t2_1_88276:
+	from symbol_1_88273
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_88276
+	goto load_right_t2_1_88276
 
-right1_t2_1_88276:
+load_right_t2_1_88276:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_88276
-		else right_2p_t2_1_88276
+		from load_right_2b_t2_1_88276
+		else load_right_2p_t2_1_88276
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_88276
+		else load_right_2p_t3_1_88276
+
+load_right_2b_t3_1_88276:
+	from load_right_t2_1_88276
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_88276
+
+load_right_t3_1_88276:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_88276
+		else load_right_2p_t3_1_88276
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_88276
+		else save_right_1p_t3_1_88276
+
+save_right_1b_t3_1_88276:
+	from load_right_t3_1_88276
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_88276
+
+save_right_t3_1_88276:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_88276
+		else save_right_1p_t3_1_88276
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_88276
-		else right_1p_t2_1_88276
+		goto save_right_1b_t2_1_88276
+		else save_right_1p_t2_1_88276
 
-right_1b_t2_1_88276:
-	from right1_t2_1_88276
+save_right_1b_t2_1_88276:
+	from save_right_t3_1_88276
 	S_t2 ^= 'BLANK
-	goto right_t2_1_88276
+	goto save_right_t2_1_88276
 
-right_t2_1_88276:
+save_right_t2_1_88276:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_88276
-		else right_1p_t2_1_88276
+		from save_right_1b_t2_1_88276
+		else save_right_1p_t2_1_88276
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_88282
 		else symbol_1_88282
 
 symbol1_1_88282:
-	from right_t2_1_88276
+	from save_right_t2_1_88276
 	S_t3 ^= 'BLANK
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6763,37 +6763,37 @@ symbol_1_88321:
 		from symbol_1_99672
 		else symbol_1_88318
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_88324
-		else left_2p_t3_1_88324
+		goto load_left_2b_t3_1_88324
+		else load_left_2p_t3_1_88324
 
-left_2b_t3_1_88324:
+load_left_2b_t3_1_88324:
 	from symbol_1_88321
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_88324
+	goto load_left_t3_1_88324
 
-left1_t3_1_88324:
+load_left_t3_1_88324:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_88324
-		else left_2p_t3_1_88324
+		from load_left_2b_t3_1_88324
+		else load_left_2p_t3_1_88324
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_88324
-		else left_1p_t3_1_88324
+		goto save_left_1b_t3_1_88324
+		else save_left_1p_t3_1_88324
 
-left_1b_t3_1_88324:
-	from left1_t3_1_88324
+save_left_1b_t3_1_88324:
+	from load_left_t3_1_88324
 	S_t3 ^= 'BLANK
-	goto left_t3_1_88324
+	goto save_left_t3_1_88324
 
-left_t3_1_88324:
+save_left_t3_1_88324:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_88324
-		else left_1p_t3_1_88324
+		from save_left_1b_t3_1_88324
+		else save_left_1p_t3_1_88324
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_88330
 		else symbol_1_88330
 
 symbol1_1_88330:
-	from left_t3_1_88324
+	from save_left_t3_1_88324
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -6952,37 +6952,37 @@ symbol_1_88405:
 		from symbol_1_94054
 		else symbol_1_88402
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_88408
-		else left_2p_t2_1_88408
+		goto load_left_2b_t2_1_88408
+		else load_left_2p_t2_1_88408
 
-left_2b_t2_1_88408:
+load_left_2b_t2_1_88408:
 	from symbol_1_88405
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_88408
+	goto load_left_t2_1_88408
 
-left1_t2_1_88408:
+load_left_t2_1_88408:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_88408
-		else left_2p_t2_1_88408
+		from load_left_2b_t2_1_88408
+		else load_left_2p_t2_1_88408
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_88408
-		else left_1p_t2_1_88408
+		goto save_left_1b_t2_1_88408
+		else save_left_1p_t2_1_88408
 
-left_1b_t2_1_88408:
-	from left1_t2_1_88408
+save_left_1b_t2_1_88408:
+	from load_left_t2_1_88408
 	S_t2 ^= 'BLANK
-	goto left_t2_1_88408
+	goto save_left_t2_1_88408
 
-left_t2_1_88408:
+save_left_t2_1_88408:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_88408
-		else left_1p_t2_1_88408
+		from save_left_1b_t2_1_88408
+		else save_left_1p_t2_1_88408
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_88414
 		else symbol_1_88414
 
 symbol1_1_88414:
-	from left_t2_1_88408
+	from save_left_t2_1_88408
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -7054,7 +7054,7 @@ symbol1_1_88578:
 	goto symbol_1_69966
 
 symbol_1_88414:
-	from left_t2_1_88408
+	from save_left_t2_1_88408
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_91233
 		else symbol_1_91233
@@ -7368,15 +7368,15 @@ symbol_1_94054:
 	S_t3 ^= '#
 	goto symbol_1_88405
 
-left_1p_t2_1_88408:
-	from left1_t2_1_88408
+save_left_1p_t2_1_88408:
+	from load_left_t2_1_88408
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_88408
+	goto save_left_t2_1_88408
 
-left_2p_t2_1_88408:
+load_left_2p_t2_1_88408:
 	from symbol_1_88405
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_88408
+	goto load_left_t2_1_88408
 
 symbol_1_88342:
 	from symbol_1_88339
@@ -7411,7 +7411,7 @@ symbol1_1_94064:
 	goto symbol_1_88351
 
 symbol_1_88330:
-	from left_t3_1_88324
+	from save_left_t3_1_88324
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_96863
 		else symbol_1_96863
@@ -7533,15 +7533,15 @@ symbol_1_99672:
 	S_t3 ^= '0
 	goto symbol_1_88321
 
-left_1p_t3_1_88324:
-	from left1_t3_1_88324
+save_left_1p_t3_1_88324:
+	from load_left_t3_1_88324
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_88324
+	goto save_left_t3_1_88324
 
-left_2p_t3_1_88324:
+load_left_2p_t3_1_88324:
 	from symbol_1_88321
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_88324
+	goto load_left_t3_1_88324
 
 symbol_1_88294:
 	from symbol_1_88291
@@ -7576,7 +7576,7 @@ symbol1_1_99682:
 	goto symbol_1_88303
 
 symbol_1_88282:
-	from right_t2_1_88276
+	from save_right_t2_1_88276
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_102481
 		else symbol_1_102481
@@ -7993,28 +7993,28 @@ symbol_1_105353:
 	S_t3 ^= '0
 	goto symbol_1_105321
 
-right_1p_t2_1_88276:
-	from right1_t2_1_88276
+save_right_1p_t2_1_88276:
+	from save_right_t3_1_88276
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_88276
+	goto save_right_t2_1_88276
 
-right_2p_t2_1_88276:
-	from right_t3_1_88276
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_88276
-
-right_1p_t3_1_88276:
-	from right1_t3_1_88276
+save_right_1p_t3_1_88276:
+	from load_right_t3_1_88276
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_88276
+	goto save_right_t3_1_88276
 
-right_2p_t3_1_88276:
-	from symbol_1_88273
+load_right_2p_t3_1_88276:
+	from load_right_t2_1_88276
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_88276
+	goto load_right_t3_1_88276
+
+load_right_2p_t2_1_88276:
+	from symbol_1_88273
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_88276
 
 symbol_1_88264:
-	from right_t2_1_88204
+	from save_right_t2_1_88204
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105359
 		else symbol_1_105359
@@ -8040,18 +8040,18 @@ symbol_1_105359:
 	S_t3 ^= '#
 	goto symbol_1_88273
 
-right_1p_t2_1_88204:
-	from right1_t2_1_88204
+save_right_1p_t2_1_88204:
+	from load_right_t2_1_88204
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_88204
+	goto save_right_t2_1_88204
 
-right_2p_t2_1_88204:
+load_right_2p_t2_1_88204:
 	from symbol_1_88201
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_88204
+	goto load_right_t2_1_88204
 
 symbol_1_88174:
-	from right_t1_1_88162
+	from save_right_t1_1_88162
 	if (((S_t1 = '1) && (S_t2 = '0)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105367
 		else symbol_1_105367
@@ -8077,28 +8077,28 @@ symbol_1_105367:
 	S_t3 ^= 'BLANK
 	goto symbol_1_88183
 
-right_1p_t1_1_88162:
-	from right1_t1_1_88162
+save_right_1p_t1_1_88162:
+	from save_right_t2_1_88162
 	(S_t1 . S_left_t1) <- S_left_t1
-	goto right_t1_1_88162
+	goto save_right_t1_1_88162
 
-right_2p_t1_1_88162:
-	from right_t2_1_88162
-	S_right_t1 <- (S_t1 . S_right_t1)
-	goto right1_t1_1_88162
-
-right_1p_t2_1_88162:
-	from right1_t2_1_88162
+save_right_1p_t2_1_88162:
+	from load_right_t2_1_88162
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_88162
+	goto save_right_t2_1_88162
 
-right_2p_t2_1_88162:
-	from symbol_1_88141
+load_right_2p_t2_1_88162:
+	from load_right_t1_1_88162
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_88162
+	goto load_right_t2_1_88162
+
+load_right_2p_t1_1_88162:
+	from symbol_1_88141
+	S_right_t1 <- (S_t1 . S_right_t1)
+	goto load_right_t1_1_88162
 
 symbol_1_88132:
-	from right_t2_1_88126
+	from save_right_t2_1_88126
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105375
 		else symbol_1_105375
@@ -8157,37 +8157,37 @@ symbol_1_105392:
 		from symbol1_1_105441
 		else symbol_1_105389
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_105407
-		else right_2p_t2_1_105407
+		goto load_right_2b_t2_1_105407
+		else load_right_2p_t2_1_105407
 
-right_2b_t2_1_105407:
+load_right_2b_t2_1_105407:
 	from symbol_1_105392
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_105407
+	goto load_right_t2_1_105407
 
-right1_t2_1_105407:
+load_right_t2_1_105407:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_105407
-		else right_2p_t2_1_105407
+		from load_right_2b_t2_1_105407
+		else load_right_2p_t2_1_105407
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_105407
-		else right_1p_t2_1_105407
+		goto save_right_1b_t2_1_105407
+		else save_right_1p_t2_1_105407
 
-right_1b_t2_1_105407:
-	from right1_t2_1_105407
+save_right_1b_t2_1_105407:
+	from load_right_t2_1_105407
 	S_t2 ^= 'BLANK
-	goto right_t2_1_105407
+	goto save_right_t2_1_105407
 
-right_t2_1_105407:
+save_right_t2_1_105407:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_105407
-		else right_1p_t2_1_105407
+		from save_right_1b_t2_1_105407
+		else save_right_1p_t2_1_105407
 	if (((S_t1 = 'BLANK) && (S_t2 = 'B)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105425
 		else symbol_1_105425
 
 symbol1_1_105425:
-	from right_t2_1_105407
+	from save_right_t2_1_105407
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'B
 	S_t1 ^= 'BLANK
@@ -8197,7 +8197,7 @@ symbol1_1_105425:
 	goto symbol_1_88186
 
 symbol_1_105425:
-	from right_t2_1_105407
+	from save_right_t2_1_105407
 	if (((S_t1 = '1) && (S_t2 = 'B)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105429
 		else symbol_1_105429
@@ -8223,15 +8223,15 @@ symbol_1_105429:
 	S_t3 ^= 'BLANK
 	goto symbol_1_88192
 
-right_1p_t2_1_105407:
-	from right1_t2_1_105407
+save_right_1p_t2_1_105407:
+	from load_right_t2_1_105407
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_105407
+	goto save_right_t2_1_105407
 
-right_2p_t2_1_105407:
+load_right_2p_t2_1_105407:
 	from symbol_1_105392
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_105407
+	goto load_right_t2_1_105407
 
 symbol_1_105383:
 	from symbol_1_105379
@@ -8292,64 +8292,64 @@ symbol_1_105454:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = 'BLANK))
 		from symbol_1_105499
 		else symbol_1_105451
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_105463
-		else right_2p_t2_1_105463
-
-right_2b_t2_1_105463:
-	from symbol_1_105454
-	S_t2 ^= 'BLANK
-	goto right1_t2_1_105463
-
-right1_t2_1_105463:
-	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_105463
-		else right_2p_t2_1_105463
-	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_105463
-		else right_1p_t2_1_105463
-
-right_1b_t2_1_105463:
-	from right1_t2_1_105463
-	S_t2 ^= 'BLANK
-	goto right_t2_1_105463
-
-right_t2_1_105463:
-	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_105463
-		else right_1p_t2_1_105463
 	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
-		goto left_2b_t1_1_105463
-		else left_2p_t1_1_105463
+		goto load_left_2b_t1_1_105463
+		else load_left_2p_t1_1_105463
 
-left_2b_t1_1_105463:
-	from right_t2_1_105463
+load_left_2b_t1_1_105463:
+	from symbol_1_105454
 	S_t1 ^= 'BLANK
-	goto left1_t1_1_105463
+	goto load_left_t1_1_105463
 
-left1_t1_1_105463:
+load_left_t1_1_105463:
 	fi (S_left_t1 = 'nil)
-		from left_2b_t1_1_105463
-		else left_2p_t1_1_105463
+		from load_left_2b_t1_1_105463
+		else load_left_2p_t1_1_105463
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+		goto load_right_2b_t2_1_105463
+		else load_right_2p_t2_1_105463
+
+load_right_2b_t2_1_105463:
+	from load_left_t1_1_105463
+	S_t2 ^= 'BLANK
+	goto load_right_t2_1_105463
+
+load_right_t2_1_105463:
+	fi (S_right_t2 = 'nil)
+		from load_right_2b_t2_1_105463
+		else load_right_2p_t2_1_105463
+	if (S_left_t2 = 'nil)
+		goto save_right_1b_t2_1_105463
+		else save_right_1p_t2_1_105463
+
+save_right_1b_t2_1_105463:
+	from load_right_t2_1_105463
+	S_t2 ^= 'BLANK
+	goto save_right_t2_1_105463
+
+save_right_t2_1_105463:
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+		from save_right_1b_t2_1_105463
+		else save_right_1p_t2_1_105463
 	if (S_right_t1 = 'nil)
-		goto left_1b_t1_1_105463
-		else left_1p_t1_1_105463
+		goto save_left_1b_t1_1_105463
+		else save_left_1p_t1_1_105463
 
-left_1b_t1_1_105463:
-	from left1_t1_1_105463
+save_left_1b_t1_1_105463:
+	from save_right_t2_1_105463
 	S_t1 ^= 'BLANK
-	goto left_t1_1_105463
+	goto save_left_t1_1_105463
 
-left_t1_1_105463:
+save_left_t1_1_105463:
 	fi ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
-		from left_1b_t1_1_105463
-		else left_1p_t1_1_105463
+		from save_left_1b_t1_1_105463
+		else save_left_1p_t1_1_105463
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105487
 		else symbol_1_105487
 
 symbol1_1_105487:
-	from left_t1_1_105463
+	from save_left_t1_1_105463
 	S_t3 ^= 'BLANK
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -8359,7 +8359,7 @@ symbol1_1_105487:
 	goto symbol_1_88195
 
 symbol_1_105487:
-	from left_t1_1_105463
+	from save_left_t1_1_105463
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_105491
 		else symbol_1_105491
@@ -8385,25 +8385,25 @@ symbol_1_105491:
 	S_t3 ^= 'BLANK
 	goto symbol_1_88201
 
-left_1p_t1_1_105463:
-	from left1_t1_1_105463
+save_left_1p_t1_1_105463:
+	from save_right_t2_1_105463
 	(S_t1 . S_right_t1) <- S_right_t1
-	goto left_t1_1_105463
+	goto save_left_t1_1_105463
 
-left_2p_t1_1_105463:
-	from right_t2_1_105463
-	S_left_t1 <- (S_t1 . S_left_t1)
-	goto left1_t1_1_105463
-
-right_1p_t2_1_105463:
-	from right1_t2_1_105463
+save_right_1p_t2_1_105463:
+	from load_right_t2_1_105463
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_105463
+	goto save_right_t2_1_105463
 
-right_2p_t2_1_105463:
-	from symbol_1_105454
+load_right_2p_t2_1_105463:
+	from load_left_t1_1_105463
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_105463
+	goto load_right_t2_1_105463
+
+load_left_2p_t1_1_105463:
+	from symbol_1_105454
+	S_left_t1 <- (S_t1 . S_left_t1)
+	goto load_left_t1_1_105463
 
 symbol_1_105445:
 	from symbol_1_105441
@@ -8432,18 +8432,18 @@ symbol_1_105499:
 	S_t3 ^= 'BLANK
 	goto symbol_1_105454
 
-right_1p_t2_1_88126:
-	from right1_t2_1_88126
+save_right_1p_t2_1_88126:
+	from load_right_t2_1_88126
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_88126
+	goto save_right_t2_1_88126
 
-right_2p_t2_1_88126:
+load_right_2p_t2_1_88126:
 	from symbol_1_88123
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_88126
+	goto load_right_t2_1_88126
 
 symbol_1_88114:
-	from right_t2_1_88108
+	from save_right_t2_1_88108
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_105507
 		else symbol_1_105507
@@ -8860,25 +8860,25 @@ symbol_1_108379:
 	S_t3 ^= 'BLANK
 	goto symbol_1_108347
 
-right_1p_t2_1_88108:
-	from right1_t2_1_88108
+save_right_1p_t2_1_88108:
+	from save_left_t3_1_88108
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_88108
+	goto save_right_t2_1_88108
 
-right_2p_t2_1_88108:
-	from left_t3_1_88108
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_88108
-
-left_1p_t3_1_88108:
-	from left1_t3_1_88108
+save_left_1p_t3_1_88108:
+	from load_left_t3_1_88108
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_88108
+	goto save_left_t3_1_88108
 
-left_2p_t3_1_88108:
-	from symbol_1_88105
+load_left_2p_t3_1_88108:
+	from load_right_t2_1_88108
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_88108
+	goto load_left_t3_1_88108
+
+load_right_2p_t2_1_88108:
+	from symbol_1_88105
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_88108
 
 symbol_1_88096:
 	from symbol_1_88039
@@ -8913,7 +8913,7 @@ symbol1_1_108389:
 	goto symbol_1_88105
 
 symbol_1_88030:
-	from left_t2_1_88024
+	from save_left_t2_1_88024
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_111134
 		else symbol_1_111134
@@ -9227,15 +9227,15 @@ symbol_1_113955:
 	S_t3 ^= '#
 	goto symbol_1_88021
 
-left_1p_t2_1_88024:
-	from left1_t2_1_88024
+save_left_1p_t2_1_88024:
+	from load_left_t2_1_88024
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_88024
+	goto save_left_t2_1_88024
 
-left_2p_t2_1_88024:
+load_left_2p_t2_1_88024:
 	from symbol_1_88021
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_88024
+	goto load_left_t2_1_88024
 
 symbol_1_87958:
 	from symbol_1_87955
@@ -9270,7 +9270,7 @@ symbol1_1_113965:
 	goto symbol_1_87967
 
 symbol_1_87946:
-	from right_t3_1_87940
+	from save_right_t3_1_87940
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_116764
 		else symbol_1_116764
@@ -9392,15 +9392,15 @@ symbol_1_119573:
 	S_t3 ^= '0
 	goto symbol_1_87937
 
-right_1p_t3_1_87940:
-	from right1_t3_1_87940
+save_right_1p_t3_1_87940:
+	from load_right_t3_1_87940
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_87940
+	goto save_right_t3_1_87940
 
-right_2p_t3_1_87940:
+load_right_2p_t3_1_87940:
 	from symbol_1_87937
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_87940
+	goto load_right_t3_1_87940
 
 symbol_1_87910:
 	from symbol_1_87877
@@ -9557,28 +9557,28 @@ symbol_1_122362:
 	S_t3 ^= '0
 	goto symbol_1_46650
 
-right_1p_t2_1_46651:
-	from right1_t2_1_46651
+save_right_1p_t2_1_46651:
+	from save_left_t3_1_46651
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_46651
+	goto save_right_t2_1_46651
 
-right_2p_t2_1_46651:
-	from left_t3_1_46651
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_46651
-
-left_1p_t3_1_46651:
-	from left1_t3_1_46651
+save_left_1p_t3_1_46651:
+	from load_left_t3_1_46651
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_46651
+	goto save_left_t3_1_46651
 
-left_2p_t3_1_46651:
-	from symbol_1_46650
+load_left_2p_t3_1_46651:
+	from load_right_t2_1_46651
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_46651
+	goto load_left_t3_1_46651
+
+load_right_2p_t2_1_46651:
+	from symbol_1_46650
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_46651
 
 symbol_1_43838:
-	from right_t2_1_43577
+	from save_right_t2_1_43577
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_122368
 		else symbol_1_122368
@@ -9604,15 +9604,15 @@ symbol_1_122368:
 	S_t3 ^= '#
 	goto symbol_1_43847
 
-right_1p_t2_1_43577:
-	from right1_t2_1_43577
+save_right_1p_t2_1_43577:
+	from load_right_t2_1_43577
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_43577
+	goto save_right_t2_1_43577
 
-right_2p_t2_1_43577:
+load_right_2p_t2_1_43577:
 	from symbol_1_43574
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_43577
+	goto load_right_t2_1_43577
 
 symbol_1_43565:
 	from symbol_1_41666
@@ -9674,37 +9674,37 @@ symbol_1_122686:
 		from symbol_1_246779
 		else symbol_1_122683
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_122689
-		else right_2p_t2_1_122689
+		goto load_right_2b_t2_1_122689
+		else load_right_2p_t2_1_122689
 
-right_2b_t2_1_122689:
+load_right_2b_t2_1_122689:
 	from symbol_1_122686
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_122689
+	goto load_right_t2_1_122689
 
-right1_t2_1_122689:
+load_right_t2_1_122689:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_122689
-		else right_2p_t2_1_122689
+		from load_right_2b_t2_1_122689
+		else load_right_2p_t2_1_122689
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_122689
-		else right_1p_t2_1_122689
+		goto save_right_1b_t2_1_122689
+		else save_right_1p_t2_1_122689
 
-right_1b_t2_1_122689:
-	from right1_t2_1_122689
+save_right_1b_t2_1_122689:
+	from load_right_t2_1_122689
 	S_t2 ^= 'BLANK
-	goto right_t2_1_122689
+	goto save_right_t2_1_122689
 
-right_t2_1_122689:
+save_right_t2_1_122689:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_122689
-		else right_1p_t2_1_122689
+		from save_right_1b_t2_1_122689
+		else save_right_1p_t2_1_122689
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_123466
 		else symbol_1_123466
 
 symbol1_1_123466:
-	from right_t2_1_122689
+	from save_right_t2_1_122689
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -9760,64 +9760,64 @@ symbol_1_126278:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_246767
 		else symbol_1_126277
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_126279
-		else left_2p_t3_1_126279
-
-left_2b_t3_1_126279:
-	from symbol_1_126278
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_126279
-
-left1_t3_1_126279:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_126279
-		else left_2p_t3_1_126279
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_126279
-		else left_1p_t3_1_126279
-
-left_1b_t3_1_126279:
-	from left1_t3_1_126279
-	S_t3 ^= 'BLANK
-	goto left_t3_1_126279
-
-left_t3_1_126279:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_126279
-		else left_1p_t3_1_126279
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_126279
-		else right_2p_t2_1_126279
+		goto load_right_2b_t2_1_126279
+		else load_right_2p_t2_1_126279
 
-right_2b_t2_1_126279:
-	from left_t3_1_126279
+load_right_2b_t2_1_126279:
+	from symbol_1_126278
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_126279
+	goto load_right_t2_1_126279
 
-right1_t2_1_126279:
+load_right_t2_1_126279:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_126279
-		else right_2p_t2_1_126279
+		from load_right_2b_t2_1_126279
+		else load_right_2p_t2_1_126279
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_126279
+		else load_left_2p_t3_1_126279
+
+load_left_2b_t3_1_126279:
+	from load_right_t2_1_126279
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_126279
+
+load_left_t3_1_126279:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_126279
+		else load_left_2p_t3_1_126279
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_126279
+		else save_left_1p_t3_1_126279
+
+save_left_1b_t3_1_126279:
+	from load_left_t3_1_126279
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_126279
+
+save_left_t3_1_126279:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_126279
+		else save_left_1p_t3_1_126279
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_126279
-		else right_1p_t2_1_126279
+		goto save_right_1b_t2_1_126279
+		else save_right_1p_t2_1_126279
 
-right_1b_t2_1_126279:
-	from right1_t2_1_126279
+save_right_1b_t2_1_126279:
+	from save_left_t3_1_126279
 	S_t2 ^= 'BLANK
-	goto right_t2_1_126279
+	goto save_right_t2_1_126279
 
-right_t2_1_126279:
+save_right_t2_1_126279:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_126279
-		else right_1p_t2_1_126279
+		from save_right_1b_t2_1_126279
+		else save_right_1p_t2_1_126279
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_129066
 		else symbol_1_129066
 
 symbol1_1_129066:
-	from right_t2_1_126279
+	from save_right_t2_1_126279
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -9963,64 +9963,64 @@ symbol_1_131878:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_217983
 		else symbol_1_131877
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_131879
-		else right_2p_t3_1_131879
-
-right_2b_t3_1_131879:
-	from symbol_1_131878
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_131879
-
-right1_t3_1_131879:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_131879
-		else right_2p_t3_1_131879
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_131879
-		else right_1p_t3_1_131879
-
-right_1b_t3_1_131879:
-	from right1_t3_1_131879
-	S_t3 ^= 'BLANK
-	goto right_t3_1_131879
-
-right_t3_1_131879:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_131879
-		else right_1p_t3_1_131879
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_131879
-		else left_2p_t2_1_131879
+		goto load_left_2b_t2_1_131879
+		else load_left_2p_t2_1_131879
 
-left_2b_t2_1_131879:
-	from right_t3_1_131879
+load_left_2b_t2_1_131879:
+	from symbol_1_131878
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_131879
+	goto load_left_t2_1_131879
 
-left1_t2_1_131879:
+load_left_t2_1_131879:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_131879
-		else left_2p_t2_1_131879
+		from load_left_2b_t2_1_131879
+		else load_left_2p_t2_1_131879
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_131879
+		else load_right_2p_t3_1_131879
+
+load_right_2b_t3_1_131879:
+	from load_left_t2_1_131879
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_131879
+
+load_right_t3_1_131879:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_131879
+		else load_right_2p_t3_1_131879
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_131879
+		else save_right_1p_t3_1_131879
+
+save_right_1b_t3_1_131879:
+	from load_right_t3_1_131879
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_131879
+
+save_right_t3_1_131879:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_131879
+		else save_right_1p_t3_1_131879
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_131879
-		else left_1p_t2_1_131879
+		goto save_left_1b_t2_1_131879
+		else save_left_1p_t2_1_131879
 
-left_1b_t2_1_131879:
-	from left1_t2_1_131879
+save_left_1b_t2_1_131879:
+	from save_right_t3_1_131879
 	S_t2 ^= 'BLANK
-	goto left_t2_1_131879
+	goto save_left_t2_1_131879
 
-left_t2_1_131879:
+save_left_t2_1_131879:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_131879
-		else left_1p_t2_1_131879
+		from save_left_1b_t2_1_131879
+		else save_left_1p_t2_1_131879
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_134684
 		else symbol_1_134684
 
 symbol1_1_134684:
-	from left_t2_1_131879
+	from save_left_t2_1_131879
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10077,37 +10077,37 @@ symbol_1_137496:
 		from symbol_1_217967
 		else symbol_1_137495
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_137497
-		else left_2p_t3_1_137497
+		goto load_left_2b_t3_1_137497
+		else load_left_2p_t3_1_137497
 
-left_2b_t3_1_137497:
+load_left_2b_t3_1_137497:
 	from symbol_1_137496
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_137497
+	goto load_left_t3_1_137497
 
-left1_t3_1_137497:
+load_left_t3_1_137497:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_137497
-		else left_2p_t3_1_137497
+		from load_left_2b_t3_1_137497
+		else load_left_2p_t3_1_137497
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_137497
-		else left_1p_t3_1_137497
+		goto save_left_1b_t3_1_137497
+		else save_left_1p_t3_1_137497
 
-left_1b_t3_1_137497:
-	from left1_t3_1_137497
+save_left_1b_t3_1_137497:
+	from load_left_t3_1_137497
 	S_t3 ^= 'BLANK
-	goto left_t3_1_137497
+	goto save_left_t3_1_137497
 
-left_t3_1_137497:
+save_left_t3_1_137497:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_137497
-		else left_1p_t3_1_137497
+		from save_left_1b_t3_1_137497
+		else save_left_1p_t3_1_137497
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_140302
 		else symbol_1_140302
 
 symbol1_1_140302:
-	from left_t3_1_137497
+	from save_left_t3_1_137497
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10164,37 +10164,37 @@ symbol_1_143114:
 		from symbol_1_217951
 		else symbol_1_143113
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_143115
-		else right_2p_t2_1_143115
+		goto load_right_2b_t2_1_143115
+		else load_right_2p_t2_1_143115
 
-right_2b_t2_1_143115:
+load_right_2b_t2_1_143115:
 	from symbol_1_143114
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_143115
+	goto load_right_t2_1_143115
 
-right1_t2_1_143115:
+load_right_t2_1_143115:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_143115
-		else right_2p_t2_1_143115
+		from load_right_2b_t2_1_143115
+		else load_right_2p_t2_1_143115
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_143115
-		else right_1p_t2_1_143115
+		goto save_right_1b_t2_1_143115
+		else save_right_1p_t2_1_143115
 
-right_1b_t2_1_143115:
-	from right1_t2_1_143115
+save_right_1b_t2_1_143115:
+	from load_right_t2_1_143115
 	S_t2 ^= 'BLANK
-	goto right_t2_1_143115
+	goto save_right_t2_1_143115
 
-right_t2_1_143115:
+save_right_t2_1_143115:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_143115
-		else right_1p_t2_1_143115
+		from save_right_1b_t2_1_143115
+		else save_right_1p_t2_1_143115
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_145920
 		else symbol_1_145920
 
 symbol1_1_145920:
-	from right_t2_1_143115
+	from save_right_t2_1_143115
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10281,37 +10281,37 @@ symbol_1_148564:
 		from symbol_1_217737
 		else symbol_1_148561
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_148567
-		else left_2p_t2_1_148567
+		goto load_left_2b_t2_1_148567
+		else load_left_2p_t2_1_148567
 
-left_2b_t2_1_148567:
+load_left_2b_t2_1_148567:
 	from symbol_1_148564
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_148567
+	goto load_left_t2_1_148567
 
-left1_t2_1_148567:
+load_left_t2_1_148567:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_148567
-		else left_2p_t2_1_148567
+		from load_left_2b_t2_1_148567
+		else load_left_2p_t2_1_148567
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_148567
-		else left_1p_t2_1_148567
+		goto save_left_1b_t2_1_148567
+		else save_left_1p_t2_1_148567
 
-left_1b_t2_1_148567:
-	from left1_t2_1_148567
+save_left_1b_t2_1_148567:
+	from load_left_t2_1_148567
 	S_t2 ^= 'BLANK
-	goto left_t2_1_148567
+	goto save_left_t2_1_148567
 
-left_t2_1_148567:
+save_left_t2_1_148567:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_148567
-		else left_1p_t2_1_148567
+		from save_left_1b_t2_1_148567
+		else save_left_1p_t2_1_148567
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148573
 		else symbol_1_148573
 
 symbol1_1_148573:
-	from left_t2_1_148567
+	from save_left_t2_1_148567
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10368,37 +10368,37 @@ symbol_1_148600:
 		from symbol_1_214922
 		else symbol_1_148597
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_148603
-		else right_2p_t3_1_148603
+		goto load_right_2b_t3_1_148603
+		else load_right_2p_t3_1_148603
 
-right_2b_t3_1_148603:
+load_right_2b_t3_1_148603:
 	from symbol_1_148600
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_148603
+	goto load_right_t3_1_148603
 
-right1_t3_1_148603:
+load_right_t3_1_148603:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_148603
-		else right_2p_t3_1_148603
+		from load_right_2b_t3_1_148603
+		else load_right_2p_t3_1_148603
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_148603
-		else right_1p_t3_1_148603
+		goto save_right_1b_t3_1_148603
+		else save_right_1p_t3_1_148603
 
-right_1b_t3_1_148603:
-	from right1_t3_1_148603
+save_right_1b_t3_1_148603:
+	from load_right_t3_1_148603
 	S_t3 ^= 'BLANK
-	goto right_t3_1_148603
+	goto save_right_t3_1_148603
 
-right_t3_1_148603:
+save_right_t3_1_148603:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_148603
-		else right_1p_t3_1_148603
+		from save_right_1b_t3_1_148603
+		else save_right_1p_t3_1_148603
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148609
 		else symbol_1_148609
 
 symbol1_1_148609:
-	from right_t3_1_148603
+	from save_right_t3_1_148603
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10454,64 +10454,64 @@ symbol_1_148636:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_212107
 		else symbol_1_148633
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_148639
-		else left_2p_t3_1_148639
-
-left_2b_t3_1_148639:
-	from symbol_1_148636
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_148639
-
-left1_t3_1_148639:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_148639
-		else left_2p_t3_1_148639
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_148639
-		else left_1p_t3_1_148639
-
-left_1b_t3_1_148639:
-	from left1_t3_1_148639
-	S_t3 ^= 'BLANK
-	goto left_t3_1_148639
-
-left_t3_1_148639:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_148639
-		else left_1p_t3_1_148639
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_148639
-		else right_2p_t2_1_148639
+		goto load_right_2b_t2_1_148639
+		else load_right_2p_t2_1_148639
 
-right_2b_t2_1_148639:
-	from left_t3_1_148639
+load_right_2b_t2_1_148639:
+	from symbol_1_148636
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_148639
+	goto load_right_t2_1_148639
 
-right1_t2_1_148639:
+load_right_t2_1_148639:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_148639
-		else right_2p_t2_1_148639
+		from load_right_2b_t2_1_148639
+		else load_right_2p_t2_1_148639
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_148639
+		else load_left_2p_t3_1_148639
+
+load_left_2b_t3_1_148639:
+	from load_right_t2_1_148639
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_148639
+
+load_left_t3_1_148639:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_148639
+		else load_left_2p_t3_1_148639
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_148639
+		else save_left_1p_t3_1_148639
+
+save_left_1b_t3_1_148639:
+	from load_left_t3_1_148639
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_148639
+
+save_left_t3_1_148639:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_148639
+		else save_left_1p_t3_1_148639
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_148639
-		else right_1p_t2_1_148639
+		goto save_right_1b_t2_1_148639
+		else save_right_1p_t2_1_148639
 
-right_1b_t2_1_148639:
-	from right1_t2_1_148639
+save_right_1b_t2_1_148639:
+	from save_left_t3_1_148639
 	S_t2 ^= 'BLANK
-	goto right_t2_1_148639
+	goto save_right_t2_1_148639
 
-right_t2_1_148639:
+save_right_t2_1_148639:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_148639
-		else right_1p_t2_1_148639
+		from save_right_1b_t2_1_148639
+		else save_right_1p_t2_1_148639
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_148645
 		else symbol_1_148645
 
 symbol1_1_148645:
-	from right_t2_1_148639
+	from save_right_t2_1_148639
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -10675,64 +10675,64 @@ symbol_1_148726:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_209277
 		else symbol_1_148723
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_148729
-		else right_2p_t3_1_148729
-
-right_2b_t3_1_148729:
-	from symbol_1_148726
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_148729
-
-right1_t3_1_148729:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_148729
-		else right_2p_t3_1_148729
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_148729
-		else right_1p_t3_1_148729
-
-right_1b_t3_1_148729:
-	from right1_t3_1_148729
-	S_t3 ^= 'BLANK
-	goto right_t3_1_148729
-
-right_t3_1_148729:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_148729
-		else right_1p_t3_1_148729
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_148729
-		else left_2p_t2_1_148729
+		goto load_left_2b_t2_1_148729
+		else load_left_2p_t2_1_148729
 
-left_2b_t2_1_148729:
-	from right_t3_1_148729
+load_left_2b_t2_1_148729:
+	from symbol_1_148726
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_148729
+	goto load_left_t2_1_148729
 
-left1_t2_1_148729:
+load_left_t2_1_148729:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_148729
-		else left_2p_t2_1_148729
+		from load_left_2b_t2_1_148729
+		else load_left_2p_t2_1_148729
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_148729
+		else load_right_2p_t3_1_148729
+
+load_right_2b_t3_1_148729:
+	from load_left_t2_1_148729
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_148729
+
+load_right_t3_1_148729:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_148729
+		else load_right_2p_t3_1_148729
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_148729
+		else save_right_1p_t3_1_148729
+
+save_right_1b_t3_1_148729:
+	from load_right_t3_1_148729
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_148729
+
+save_right_t3_1_148729:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_148729
+		else save_right_1p_t3_1_148729
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_148729
-		else left_1p_t2_1_148729
+		goto save_left_1b_t2_1_148729
+		else save_left_1p_t2_1_148729
 
-left_1b_t2_1_148729:
-	from left1_t2_1_148729
+save_left_1b_t2_1_148729:
+	from save_right_t3_1_148729
 	S_t2 ^= 'BLANK
-	goto left_t2_1_148729
+	goto save_left_t2_1_148729
 
-left_t2_1_148729:
+save_left_t2_1_148729:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_148729
-		else left_1p_t2_1_148729
+		from save_left_1b_t2_1_148729
+		else save_left_1p_t2_1_148729
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148735
 		else symbol_1_148735
 
 symbol1_1_148735:
-	from left_t2_1_148729
+	from save_left_t2_1_148729
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -10891,37 +10891,37 @@ symbol_1_148810:
 		from symbol_1_203659
 		else symbol_1_148807
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_148813
-		else right_2p_t2_1_148813
+		goto load_right_2b_t2_1_148813
+		else load_right_2p_t2_1_148813
 
-right_2b_t2_1_148813:
+load_right_2b_t2_1_148813:
 	from symbol_1_148810
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_148813
+	goto load_right_t2_1_148813
 
-right1_t2_1_148813:
+load_right_t2_1_148813:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_148813
-		else right_2p_t2_1_148813
+		from load_right_2b_t2_1_148813
+		else load_right_2p_t2_1_148813
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_148813
-		else right_1p_t2_1_148813
+		goto save_right_1b_t2_1_148813
+		else save_right_1p_t2_1_148813
 
-right_1b_t2_1_148813:
-	from right1_t2_1_148813
+save_right_1b_t2_1_148813:
+	from load_right_t2_1_148813
 	S_t2 ^= 'BLANK
-	goto right_t2_1_148813
+	goto save_right_t2_1_148813
 
-right_t2_1_148813:
+save_right_t2_1_148813:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_148813
-		else right_1p_t2_1_148813
+		from save_right_1b_t2_1_148813
+		else save_right_1p_t2_1_148813
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148819
 		else symbol_1_148819
 
 symbol1_1_148819:
-	from right_t2_1_148813
+	from save_right_t2_1_148813
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11080,37 +11080,37 @@ symbol_1_148894:
 		from symbol_1_198029
 		else symbol_1_148891
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_148897
-		else right_2p_t2_1_148897
+		goto load_right_2b_t2_1_148897
+		else load_right_2p_t2_1_148897
 
-right_2b_t2_1_148897:
+load_right_2b_t2_1_148897:
 	from symbol_1_148894
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_148897
+	goto load_right_t2_1_148897
 
-right1_t2_1_148897:
+load_right_t2_1_148897:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_148897
-		else right_2p_t2_1_148897
+		from load_right_2b_t2_1_148897
+		else load_right_2p_t2_1_148897
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_148897
-		else right_1p_t2_1_148897
+		goto save_right_1b_t2_1_148897
+		else save_right_1p_t2_1_148897
 
-right_1b_t2_1_148897:
-	from right1_t2_1_148897
+save_right_1b_t2_1_148897:
+	from load_right_t2_1_148897
 	S_t2 ^= 'BLANK
-	goto right_t2_1_148897
+	goto save_right_t2_1_148897
 
-right_t2_1_148897:
+save_right_t2_1_148897:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_148897
-		else right_1p_t2_1_148897
+		from save_right_1b_t2_1_148897
+		else save_right_1p_t2_1_148897
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148903
 		else symbol_1_148903
 
 symbol1_1_148903:
-	from right_t2_1_148897
+	from save_right_t2_1_148897
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11269,37 +11269,37 @@ symbol_1_148978:
 		from symbol_1_192399
 		else symbol_1_148975
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_148981
-		else right_2p_t2_1_148981
+		goto load_right_2b_t2_1_148981
+		else load_right_2p_t2_1_148981
 
-right_2b_t2_1_148981:
+load_right_2b_t2_1_148981:
 	from symbol_1_148978
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_148981
+	goto load_right_t2_1_148981
 
-right1_t2_1_148981:
+load_right_t2_1_148981:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_148981
-		else right_2p_t2_1_148981
+		from load_right_2b_t2_1_148981
+		else load_right_2p_t2_1_148981
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_148981
-		else right_1p_t2_1_148981
+		goto save_right_1b_t2_1_148981
+		else save_right_1p_t2_1_148981
 
-right_1b_t2_1_148981:
-	from right1_t2_1_148981
+save_right_1b_t2_1_148981:
+	from load_right_t2_1_148981
 	S_t2 ^= 'BLANK
-	goto right_t2_1_148981
+	goto save_right_t2_1_148981
 
-right_t2_1_148981:
+save_right_t2_1_148981:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_148981
-		else right_1p_t2_1_148981
+		from save_right_1b_t2_1_148981
+		else save_right_1p_t2_1_148981
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_148987
 		else symbol_1_148987
 
 symbol1_1_148987:
-	from right_t2_1_148981
+	from save_right_t2_1_148981
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11385,64 +11385,64 @@ symbol_1_151985:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_186943
 		else symbol_1_151984
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_151986
-		else left_2p_t3_1_151986
-
-left_2b_t3_1_151986:
-	from symbol_1_151985
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_151986
-
-left1_t3_1_151986:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_151986
-		else left_2p_t3_1_151986
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_151986
-		else left_1p_t3_1_151986
-
-left_1b_t3_1_151986:
-	from left1_t3_1_151986
-	S_t3 ^= 'BLANK
-	goto left_t3_1_151986
-
-left_t3_1_151986:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_151986
-		else left_1p_t3_1_151986
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_151986
-		else left_2p_t2_1_151986
+		goto load_left_2b_t2_1_151986
+		else load_left_2p_t2_1_151986
 
-left_2b_t2_1_151986:
-	from left_t3_1_151986
+load_left_2b_t2_1_151986:
+	from symbol_1_151985
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_151986
+	goto load_left_t2_1_151986
 
-left1_t2_1_151986:
+load_left_t2_1_151986:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_151986
-		else left_2p_t2_1_151986
+		from load_left_2b_t2_1_151986
+		else load_left_2p_t2_1_151986
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_151986
+		else load_left_2p_t3_1_151986
+
+load_left_2b_t3_1_151986:
+	from load_left_t2_1_151986
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_151986
+
+load_left_t3_1_151986:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_151986
+		else load_left_2p_t3_1_151986
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_151986
+		else save_left_1p_t3_1_151986
+
+save_left_1b_t3_1_151986:
+	from load_left_t3_1_151986
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_151986
+
+save_left_t3_1_151986:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_151986
+		else save_left_1p_t3_1_151986
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_151986
-		else left_1p_t2_1_151986
+		goto save_left_1b_t2_1_151986
+		else save_left_1p_t2_1_151986
 
-left_1b_t2_1_151986:
-	from left1_t2_1_151986
+save_left_1b_t2_1_151986:
+	from save_left_t3_1_151986
 	S_t2 ^= 'BLANK
-	goto left_t2_1_151986
+	goto save_left_t2_1_151986
 
-left_t2_1_151986:
+save_left_t2_1_151986:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_151986
-		else left_1p_t2_1_151986
+		from save_left_1b_t2_1_151986
+		else save_left_1p_t2_1_151986
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_154773
 		else symbol_1_154773
 
 symbol1_1_154773:
-	from left_t2_1_151986
+	from save_left_t2_1_151986
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -11588,64 +11588,64 @@ symbol_1_157585:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_186005
 		else symbol_1_157584
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_157586
-		else right_2p_t3_1_157586
-
-right_2b_t3_1_157586:
-	from symbol_1_157585
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_157586
-
-right1_t3_1_157586:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_157586
-		else right_2p_t3_1_157586
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_157586
-		else right_1p_t3_1_157586
-
-right_1b_t3_1_157586:
-	from right1_t3_1_157586
-	S_t3 ^= 'BLANK
-	goto right_t3_1_157586
-
-right_t3_1_157586:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_157586
-		else right_1p_t3_1_157586
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_157586
-		else right_2p_t2_1_157586
+		goto load_right_2b_t2_1_157586
+		else load_right_2p_t2_1_157586
 
-right_2b_t2_1_157586:
-	from right_t3_1_157586
+load_right_2b_t2_1_157586:
+	from symbol_1_157585
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_157586
+	goto load_right_t2_1_157586
 
-right1_t2_1_157586:
+load_right_t2_1_157586:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_157586
-		else right_2p_t2_1_157586
+		from load_right_2b_t2_1_157586
+		else load_right_2p_t2_1_157586
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_157586
+		else load_right_2p_t3_1_157586
+
+load_right_2b_t3_1_157586:
+	from load_right_t2_1_157586
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_157586
+
+load_right_t3_1_157586:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_157586
+		else load_right_2p_t3_1_157586
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_157586
+		else save_right_1p_t3_1_157586
+
+save_right_1b_t3_1_157586:
+	from load_right_t3_1_157586
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_157586
+
+save_right_t3_1_157586:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_157586
+		else save_right_1p_t3_1_157586
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_157586
-		else right_1p_t2_1_157586
+		goto save_right_1b_t2_1_157586
+		else save_right_1p_t2_1_157586
 
-right_1b_t2_1_157586:
-	from right1_t2_1_157586
+save_right_1b_t2_1_157586:
+	from save_right_t3_1_157586
 	S_t2 ^= 'BLANK
-	goto right_t2_1_157586
+	goto save_right_t2_1_157586
 
-right_t2_1_157586:
+save_right_t2_1_157586:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_157586
-		else right_1p_t2_1_157586
+		from save_right_1b_t2_1_157586
+		else save_right_1p_t2_1_157586
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_160391
 		else symbol_1_160391
 
 symbol1_1_160391:
-	from right_t2_1_157586
+	from save_right_t2_1_157586
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11702,37 +11702,37 @@ symbol_1_163203:
 		from symbol_1_185989
 		else symbol_1_163202
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_163204
-		else left_2p_t3_1_163204
+		goto load_left_2b_t3_1_163204
+		else load_left_2p_t3_1_163204
 
-left_2b_t3_1_163204:
+load_left_2b_t3_1_163204:
 	from symbol_1_163203
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_163204
+	goto load_left_t3_1_163204
 
-left1_t3_1_163204:
+load_left_t3_1_163204:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_163204
-		else left_2p_t3_1_163204
+		from load_left_2b_t3_1_163204
+		else load_left_2p_t3_1_163204
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_163204
-		else left_1p_t3_1_163204
+		goto save_left_1b_t3_1_163204
+		else save_left_1p_t3_1_163204
 
-left_1b_t3_1_163204:
-	from left1_t3_1_163204
+save_left_1b_t3_1_163204:
+	from load_left_t3_1_163204
 	S_t3 ^= 'BLANK
-	goto left_t3_1_163204
+	goto save_left_t3_1_163204
 
-left_t3_1_163204:
+save_left_t3_1_163204:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_163204
-		else left_1p_t3_1_163204
+		from save_left_1b_t3_1_163204
+		else save_left_1p_t3_1_163204
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_166009
 		else symbol_1_166009
 
 symbol1_1_166009:
-	from left_t3_1_163204
+	from save_left_t3_1_163204
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11789,37 +11789,37 @@ symbol_1_168821:
 		from symbol_1_185973
 		else symbol_1_168820
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_168822
-		else left_2p_t2_1_168822
+		goto load_left_2b_t2_1_168822
+		else load_left_2p_t2_1_168822
 
-left_2b_t2_1_168822:
+load_left_2b_t2_1_168822:
 	from symbol_1_168821
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_168822
+	goto load_left_t2_1_168822
 
-left1_t2_1_168822:
+load_left_t2_1_168822:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_168822
-		else left_2p_t2_1_168822
+		from load_left_2b_t2_1_168822
+		else load_left_2p_t2_1_168822
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_168822
-		else left_1p_t2_1_168822
+		goto save_left_1b_t2_1_168822
+		else save_left_1p_t2_1_168822
 
-left_1b_t2_1_168822:
-	from left1_t2_1_168822
+save_left_1b_t2_1_168822:
+	from load_left_t2_1_168822
 	S_t2 ^= 'BLANK
-	goto left_t2_1_168822
+	goto save_left_t2_1_168822
 
-left_t2_1_168822:
+save_left_t2_1_168822:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_168822
-		else left_1p_t2_1_168822
+		from save_left_1b_t2_1_168822
+		else save_left_1p_t2_1_168822
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_171627
 		else symbol_1_171627
 
 symbol1_1_171627:
-	from left_t2_1_168822
+	from save_left_t2_1_168822
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11906,37 +11906,37 @@ symbol_1_172503:
 		from symbol_1_183991
 		else symbol_1_172500
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_172506
-		else right_2p_t2_1_172506
+		goto load_right_2b_t2_1_172506
+		else load_right_2p_t2_1_172506
 
-right_2b_t2_1_172506:
+load_right_2b_t2_1_172506:
 	from symbol_1_172503
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_172506
+	goto load_right_t2_1_172506
 
-right1_t2_1_172506:
+load_right_t2_1_172506:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_172506
-		else right_2p_t2_1_172506
+		from load_right_2b_t2_1_172506
+		else load_right_2p_t2_1_172506
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_172506
-		else right_1p_t2_1_172506
+		goto save_right_1b_t2_1_172506
+		else save_right_1p_t2_1_172506
 
-right_1b_t2_1_172506:
-	from right1_t2_1_172506
+save_right_1b_t2_1_172506:
+	from load_right_t2_1_172506
 	S_t2 ^= 'BLANK
-	goto right_t2_1_172506
+	goto save_right_t2_1_172506
 
-right_t2_1_172506:
+save_right_t2_1_172506:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_172506
-		else right_1p_t2_1_172506
+		from save_right_1b_t2_1_172506
+		else save_right_1p_t2_1_172506
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_172512
 		else symbol_1_172512
 
 symbol1_1_172512:
-	from right_t2_1_172506
+	from save_right_t2_1_172506
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -11993,37 +11993,37 @@ symbol_1_172539:
 		from symbol_1_181176
 		else symbol_1_172536
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_172542
-		else right_2p_t3_1_172542
+		goto load_right_2b_t3_1_172542
+		else load_right_2p_t3_1_172542
 
-right_2b_t3_1_172542:
+load_right_2b_t3_1_172542:
 	from symbol_1_172539
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_172542
+	goto load_right_t3_1_172542
 
-right1_t3_1_172542:
+load_right_t3_1_172542:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_172542
-		else right_2p_t3_1_172542
+		from load_right_2b_t3_1_172542
+		else load_right_2p_t3_1_172542
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_172542
-		else right_1p_t3_1_172542
+		goto save_right_1b_t3_1_172542
+		else save_right_1p_t3_1_172542
 
-right_1b_t3_1_172542:
-	from right1_t3_1_172542
+save_right_1b_t3_1_172542:
+	from load_right_t3_1_172542
 	S_t3 ^= 'BLANK
-	goto right_t3_1_172542
+	goto save_right_t3_1_172542
 
-right_t3_1_172542:
+save_right_t3_1_172542:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_172542
-		else right_1p_t3_1_172542
+		from save_right_1b_t3_1_172542
+		else save_right_1p_t3_1_172542
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_172548
 		else symbol_1_172548
 
 symbol1_1_172548:
-	from right_t3_1_172542
+	from save_right_t3_1_172542
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -12079,64 +12079,64 @@ symbol_1_172575:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_178361
 		else symbol_1_172572
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_172578
-		else left_2p_t3_1_172578
-
-left_2b_t3_1_172578:
-	from symbol_1_172575
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_172578
-
-left1_t3_1_172578:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_172578
-		else left_2p_t3_1_172578
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_172578
-		else left_1p_t3_1_172578
-
-left_1b_t3_1_172578:
-	from left1_t3_1_172578
-	S_t3 ^= 'BLANK
-	goto left_t3_1_172578
-
-left_t3_1_172578:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_172578
-		else left_1p_t3_1_172578
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_172578
-		else left_2p_t2_1_172578
+		goto load_left_2b_t2_1_172578
+		else load_left_2p_t2_1_172578
 
-left_2b_t2_1_172578:
-	from left_t3_1_172578
+load_left_2b_t2_1_172578:
+	from symbol_1_172575
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_172578
+	goto load_left_t2_1_172578
 
-left1_t2_1_172578:
+load_left_t2_1_172578:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_172578
-		else left_2p_t2_1_172578
+		from load_left_2b_t2_1_172578
+		else load_left_2p_t2_1_172578
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_172578
+		else load_left_2p_t3_1_172578
+
+load_left_2b_t3_1_172578:
+	from load_left_t2_1_172578
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_172578
+
+load_left_t3_1_172578:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_172578
+		else load_left_2p_t3_1_172578
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_172578
+		else save_left_1p_t3_1_172578
+
+save_left_1b_t3_1_172578:
+	from load_left_t3_1_172578
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_172578
+
+save_left_t3_1_172578:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_172578
+		else save_left_1p_t3_1_172578
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_172578
-		else left_1p_t2_1_172578
+		goto save_left_1b_t2_1_172578
+		else save_left_1p_t2_1_172578
 
-left_1b_t2_1_172578:
-	from left1_t2_1_172578
+save_left_1b_t2_1_172578:
+	from save_left_t3_1_172578
 	S_t2 ^= 'BLANK
-	goto left_t2_1_172578
+	goto save_left_t2_1_172578
 
-left_t2_1_172578:
+save_left_t2_1_172578:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_172578
-		else left_1p_t2_1_172578
+		from save_left_1b_t2_1_172578
+		else save_left_1p_t2_1_172578
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_172584
 		else symbol_1_172584
 
 symbol1_1_172584:
-	from left_t2_1_172578
+	from save_left_t2_1_172578
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= 'BLANK
@@ -12300,64 +12300,64 @@ symbol_1_172665:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from symbol_1_175531
 		else symbol_1_172662
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_172668
-		else right_2p_t3_1_172668
-
-right_2b_t3_1_172668:
-	from symbol_1_172665
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_172668
-
-right1_t3_1_172668:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_172668
-		else right_2p_t3_1_172668
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_172668
-		else right_1p_t3_1_172668
-
-right_1b_t3_1_172668:
-	from right1_t3_1_172668
-	S_t3 ^= 'BLANK
-	goto right_t3_1_172668
-
-right_t3_1_172668:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_172668
-		else right_1p_t3_1_172668
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_172668
-		else right_2p_t2_1_172668
+		goto load_right_2b_t2_1_172668
+		else load_right_2p_t2_1_172668
 
-right_2b_t2_1_172668:
-	from right_t3_1_172668
+load_right_2b_t2_1_172668:
+	from symbol_1_172665
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_172668
+	goto load_right_t2_1_172668
 
-right1_t2_1_172668:
+load_right_t2_1_172668:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_172668
-		else right_2p_t2_1_172668
+		from load_right_2b_t2_1_172668
+		else load_right_2p_t2_1_172668
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_172668
+		else load_right_2p_t3_1_172668
+
+load_right_2b_t3_1_172668:
+	from load_right_t2_1_172668
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_172668
+
+load_right_t3_1_172668:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_172668
+		else load_right_2p_t3_1_172668
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_172668
+		else save_right_1p_t3_1_172668
+
+save_right_1b_t3_1_172668:
+	from load_right_t3_1_172668
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_172668
+
+save_right_t3_1_172668:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_172668
+		else save_right_1p_t3_1_172668
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_172668
-		else right_1p_t2_1_172668
+		goto save_right_1b_t2_1_172668
+		else save_right_1p_t2_1_172668
 
-right_1b_t2_1_172668:
-	from right1_t2_1_172668
+save_right_1b_t2_1_172668:
+	from save_right_t3_1_172668
 	S_t2 ^= 'BLANK
-	goto right_t2_1_172668
+	goto save_right_t2_1_172668
 
-right_t2_1_172668:
+save_right_t2_1_172668:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_172668
-		else right_1p_t2_1_172668
+		from save_right_1b_t2_1_172668
+		else save_right_1p_t2_1_172668
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_172674
 		else symbol_1_172674
 
 symbol1_1_172674:
-	from right_t2_1_172668
+	from save_right_t2_1_172668
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -12378,37 +12378,37 @@ symbol_1_172683:
 		from symbol1_1_172726
 		else symbol_1_172680
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_172686
-		else right_2p_t2_1_172686
+		goto load_right_2b_t2_1_172686
+		else load_right_2p_t2_1_172686
 
-right_2b_t2_1_172686:
+load_right_2b_t2_1_172686:
 	from symbol_1_172683
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_172686
+	goto load_right_t2_1_172686
 
-right1_t2_1_172686:
+load_right_t2_1_172686:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_172686
-		else right_2p_t2_1_172686
+		from load_right_2b_t2_1_172686
+		else load_right_2p_t2_1_172686
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_172686
-		else right_1p_t2_1_172686
+		goto save_right_1b_t2_1_172686
+		else save_right_1p_t2_1_172686
 
-right_1b_t2_1_172686:
-	from right1_t2_1_172686
+save_right_1b_t2_1_172686:
+	from load_right_t2_1_172686
 	S_t2 ^= 'BLANK
-	goto right_t2_1_172686
+	goto save_right_t2_1_172686
 
-right_t2_1_172686:
+save_right_t2_1_172686:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_172686
-		else right_1p_t2_1_172686
+		from save_right_1b_t2_1_172686
+		else save_right_1p_t2_1_172686
 	if (((S_t1 = 'BLANK) && (S_t2 = 'S)) && (S_t3 = '#))
 		goto symbol1_1_172710
 		else symbol_1_172710
 
 symbol1_1_172710:
-	from right_t2_1_172686
+	from save_right_t2_1_172686
 	S_t3 ^= '#
 	S_t2 ^= 'S
 	S_t1 ^= 'BLANK
@@ -12418,7 +12418,7 @@ symbol1_1_172710:
 	goto symbol_1_4598
 
 symbol_1_172710:
-	from right_t2_1_172686
+	from save_right_t2_1_172686
 	if (((S_t1 = '1) && (S_t2 = 'S)) && (S_t3 = '#))
 		goto symbol1_1_172714
 		else symbol_1_172714
@@ -12444,18 +12444,18 @@ symbol_1_172714:
 	S_t3 ^= '#
 	goto symbol_1_4604
 
-right_1p_t2_1_172686:
-	from right1_t2_1_172686
+save_right_1p_t2_1_172686:
+	from load_right_t2_1_172686
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_172686
+	goto save_right_t2_1_172686
 
-right_2p_t2_1_172686:
+load_right_2p_t2_1_172686:
 	from symbol_1_172683
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_172686
+	goto load_right_t2_1_172686
 
 symbol_1_172674:
-	from right_t2_1_172668
+	from save_right_t2_1_172668
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_172722
 		else symbol_1_172722
@@ -12577,28 +12577,28 @@ symbol_1_175531:
 	S_t3 ^= '0
 	goto symbol_1_172665
 
-right_1p_t2_1_172668:
-	from right1_t2_1_172668
+save_right_1p_t2_1_172668:
+	from save_right_t3_1_172668
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_172668
+	goto save_right_t2_1_172668
 
-right_2p_t2_1_172668:
-	from right_t3_1_172668
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_172668
-
-right_1p_t3_1_172668:
-	from right1_t3_1_172668
+save_right_1p_t3_1_172668:
+	from load_right_t3_1_172668
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_172668
+	goto save_right_t3_1_172668
 
-right_2p_t3_1_172668:
-	from symbol_1_172665
+load_right_2p_t3_1_172668:
+	from load_right_t2_1_172668
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_172668
+	goto load_right_t3_1_172668
+
+load_right_2p_t2_1_172668:
+	from symbol_1_172665
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_172668
 
 symbol_1_172584:
-	from left_t2_1_172578
+	from save_left_t2_1_172578
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_175537
 		else symbol_1_175537
@@ -12960,28 +12960,28 @@ symbol_1_178361:
 	S_t3 ^= '0
 	goto symbol_1_172575
 
-left_1p_t2_1_172578:
-	from left1_t2_1_172578
+save_left_1p_t2_1_172578:
+	from save_left_t3_1_172578
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_172578
+	goto save_left_t2_1_172578
 
-left_2p_t2_1_172578:
-	from left_t3_1_172578
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_172578
-
-left_1p_t3_1_172578:
-	from left1_t3_1_172578
+save_left_1p_t3_1_172578:
+	from load_left_t3_1_172578
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_172578
+	goto save_left_t3_1_172578
 
-left_2p_t3_1_172578:
-	from symbol_1_172575
+load_left_2p_t3_1_172578:
+	from load_left_t2_1_172578
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_172578
+	goto load_left_t3_1_172578
+
+load_left_2p_t2_1_172578:
+	from symbol_1_172575
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_172578
 
 symbol_1_172548:
-	from right_t3_1_172542
+	from save_right_t3_1_172542
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_178367
 		else symbol_1_178367
@@ -13103,18 +13103,18 @@ symbol_1_181176:
 	S_t3 ^= '0
 	goto symbol_1_172539
 
-right_1p_t3_1_172542:
-	from right1_t3_1_172542
+save_right_1p_t3_1_172542:
+	from load_right_t3_1_172542
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_172542
+	goto save_right_t3_1_172542
 
-right_2p_t3_1_172542:
+load_right_2p_t3_1_172542:
 	from symbol_1_172539
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_172542
+	goto load_right_t3_1_172542
 
 symbol_1_172512:
-	from right_t2_1_172506
+	from save_right_t2_1_172506
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_181182
 		else symbol_1_181182
@@ -13236,15 +13236,15 @@ symbol_1_183991:
 	S_t3 ^= '#
 	goto symbol_1_172503
 
-right_1p_t2_1_172506:
-	from right1_t2_1_172506
+save_right_1p_t2_1_172506:
+	from load_right_t2_1_172506
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_172506
+	goto save_right_t2_1_172506
 
-right_2p_t2_1_172506:
+load_right_2p_t2_1_172506:
 	from symbol_1_172503
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_172506
+	goto load_right_t2_1_172506
 
 symbol_1_172476:
 	from symbol_1_171636
@@ -13279,7 +13279,7 @@ symbol1_1_184001:
 	goto symbol_1_172485
 
 symbol_1_171627:
-	from left_t2_1_168822
+	from save_left_t2_1_168822
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_185961
 		else symbol_1_185961
@@ -13401,18 +13401,18 @@ symbol_1_185973:
 	S_t3 ^= '#
 	goto symbol_1_168821
 
-left_1p_t2_1_168822:
-	from left1_t2_1_168822
+save_left_1p_t2_1_168822:
+	from load_left_t2_1_168822
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_168822
+	goto save_left_t2_1_168822
 
-left_2p_t2_1_168822:
+load_left_2p_t2_1_168822:
 	from symbol_1_168821
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_168822
+	goto load_left_t2_1_168822
 
 symbol_1_166009:
-	from left_t3_1_163204
+	from save_left_t3_1_163204
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_185977
 		else symbol_1_185977
@@ -13534,18 +13534,18 @@ symbol_1_185989:
 	S_t3 ^= '0
 	goto symbol_1_163203
 
-left_1p_t3_1_163204:
-	from left1_t3_1_163204
+save_left_1p_t3_1_163204:
+	from load_left_t3_1_163204
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_163204
+	goto save_left_t3_1_163204
 
-left_2p_t3_1_163204:
+load_left_2p_t3_1_163204:
 	from symbol_1_163203
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_163204
+	goto load_left_t3_1_163204
 
 symbol_1_160391:
-	from right_t2_1_157586
+	from save_right_t2_1_157586
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_185993
 		else symbol_1_185993
@@ -13667,28 +13667,28 @@ symbol_1_186005:
 	S_t3 ^= '0
 	goto symbol_1_157585
 
-right_1p_t2_1_157586:
-	from right1_t2_1_157586
+save_right_1p_t2_1_157586:
+	from save_right_t3_1_157586
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_157586
+	goto save_right_t2_1_157586
 
-right_2p_t2_1_157586:
-	from right_t3_1_157586
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_157586
-
-right_1p_t3_1_157586:
-	from right1_t3_1_157586
+save_right_1p_t3_1_157586:
+	from load_right_t3_1_157586
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_157586
+	goto save_right_t3_1_157586
 
-right_2p_t3_1_157586:
-	from symbol_1_157585
+load_right_2p_t3_1_157586:
+	from load_right_t2_1_157586
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_157586
+	goto load_right_t3_1_157586
+
+load_right_2p_t2_1_157586:
+	from symbol_1_157585
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_157586
 
 symbol_1_154773:
-	from left_t2_1_151986
+	from save_left_t2_1_151986
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_186009
 		else symbol_1_186009
@@ -13987,37 +13987,37 @@ symbol_1_186052:
 		from symbol1_1_186933
 		else symbol_1_186049
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_186268
-		else left_2p_t2_1_186268
+		goto load_left_2b_t2_1_186268
+		else load_left_2p_t2_1_186268
 
-left_2b_t2_1_186268:
+load_left_2b_t2_1_186268:
 	from symbol_1_186052
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_186268
+	goto load_left_t2_1_186268
 
-left1_t2_1_186268:
+load_left_t2_1_186268:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_186268
-		else left_2p_t2_1_186268
+		from load_left_2b_t2_1_186268
+		else load_left_2p_t2_1_186268
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_186268
-		else left_1p_t2_1_186268
+		goto save_left_1b_t2_1_186268
+		else save_left_1p_t2_1_186268
 
-left_1b_t2_1_186268:
-	from left1_t2_1_186268
+save_left_1b_t2_1_186268:
+	from load_left_t2_1_186268
 	S_t2 ^= 'BLANK
-	goto left_t2_1_186268
+	goto save_left_t2_1_186268
 
-left_t2_1_186268:
+save_left_t2_1_186268:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_186268
-		else left_1p_t2_1_186268
+		from save_left_1b_t2_1_186268
+		else save_left_1p_t2_1_186268
 	if (((S_t1 = '1) && (S_t2 = '0)) && (S_t3 = '#))
 		goto symbol1_1_186721
 		else symbol_1_186721
 
 symbol1_1_186721:
-	from left_t2_1_186268
+	from save_left_t2_1_186268
 	S_t3 ^= '#
 	S_t2 ^= '0
 	S_t1 ^= '1
@@ -14074,37 +14074,37 @@ symbol_1_186748:
 		from symbol_1_221252
 		else symbol_1_186745
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_186751
-		else right_2p_t2_1_186751
+		goto load_right_2b_t2_1_186751
+		else load_right_2p_t2_1_186751
 
-right_2b_t2_1_186751:
+load_right_2b_t2_1_186751:
 	from symbol_1_186748
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_186751
+	goto load_right_t2_1_186751
 
-right1_t2_1_186751:
+load_right_t2_1_186751:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_186751
-		else right_2p_t2_1_186751
+		from load_right_2b_t2_1_186751
+		else load_right_2p_t2_1_186751
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_186751
-		else right_1p_t2_1_186751
+		goto save_right_1b_t2_1_186751
+		else save_right_1p_t2_1_186751
 
-right_1b_t2_1_186751:
-	from right1_t2_1_186751
+save_right_1b_t2_1_186751:
+	from load_right_t2_1_186751
 	S_t2 ^= 'BLANK
-	goto right_t2_1_186751
+	goto save_right_t2_1_186751
 
-right_t2_1_186751:
+save_right_t2_1_186751:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_186751
-		else right_1p_t2_1_186751
+		from save_right_1b_t2_1_186751
+		else save_right_1p_t2_1_186751
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_186901
 		else symbol_1_186901
 
 symbol1_1_186901:
-	from right_t2_1_186751
+	from save_right_t2_1_186751
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -14114,7 +14114,7 @@ symbol1_1_186901:
 	goto symbol_1_172641
 
 symbol_1_186901:
-	from right_t2_1_186751
+	from save_right_t2_1_186751
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_186905
 		else symbol_1_186905
@@ -14140,18 +14140,18 @@ symbol_1_186905:
 	S_t3 ^= '#
 	goto symbol_1_172647
 
-right_1p_t2_1_186751:
-	from right1_t2_1_186751
+save_right_1p_t2_1_186751:
+	from load_right_t2_1_186751
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_186751
+	goto save_right_t2_1_186751
 
-right_2p_t2_1_186751:
+load_right_2p_t2_1_186751:
 	from symbol_1_186748
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_186751
+	goto load_right_t2_1_186751
 
 symbol_1_186721:
-	from left_t2_1_186268
+	from save_left_t2_1_186268
 	if (((S_t1 = '1) && (S_t2 = 'B)) && (S_t3 = '#))
 		goto symbol1_1_186913
 		else symbol_1_186913
@@ -14225,15 +14225,15 @@ symbol_1_186925:
 	S_t3 ^= '#
 	goto symbol_1_186739
 
-left_1p_t2_1_186268:
-	from left1_t2_1_186268
+save_left_1p_t2_1_186268:
+	from load_left_t2_1_186268
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_186268
+	goto save_left_t2_1_186268
 
-left_2p_t2_1_186268:
+load_left_2p_t2_1_186268:
 	from symbol_1_186052
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_186268
+	goto load_left_t2_1_186268
 
 symbol_1_186043:
 	from symbol_1_186041
@@ -14358,25 +14358,25 @@ symbol_1_186943:
 	S_t3 ^= '0
 	goto symbol_1_151985
 
-left_1p_t2_1_151986:
-	from left1_t2_1_151986
+save_left_1p_t2_1_151986:
+	from save_left_t3_1_151986
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_151986
+	goto save_left_t2_1_151986
 
-left_2p_t2_1_151986:
-	from left_t3_1_151986
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_151986
-
-left_1p_t3_1_151986:
-	from left1_t3_1_151986
+save_left_1p_t3_1_151986:
+	from load_left_t3_1_151986
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_151986
+	goto save_left_t3_1_151986
 
-left_2p_t3_1_151986:
-	from symbol_1_151985
+load_left_2p_t3_1_151986:
+	from load_left_t2_1_151986
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_151986
+	goto load_left_t3_1_151986
+
+load_left_2p_t2_1_151986:
+	from symbol_1_151985
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_151986
 
 symbol_1_149173:
 	from symbol_1_148996
@@ -14411,7 +14411,7 @@ symbol1_1_186953:
 	goto symbol_1_149182
 
 symbol_1_148987:
-	from right_t2_1_148981
+	from save_right_t2_1_148981
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_189578
 		else symbol_1_189578
@@ -14725,15 +14725,15 @@ symbol_1_192399:
 	S_t3 ^= '#
 	goto symbol_1_148978
 
-right_1p_t2_1_148981:
-	from right1_t2_1_148981
+save_right_1p_t2_1_148981:
+	from load_right_t2_1_148981
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_148981
+	goto save_right_t2_1_148981
 
-right_2p_t2_1_148981:
+load_right_2p_t2_1_148981:
 	from symbol_1_148978
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_148981
+	goto load_right_t2_1_148981
 
 symbol_1_148915:
 	from symbol_1_148912
@@ -14768,7 +14768,7 @@ symbol1_1_192409:
 	goto symbol_1_148924
 
 symbol_1_148903:
-	from right_t2_1_148897
+	from save_right_t2_1_148897
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_195208
 		else symbol_1_195208
@@ -15082,15 +15082,15 @@ symbol_1_198029:
 	S_t3 ^= '#
 	goto symbol_1_148894
 
-right_1p_t2_1_148897:
-	from right1_t2_1_148897
+save_right_1p_t2_1_148897:
+	from load_right_t2_1_148897
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_148897
+	goto save_right_t2_1_148897
 
-right_2p_t2_1_148897:
+load_right_2p_t2_1_148897:
 	from symbol_1_148894
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_148897
+	goto load_right_t2_1_148897
 
 symbol_1_148831:
 	from symbol_1_148828
@@ -15125,7 +15125,7 @@ symbol1_1_198039:
 	goto symbol_1_148840
 
 symbol_1_148819:
-	from right_t2_1_148813
+	from save_right_t2_1_148813
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_200838
 		else symbol_1_200838
@@ -15439,15 +15439,15 @@ symbol_1_203659:
 	S_t3 ^= '#
 	goto symbol_1_148810
 
-right_1p_t2_1_148813:
-	from right1_t2_1_148813
+save_right_1p_t2_1_148813:
+	from load_right_t2_1_148813
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_148813
+	goto save_right_t2_1_148813
 
-right_2p_t2_1_148813:
+load_right_2p_t2_1_148813:
 	from symbol_1_148810
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_148813
+	goto load_right_t2_1_148813
 
 symbol_1_148747:
 	from symbol_1_148744
@@ -15482,7 +15482,7 @@ symbol1_1_203669:
 	goto symbol_1_148756
 
 symbol_1_148735:
-	from left_t2_1_148729
+	from save_left_t2_1_148729
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_206468
 		else symbol_1_206468
@@ -15604,28 +15604,28 @@ symbol_1_209277:
 	S_t3 ^= '0
 	goto symbol_1_148726
 
-left_1p_t2_1_148729:
-	from left1_t2_1_148729
+save_left_1p_t2_1_148729:
+	from save_right_t3_1_148729
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_148729
+	goto save_left_t2_1_148729
 
-left_2p_t2_1_148729:
-	from right_t3_1_148729
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_148729
-
-right_1p_t3_1_148729:
-	from right1_t3_1_148729
+save_right_1p_t3_1_148729:
+	from load_right_t3_1_148729
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_148729
+	goto save_right_t3_1_148729
 
-right_2p_t3_1_148729:
-	from symbol_1_148726
+load_right_2p_t3_1_148729:
+	from load_left_t2_1_148729
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_148729
+	goto load_right_t3_1_148729
+
+load_left_2p_t2_1_148729:
+	from symbol_1_148726
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_148729
 
 symbol_1_148645:
-	from right_t2_1_148639
+	from save_right_t2_1_148639
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_209283
 		else symbol_1_209283
@@ -15987,28 +15987,28 @@ symbol_1_212107:
 	S_t3 ^= '0
 	goto symbol_1_148636
 
-right_1p_t2_1_148639:
-	from right1_t2_1_148639
+save_right_1p_t2_1_148639:
+	from save_left_t3_1_148639
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_148639
+	goto save_right_t2_1_148639
 
-right_2p_t2_1_148639:
-	from left_t3_1_148639
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_148639
-
-left_1p_t3_1_148639:
-	from left1_t3_1_148639
+save_left_1p_t3_1_148639:
+	from load_left_t3_1_148639
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_148639
+	goto save_left_t3_1_148639
 
-left_2p_t3_1_148639:
-	from symbol_1_148636
+load_left_2p_t3_1_148639:
+	from load_right_t2_1_148639
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_148639
+	goto load_left_t3_1_148639
+
+load_right_2p_t2_1_148639:
+	from symbol_1_148636
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_148639
 
 symbol_1_148609:
-	from right_t3_1_148603
+	from save_right_t3_1_148603
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_212113
 		else symbol_1_212113
@@ -16130,18 +16130,18 @@ symbol_1_214922:
 	S_t3 ^= '0
 	goto symbol_1_148600
 
-right_1p_t3_1_148603:
-	from right1_t3_1_148603
+save_right_1p_t3_1_148603:
+	from load_right_t3_1_148603
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_148603
+	goto save_right_t3_1_148603
 
-right_2p_t3_1_148603:
+load_right_2p_t3_1_148603:
 	from symbol_1_148600
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_148603
+	goto load_right_t3_1_148603
 
 symbol_1_148573:
-	from left_t2_1_148567
+	from save_left_t2_1_148567
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_214928
 		else symbol_1_214928
@@ -16263,15 +16263,15 @@ symbol_1_217737:
 	S_t3 ^= '#
 	goto symbol_1_148564
 
-left_1p_t2_1_148567:
-	from left1_t2_1_148567
+save_left_1p_t2_1_148567:
+	from load_left_t2_1_148567
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_148567
+	goto save_left_t2_1_148567
 
-left_2p_t2_1_148567:
+load_left_2p_t2_1_148567:
 	from symbol_1_148564
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_148567
+	goto load_left_t2_1_148567
 
 symbol_1_148537:
 	from symbol_1_145929
@@ -16306,7 +16306,7 @@ symbol1_1_217743:
 	goto symbol_1_148546
 
 symbol_1_145920:
-	from right_t2_1_143115
+	from save_right_t2_1_143115
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_217939
 		else symbol_1_217939
@@ -16428,18 +16428,18 @@ symbol_1_217951:
 	S_t3 ^= '#
 	goto symbol_1_143114
 
-right_1p_t2_1_143115:
-	from right1_t2_1_143115
+save_right_1p_t2_1_143115:
+	from load_right_t2_1_143115
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_143115
+	goto save_right_t2_1_143115
 
-right_2p_t2_1_143115:
+load_right_2p_t2_1_143115:
 	from symbol_1_143114
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_143115
+	goto load_right_t2_1_143115
 
 symbol_1_140302:
-	from left_t3_1_137497
+	from save_left_t3_1_137497
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_217955
 		else symbol_1_217955
@@ -16561,18 +16561,18 @@ symbol_1_217967:
 	S_t3 ^= '0
 	goto symbol_1_137496
 
-left_1p_t3_1_137497:
-	from left1_t3_1_137497
+save_left_1p_t3_1_137497:
+	from load_left_t3_1_137497
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_137497
+	goto save_left_t3_1_137497
 
-left_2p_t3_1_137497:
+load_left_2p_t3_1_137497:
 	from symbol_1_137496
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_137497
+	goto load_left_t3_1_137497
 
 symbol_1_134684:
-	from left_t2_1_131879
+	from save_left_t2_1_131879
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_217971
 		else symbol_1_217971
@@ -16694,28 +16694,28 @@ symbol_1_217983:
 	S_t3 ^= '0
 	goto symbol_1_131878
 
-left_1p_t2_1_131879:
-	from left1_t2_1_131879
+save_left_1p_t2_1_131879:
+	from save_right_t3_1_131879
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_131879
+	goto save_left_t2_1_131879
 
-left_2p_t2_1_131879:
-	from right_t3_1_131879
-	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_131879
-
-right_1p_t3_1_131879:
-	from right1_t3_1_131879
+save_right_1p_t3_1_131879:
+	from load_right_t3_1_131879
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_131879
+	goto save_right_t3_1_131879
 
-right_2p_t3_1_131879:
-	from symbol_1_131878
+load_right_2p_t3_1_131879:
+	from load_left_t2_1_131879
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_131879
+	goto load_right_t3_1_131879
+
+load_left_2p_t2_1_131879:
+	from symbol_1_131878
+	S_left_t2 <- (S_t2 . S_left_t2)
+	goto load_left_t2_1_131879
 
 symbol_1_129066:
-	from right_t2_1_126279
+	from save_right_t2_1_126279
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_217987
 		else symbol_1_217987
@@ -17014,37 +17014,37 @@ symbol_1_218030:
 		from symbol1_1_246757
 		else symbol_1_218027
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_218066
-		else right_2p_t2_1_218066
+		goto load_right_2b_t2_1_218066
+		else load_right_2p_t2_1_218066
 
-right_2b_t2_1_218066:
+load_right_2b_t2_1_218066:
 	from symbol_1_218030
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_218066
+	goto load_right_t2_1_218066
 
-right1_t2_1_218066:
+load_right_t2_1_218066:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_218066
-		else right_2p_t2_1_218066
+		from load_right_2b_t2_1_218066
+		else load_right_2p_t2_1_218066
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_218066
-		else right_1p_t2_1_218066
+		goto save_right_1b_t2_1_218066
+		else save_right_1p_t2_1_218066
 
-right_1b_t2_1_218066:
-	from right1_t2_1_218066
+save_right_1b_t2_1_218066:
+	from load_right_t2_1_218066
 	S_t2 ^= 'BLANK
-	goto right_t2_1_218066
+	goto save_right_t2_1_218066
 
-right_t2_1_218066:
+save_right_t2_1_218066:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_218066
-		else right_1p_t2_1_218066
+		from save_right_1b_t2_1_218066
+		else save_right_1p_t2_1_218066
 	if (((S_t1 = '1) && (S_t2 = '0)) && (S_t3 = '#))
 		goto symbol1_1_218072
 		else symbol_1_218072
 
 symbol1_1_218072:
-	from right_t2_1_218066
+	from save_right_t2_1_218066
 	S_t3 ^= '#
 	S_t2 ^= '0
 	S_t1 ^= '1
@@ -17083,37 +17083,37 @@ symbol_1_218090:
 		from symbol1_1_220719
 		else symbol_1_218087
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_218102
-		else left_2p_t2_1_218102
+		goto load_left_2b_t2_1_218102
+		else load_left_2p_t2_1_218102
 
-left_2b_t2_1_218102:
+load_left_2b_t2_1_218102:
 	from symbol_1_218090
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_218102
+	goto load_left_t2_1_218102
 
-left1_t2_1_218102:
+load_left_t2_1_218102:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_218102
-		else left_2p_t2_1_218102
+		from load_left_2b_t2_1_218102
+		else load_left_2p_t2_1_218102
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_218102
-		else left_1p_t2_1_218102
+		goto save_left_1b_t2_1_218102
+		else save_left_1p_t2_1_218102
 
-left_1b_t2_1_218102:
-	from left1_t2_1_218102
+save_left_1b_t2_1_218102:
+	from load_left_t2_1_218102
 	S_t2 ^= 'BLANK
-	goto left_t2_1_218102
+	goto save_left_t2_1_218102
 
-left_t2_1_218102:
+save_left_t2_1_218102:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_218102
-		else left_1p_t2_1_218102
+		from save_left_1b_t2_1_218102
+		else save_left_1p_t2_1_218102
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220695
 		else symbol_1_220695
 
 symbol1_1_220695:
-	from left_t2_1_218102
+	from save_left_t2_1_218102
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17123,7 +17123,7 @@ symbol1_1_220695:
 	goto symbol_1_148702
 
 symbol_1_220695:
-	from left_t2_1_218102
+	from save_left_t2_1_218102
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220697
 		else symbol_1_220697
@@ -17149,18 +17149,18 @@ symbol_1_220697:
 	S_t3 ^= '#
 	goto symbol_1_148708
 
-left_1p_t2_1_218102:
-	from left1_t2_1_218102
+save_left_1p_t2_1_218102:
+	from load_left_t2_1_218102
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_218102
+	goto save_left_t2_1_218102
 
-left_2p_t2_1_218102:
+load_left_2p_t2_1_218102:
 	from symbol_1_218090
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_218102
+	goto load_left_t2_1_218102
 
 symbol_1_218072:
-	from right_t2_1_218066
+	from save_right_t2_1_218066
 	if (((S_t1 = '1) && (S_t2 = 'B)) && (S_t3 = '#))
 		goto symbol1_1_220703
 		else symbol_1_220703
@@ -17267,37 +17267,37 @@ symbol_1_220732:
 		from symbol_1_246749
 		else symbol_1_220729
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_220738
-		else left_2p_t2_1_220738
+		goto load_left_2b_t2_1_220738
+		else load_left_2p_t2_1_220738
 
-left_2b_t2_1_220738:
+load_left_2b_t2_1_220738:
 	from symbol_1_220732
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_220738
+	goto load_left_t2_1_220738
 
-left1_t2_1_220738:
+load_left_t2_1_220738:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_220738
-		else left_2p_t2_1_220738
+		from load_left_2b_t2_1_220738
+		else load_left_2p_t2_1_220738
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_220738
-		else left_1p_t2_1_220738
+		goto save_left_1b_t2_1_220738
+		else save_left_1p_t2_1_220738
 
-left_1b_t2_1_220738:
-	from left1_t2_1_220738
+save_left_1b_t2_1_220738:
+	from load_left_t2_1_220738
 	S_t2 ^= 'BLANK
-	goto left_t2_1_220738
+	goto save_left_t2_1_220738
 
-left_t2_1_220738:
+save_left_t2_1_220738:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_220738
-		else left_1p_t2_1_220738
+		from save_left_1b_t2_1_220738
+		else save_left_1p_t2_1_220738
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220744
 		else symbol_1_220744
 
 symbol1_1_220744:
-	from left_t2_1_220738
+	from save_left_t2_1_220738
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17354,37 +17354,37 @@ symbol_1_220771:
 		from symbol_1_246735
 		else symbol_1_220768
 	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_220774
-		else right_2p_t3_1_220774
+		goto load_right_2b_t3_1_220774
+		else load_right_2p_t3_1_220774
 
-right_2b_t3_1_220774:
+load_right_2b_t3_1_220774:
 	from symbol_1_220771
 	S_t3 ^= 'BLANK
-	goto right1_t3_1_220774
+	goto load_right_t3_1_220774
 
-right1_t3_1_220774:
+load_right_t3_1_220774:
 	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_220774
-		else right_2p_t3_1_220774
+		from load_right_2b_t3_1_220774
+		else load_right_2p_t3_1_220774
 	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_220774
-		else right_1p_t3_1_220774
+		goto save_right_1b_t3_1_220774
+		else save_right_1p_t3_1_220774
 
-right_1b_t3_1_220774:
-	from right1_t3_1_220774
+save_right_1b_t3_1_220774:
+	from load_right_t3_1_220774
 	S_t3 ^= 'BLANK
-	goto right_t3_1_220774
+	goto save_right_t3_1_220774
 
-right_t3_1_220774:
+save_right_t3_1_220774:
 	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_220774
-		else right_1p_t3_1_220774
+		from save_right_1b_t3_1_220774
+		else save_right_1p_t3_1_220774
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220780
 		else symbol_1_220780
 
 symbol1_1_220780:
-	from right_t3_1_220774
+	from save_right_t3_1_220774
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17543,37 +17543,37 @@ symbol_1_220855:
 		from symbol_1_241117
 		else symbol_1_220852
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_220858
-		else left_2p_t2_1_220858
+		goto load_left_2b_t2_1_220858
+		else load_left_2p_t2_1_220858
 
-left_2b_t2_1_220858:
+load_left_2b_t2_1_220858:
 	from symbol_1_220855
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_220858
+	goto load_left_t2_1_220858
 
-left1_t2_1_220858:
+load_left_t2_1_220858:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_220858
-		else left_2p_t2_1_220858
+		from load_left_2b_t2_1_220858
+		else load_left_2p_t2_1_220858
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_220858
-		else left_1p_t2_1_220858
+		goto save_left_1b_t2_1_220858
+		else save_left_1p_t2_1_220858
 
-left_1b_t2_1_220858:
-	from left1_t2_1_220858
+save_left_1b_t2_1_220858:
+	from load_left_t2_1_220858
 	S_t2 ^= 'BLANK
-	goto left_t2_1_220858
+	goto save_left_t2_1_220858
 
-left_t2_1_220858:
+save_left_t2_1_220858:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_220858
-		else left_1p_t2_1_220858
+		from save_left_1b_t2_1_220858
+		else save_left_1p_t2_1_220858
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220864
 		else symbol_1_220864
 
 symbol1_1_220864:
-	from left_t2_1_220858
+	from save_left_t2_1_220858
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17623,64 +17623,64 @@ symbol_1_220945:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		from symbol_1_238288
 		else symbol_1_220942
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_220948
-		else left_2p_t3_1_220948
-
-left_2b_t3_1_220948:
-	from symbol_1_220945
-	S_t3 ^= 'BLANK
-	goto left1_t3_1_220948
-
-left1_t3_1_220948:
-	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_220948
-		else left_2p_t3_1_220948
-	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_220948
-		else left_1p_t3_1_220948
-
-left_1b_t3_1_220948:
-	from left1_t3_1_220948
-	S_t3 ^= 'BLANK
-	goto left_t3_1_220948
-
-left_t3_1_220948:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_220948
-		else left_1p_t3_1_220948
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_220948
-		else right_2p_t2_1_220948
+		goto load_right_2b_t2_1_220948
+		else load_right_2p_t2_1_220948
 
-right_2b_t2_1_220948:
-	from left_t3_1_220948
+load_right_2b_t2_1_220948:
+	from symbol_1_220945
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_220948
+	goto load_right_t2_1_220948
 
-right1_t2_1_220948:
+load_right_t2_1_220948:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_220948
-		else right_2p_t2_1_220948
+		from load_right_2b_t2_1_220948
+		else load_right_2p_t2_1_220948
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_left_2b_t3_1_220948
+		else load_left_2p_t3_1_220948
+
+load_left_2b_t3_1_220948:
+	from load_right_t2_1_220948
+	S_t3 ^= 'BLANK
+	goto load_left_t3_1_220948
+
+load_left_t3_1_220948:
+	fi (S_left_t3 = 'nil)
+		from load_left_2b_t3_1_220948
+		else load_left_2p_t3_1_220948
+	if (S_right_t3 = 'nil)
+		goto save_left_1b_t3_1_220948
+		else save_left_1p_t3_1_220948
+
+save_left_1b_t3_1_220948:
+	from load_left_t3_1_220948
+	S_t3 ^= 'BLANK
+	goto save_left_t3_1_220948
+
+save_left_t3_1_220948:
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_left_1b_t3_1_220948
+		else save_left_1p_t3_1_220948
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_220948
-		else right_1p_t2_1_220948
+		goto save_right_1b_t2_1_220948
+		else save_right_1p_t2_1_220948
 
-right_1b_t2_1_220948:
-	from right1_t2_1_220948
+save_right_1b_t2_1_220948:
+	from save_left_t3_1_220948
 	S_t2 ^= 'BLANK
-	goto right_t2_1_220948
+	goto save_right_t2_1_220948
 
-right_t2_1_220948:
+save_right_t2_1_220948:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_220948
-		else right_1p_t2_1_220948
+		from save_right_1b_t2_1_220948
+		else save_right_1p_t2_1_220948
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_220954
 		else symbol_1_220954
 
 symbol1_1_220954:
-	from right_t2_1_220948
+	from save_right_t2_1_220948
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17701,37 +17701,37 @@ symbol_1_220963:
 		from symbol1_1_235414
 		else symbol_1_220960
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_220966
-		else right_2p_t2_1_220966
+		goto load_right_2b_t2_1_220966
+		else load_right_2p_t2_1_220966
 
-right_2b_t2_1_220966:
+load_right_2b_t2_1_220966:
 	from symbol_1_220963
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_220966
+	goto load_right_t2_1_220966
 
-right1_t2_1_220966:
+load_right_t2_1_220966:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_220966
-		else right_2p_t2_1_220966
+		from load_right_2b_t2_1_220966
+		else load_right_2p_t2_1_220966
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_220966
-		else right_1p_t2_1_220966
+		goto save_right_1b_t2_1_220966
+		else save_right_1p_t2_1_220966
 
-right_1b_t2_1_220966:
-	from right1_t2_1_220966
+save_right_1b_t2_1_220966:
+	from load_right_t2_1_220966
 	S_t2 ^= 'BLANK
-	goto right_t2_1_220966
+	goto save_right_t2_1_220966
 
-right_t2_1_220966:
+save_right_t2_1_220966:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_220966
-		else right_1p_t2_1_220966
+		from save_right_1b_t2_1_220966
+		else save_right_1p_t2_1_220966
 	if (((S_t1 = 'BLANK) && (S_t2 = 'B)) && (S_t3 = 'BLANK))
 		goto symbol1_1_220972
 		else symbol_1_220972
 
 symbol1_1_220972:
-	from right_t2_1_220966
+	from save_right_t2_1_220966
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'B
 	S_t1 ^= 'BLANK
@@ -17752,37 +17752,37 @@ symbol_1_220981:
 		from symbol_1_235402
 		else symbol_1_220978
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_220984
-		else right_2p_t2_1_220984
+		goto load_right_2b_t2_1_220984
+		else load_right_2p_t2_1_220984
 
-right_2b_t2_1_220984:
+load_right_2b_t2_1_220984:
 	from symbol_1_220981
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_220984
+	goto load_right_t2_1_220984
 
-right1_t2_1_220984:
+load_right_t2_1_220984:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_220984
-		else right_2p_t2_1_220984
+		from load_right_2b_t2_1_220984
+		else load_right_2p_t2_1_220984
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_220984
-		else right_1p_t2_1_220984
+		goto save_right_1b_t2_1_220984
+		else save_right_1p_t2_1_220984
 
-right_1b_t2_1_220984:
-	from right1_t2_1_220984
+save_right_1b_t2_1_220984:
+	from load_right_t2_1_220984
 	S_t2 ^= 'BLANK
-	goto right_t2_1_220984
+	goto save_right_t2_1_220984
 
-right_t2_1_220984:
+save_right_t2_1_220984:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_220984
-		else right_1p_t2_1_220984
+		from save_right_1b_t2_1_220984
+		else save_right_1p_t2_1_220984
 	if (((S_t1 = 'BLANK) && (S_t2 = 'B)) && (S_t3 = 'BLANK))
 		goto symbol1_1_220990
 		else symbol_1_220990
 
 symbol1_1_220990:
-	from right_t2_1_220984
+	from save_right_t2_1_220984
 	S_t3 ^= 'BLANK
 	S_t2 ^= 'B
 	S_t1 ^= 'BLANK
@@ -17803,37 +17803,37 @@ symbol_1_220999:
 		from symbol_1_235394
 		else symbol_1_220996
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_221002
-		else right_2p_t2_1_221002
+		goto load_right_2b_t2_1_221002
+		else load_right_2p_t2_1_221002
 
-right_2b_t2_1_221002:
+load_right_2b_t2_1_221002:
 	from symbol_1_220999
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_221002
+	goto load_right_t2_1_221002
 
-right1_t2_1_221002:
+load_right_t2_1_221002:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_221002
-		else right_2p_t2_1_221002
+		from load_right_2b_t2_1_221002
+		else load_right_2p_t2_1_221002
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_221002
-		else right_1p_t2_1_221002
+		goto save_right_1b_t2_1_221002
+		else save_right_1p_t2_1_221002
 
-right_1b_t2_1_221002:
-	from right1_t2_1_221002
+save_right_1b_t2_1_221002:
+	from load_right_t2_1_221002
 	S_t2 ^= 'BLANK
-	goto right_t2_1_221002
+	goto save_right_t2_1_221002
 
-right_t2_1_221002:
+save_right_t2_1_221002:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_221002
-		else right_1p_t2_1_221002
+		from save_right_1b_t2_1_221002
+		else save_right_1p_t2_1_221002
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_221062
 		else symbol_1_221062
 
 symbol1_1_221062:
-	from right_t2_1_221002
+	from save_right_t2_1_221002
 	S_t3 ^= 'BLANK
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -17858,64 +17858,64 @@ symbol_1_221071:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = '#))
 		from symbol_1_235386
 		else symbol_1_221068
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto right_2b_t3_1_221074
-		else right_2p_t3_1_221074
-
-right_2b_t3_1_221074:
-	from symbol_1_221071
-	S_t3 ^= 'BLANK
-	goto right1_t3_1_221074
-
-right1_t3_1_221074:
-	fi (S_right_t3 = 'nil)
-		from right_2b_t3_1_221074
-		else right_2p_t3_1_221074
-	if (S_left_t3 = 'nil)
-		goto right_1b_t3_1_221074
-		else right_1p_t3_1_221074
-
-right_1b_t3_1_221074:
-	from right1_t3_1_221074
-	S_t3 ^= 'BLANK
-	goto right_t3_1_221074
-
-right_t3_1_221074:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		from right_1b_t3_1_221074
-		else right_1p_t3_1_221074
 	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto right_2b_t2_1_221074
-		else right_2p_t2_1_221074
+		goto load_right_2b_t2_1_221074
+		else load_right_2p_t2_1_221074
 
-right_2b_t2_1_221074:
-	from right_t3_1_221074
+load_right_2b_t2_1_221074:
+	from symbol_1_221071
 	S_t2 ^= 'BLANK
-	goto right1_t2_1_221074
+	goto load_right_t2_1_221074
 
-right1_t2_1_221074:
+load_right_t2_1_221074:
 	fi (S_right_t2 = 'nil)
-		from right_2b_t2_1_221074
-		else right_2p_t2_1_221074
+		from load_right_2b_t2_1_221074
+		else load_right_2p_t2_1_221074
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+		goto load_right_2b_t3_1_221074
+		else load_right_2p_t3_1_221074
+
+load_right_2b_t3_1_221074:
+	from load_right_t2_1_221074
+	S_t3 ^= 'BLANK
+	goto load_right_t3_1_221074
+
+load_right_t3_1_221074:
+	fi (S_right_t3 = 'nil)
+		from load_right_2b_t3_1_221074
+		else load_right_2p_t3_1_221074
+	if (S_left_t3 = 'nil)
+		goto save_right_1b_t3_1_221074
+		else save_right_1p_t3_1_221074
+
+save_right_1b_t3_1_221074:
+	from load_right_t3_1_221074
+	S_t3 ^= 'BLANK
+	goto save_right_t3_1_221074
+
+save_right_t3_1_221074:
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+		from save_right_1b_t3_1_221074
+		else save_right_1p_t3_1_221074
 	if (S_left_t2 = 'nil)
-		goto right_1b_t2_1_221074
-		else right_1p_t2_1_221074
+		goto save_right_1b_t2_1_221074
+		else save_right_1p_t2_1_221074
 
-right_1b_t2_1_221074:
-	from right1_t2_1_221074
+save_right_1b_t2_1_221074:
+	from save_right_t3_1_221074
 	S_t2 ^= 'BLANK
-	goto right_t2_1_221074
+	goto save_right_t2_1_221074
 
-right_t2_1_221074:
+save_right_t2_1_221074:
 	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		from right_1b_t2_1_221074
-		else right_1p_t2_1_221074
+		from save_right_1b_t2_1_221074
+		else save_right_1p_t2_1_221074
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_221080
 		else symbol_1_221080
 
 symbol1_1_221080:
-	from right_t2_1_221074
+	from save_right_t2_1_221074
 	S_t3 ^= 'BLANK
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -18002,37 +18002,37 @@ symbol_1_221119:
 		from symbol_1_229699
 		else symbol_1_221116
 	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
-		goto left_2b_t3_1_221122
-		else left_2p_t3_1_221122
+		goto load_left_2b_t3_1_221122
+		else load_left_2p_t3_1_221122
 
-left_2b_t3_1_221122:
+load_left_2b_t3_1_221122:
 	from symbol_1_221119
 	S_t3 ^= 'BLANK
-	goto left1_t3_1_221122
+	goto load_left_t3_1_221122
 
-left1_t3_1_221122:
+load_left_t3_1_221122:
 	fi (S_left_t3 = 'nil)
-		from left_2b_t3_1_221122
-		else left_2p_t3_1_221122
+		from load_left_2b_t3_1_221122
+		else load_left_2p_t3_1_221122
 	if (S_right_t3 = 'nil)
-		goto left_1b_t3_1_221122
-		else left_1p_t3_1_221122
+		goto save_left_1b_t3_1_221122
+		else save_left_1p_t3_1_221122
 
-left_1b_t3_1_221122:
-	from left1_t3_1_221122
+save_left_1b_t3_1_221122:
+	from load_left_t3_1_221122
 	S_t3 ^= 'BLANK
-	goto left_t3_1_221122
+	goto save_left_t3_1_221122
 
-left_t3_1_221122:
+save_left_t3_1_221122:
 	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
-		from left_1b_t3_1_221122
-		else left_1p_t3_1_221122
+		from save_left_1b_t3_1_221122
+		else save_left_1p_t3_1_221122
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_221128
 		else symbol_1_221128
 
 symbol1_1_221128:
-	from left_t3_1_221122
+	from save_left_t3_1_221122
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -18191,37 +18191,37 @@ symbol_1_221203:
 		from symbol_1_224081
 		else symbol_1_221200
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_221206
-		else left_2p_t2_1_221206
+		goto load_left_2b_t2_1_221206
+		else load_left_2p_t2_1_221206
 
-left_2b_t2_1_221206:
+load_left_2b_t2_1_221206:
 	from symbol_1_221203
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_221206
+	goto load_left_t2_1_221206
 
-left1_t2_1_221206:
+load_left_t2_1_221206:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_221206
-		else left_2p_t2_1_221206
+		from load_left_2b_t2_1_221206
+		else load_left_2p_t2_1_221206
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_221206
-		else left_1p_t2_1_221206
+		goto save_left_1b_t2_1_221206
+		else save_left_1p_t2_1_221206
 
-left_1b_t2_1_221206:
-	from left1_t2_1_221206
+save_left_1b_t2_1_221206:
+	from load_left_t2_1_221206
 	S_t2 ^= 'BLANK
-	goto left_t2_1_221206
+	goto save_left_t2_1_221206
 
-left_t2_1_221206:
+save_left_t2_1_221206:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_221206
-		else left_1p_t2_1_221206
+		from save_left_1b_t2_1_221206
+		else save_left_1p_t2_1_221206
 	if (((S_t1 = 'BLANK) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_221212
 		else symbol_1_221212
 
 symbol1_1_221212:
-	from left_t2_1_221206
+	from save_left_t2_1_221206
 	S_t3 ^= '#
 	S_t2 ^= '#
 	S_t1 ^= 'BLANK
@@ -18242,37 +18242,37 @@ symbol_1_221221:
 		from symbol1_1_221264
 		else symbol_1_221218
 	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
-		goto left_2b_t2_1_221224
-		else left_2p_t2_1_221224
+		goto load_left_2b_t2_1_221224
+		else load_left_2p_t2_1_221224
 
-left_2b_t2_1_221224:
+load_left_2b_t2_1_221224:
 	from symbol_1_221221
 	S_t2 ^= 'BLANK
-	goto left1_t2_1_221224
+	goto load_left_t2_1_221224
 
-left1_t2_1_221224:
+load_left_t2_1_221224:
 	fi (S_left_t2 = 'nil)
-		from left_2b_t2_1_221224
-		else left_2p_t2_1_221224
+		from load_left_2b_t2_1_221224
+		else load_left_2p_t2_1_221224
 	if (S_right_t2 = 'nil)
-		goto left_1b_t2_1_221224
-		else left_1p_t2_1_221224
+		goto save_left_1b_t2_1_221224
+		else save_left_1p_t2_1_221224
 
-left_1b_t2_1_221224:
-	from left1_t2_1_221224
+save_left_1b_t2_1_221224:
+	from load_left_t2_1_221224
 	S_t2 ^= 'BLANK
-	goto left_t2_1_221224
+	goto save_left_t2_1_221224
 
-left_t2_1_221224:
+save_left_t2_1_221224:
 	fi ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
-		from left_1b_t2_1_221224
-		else left_1p_t2_1_221224
+		from save_left_1b_t2_1_221224
+		else save_left_1p_t2_1_221224
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = '#))
 		goto symbol1_1_221248
 		else symbol_1_221248
 
 symbol1_1_221248:
-	from left_t2_1_221224
+	from save_left_t2_1_221224
 	S_t3 ^= '#
 	S_t2 ^= '1
 	S_t1 ^= '1
@@ -18282,7 +18282,7 @@ symbol1_1_221248:
 	goto symbol_1_186742
 
 symbol_1_221248:
-	from left_t2_1_221224
+	from save_left_t2_1_221224
 	if (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '#))
 		goto symbol1_1_221252
 		else symbol_1_221252
@@ -18308,18 +18308,18 @@ symbol_1_221252:
 	S_t3 ^= '#
 	goto symbol_1_186748
 
-left_1p_t2_1_221224:
-	from left1_t2_1_221224
+save_left_1p_t2_1_221224:
+	from load_left_t2_1_221224
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_221224
+	goto save_left_t2_1_221224
 
-left_2p_t2_1_221224:
+load_left_2p_t2_1_221224:
 	from symbol_1_221221
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_221224
+	goto load_left_t2_1_221224
 
 symbol_1_221212:
-	from left_t2_1_221206
+	from save_left_t2_1_221206
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_221260
 		else symbol_1_221260
@@ -18633,15 +18633,15 @@ symbol_1_224081:
 	S_t3 ^= '#
 	goto symbol_1_221203
 
-left_1p_t2_1_221206:
-	from left1_t2_1_221206
+save_left_1p_t2_1_221206:
+	from load_left_t2_1_221206
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_221206
+	goto save_left_t2_1_221206
 
-left_2p_t2_1_221206:
+load_left_2p_t2_1_221206:
 	from symbol_1_221203
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_221206
+	goto load_left_t2_1_221206
 
 symbol_1_221140:
 	from symbol_1_221137
@@ -18676,7 +18676,7 @@ symbol1_1_224091:
 	goto symbol_1_221149
 
 symbol_1_221128:
-	from left_t3_1_221122
+	from save_left_t3_1_221122
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_226890
 		else symbol_1_226890
@@ -18798,15 +18798,15 @@ symbol_1_229699:
 	S_t3 ^= '0
 	goto symbol_1_221119
 
-left_1p_t3_1_221122:
-	from left1_t3_1_221122
+save_left_1p_t3_1_221122:
+	from load_left_t3_1_221122
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_221122
+	goto save_left_t3_1_221122
 
-left_2p_t3_1_221122:
+load_left_2p_t3_1_221122:
 	from symbol_1_221119
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_221122
+	goto load_left_t3_1_221122
 
 symbol_1_221092:
 	from symbol_1_221089
@@ -18841,7 +18841,7 @@ symbol1_1_229709:
 	goto symbol_1_221101
 
 symbol_1_221080:
-	from right_t2_1_221074
+	from save_right_t2_1_221074
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_232508
 		else symbol_1_232508
@@ -19258,28 +19258,28 @@ symbol_1_235380:
 	S_t3 ^= '0
 	goto symbol_1_235348
 
-right_1p_t2_1_221074:
-	from right1_t2_1_221074
+save_right_1p_t2_1_221074:
+	from save_right_t3_1_221074
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_221074
+	goto save_right_t2_1_221074
 
-right_2p_t2_1_221074:
-	from right_t3_1_221074
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_221074
-
-right_1p_t3_1_221074:
-	from right1_t3_1_221074
+save_right_1p_t3_1_221074:
+	from load_right_t3_1_221074
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_221074
+	goto save_right_t3_1_221074
 
-right_2p_t3_1_221074:
-	from symbol_1_221071
+load_right_2p_t3_1_221074:
+	from load_right_t2_1_221074
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_221074
+	goto load_right_t3_1_221074
+
+load_right_2p_t2_1_221074:
+	from symbol_1_221071
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_221074
 
 symbol_1_221062:
-	from right_t2_1_221002
+	from save_right_t2_1_221002
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		goto symbol1_1_235386
 		else symbol_1_235386
@@ -19305,18 +19305,18 @@ symbol_1_235386:
 	S_t3 ^= '#
 	goto symbol_1_221071
 
-right_1p_t2_1_221002:
-	from right1_t2_1_221002
+save_right_1p_t2_1_221002:
+	from load_right_t2_1_221002
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_221002
+	goto save_right_t2_1_221002
 
-right_2p_t2_1_221002:
+load_right_2p_t2_1_221002:
 	from symbol_1_220999
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_221002
+	goto load_right_t2_1_221002
 
 symbol_1_220990:
-	from right_t2_1_220984
+	from save_right_t2_1_220984
 	if (((S_t1 = 'BLANK) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_235394
 		else symbol_1_235394
@@ -19342,18 +19342,18 @@ symbol_1_235394:
 	S_t3 ^= 'BLANK
 	goto symbol_1_220999
 
-right_1p_t2_1_220984:
-	from right1_t2_1_220984
+save_right_1p_t2_1_220984:
+	from load_right_t2_1_220984
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_220984
+	goto save_right_t2_1_220984
 
-right_2p_t2_1_220984:
+load_right_2p_t2_1_220984:
 	from symbol_1_220981
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_220984
+	goto load_right_t2_1_220984
 
 symbol_1_220972:
-	from right_t2_1_220966
+	from save_right_t2_1_220966
 	if (((S_t1 = '1) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		goto symbol1_1_235402
 		else symbol_1_235402
@@ -19379,18 +19379,18 @@ symbol_1_235402:
 	S_t3 ^= 'BLANK
 	goto symbol_1_220981
 
-right_1p_t2_1_220966:
-	from right1_t2_1_220966
+save_right_1p_t2_1_220966:
+	from load_right_t2_1_220966
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_220966
+	goto save_right_t2_1_220966
 
-right_2p_t2_1_220966:
+load_right_2p_t2_1_220966:
 	from symbol_1_220963
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_220966
+	goto load_right_t2_1_220966
 
 symbol_1_220954:
-	from right_t2_1_220948
+	from save_right_t2_1_220948
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_235410
 		else symbol_1_235410
@@ -19807,25 +19807,25 @@ symbol_1_238282:
 	S_t3 ^= 'BLANK
 	goto symbol_1_238250
 
-right_1p_t2_1_220948:
-	from right1_t2_1_220948
+save_right_1p_t2_1_220948:
+	from save_left_t3_1_220948
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_220948
+	goto save_right_t2_1_220948
 
-right_2p_t2_1_220948:
-	from left_t3_1_220948
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_220948
-
-left_1p_t3_1_220948:
-	from left1_t3_1_220948
+save_left_1p_t3_1_220948:
+	from load_left_t3_1_220948
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_220948
+	goto save_left_t3_1_220948
 
-left_2p_t3_1_220948:
-	from symbol_1_220945
+load_left_2p_t3_1_220948:
+	from load_right_t2_1_220948
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_220948
+	goto load_left_t3_1_220948
+
+load_right_2p_t2_1_220948:
+	from symbol_1_220945
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_220948
 
 symbol_1_220936:
 	from symbol_1_220873
@@ -19855,7 +19855,7 @@ symbol_1_238288:
 	goto symbol_1_220945
 
 symbol_1_220864:
-	from left_t2_1_220858
+	from save_left_t2_1_220858
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_238296
 		else symbol_1_238296
@@ -20169,15 +20169,15 @@ symbol_1_241117:
 	S_t3 ^= '#
 	goto symbol_1_220855
 
-left_1p_t2_1_220858:
-	from left1_t2_1_220858
+save_left_1p_t2_1_220858:
+	from load_left_t2_1_220858
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_220858
+	goto save_left_t2_1_220858
 
-left_2p_t2_1_220858:
+load_left_2p_t2_1_220858:
 	from symbol_1_220855
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_220858
+	goto load_left_t2_1_220858
 
 symbol_1_220792:
 	from symbol_1_220789
@@ -20212,7 +20212,7 @@ symbol1_1_241127:
 	goto symbol_1_220801
 
 symbol_1_220780:
-	from right_t3_1_220774
+	from save_right_t3_1_220774
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_243926
 		else symbol_1_243926
@@ -20334,18 +20334,18 @@ symbol_1_246735:
 	S_t3 ^= '0
 	goto symbol_1_220771
 
-right_1p_t3_1_220774:
-	from right1_t3_1_220774
+save_right_1p_t3_1_220774:
+	from load_right_t3_1_220774
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_220774
+	goto save_right_t3_1_220774
 
-right_2p_t3_1_220774:
+load_right_2p_t3_1_220774:
 	from symbol_1_220771
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_220774
+	goto load_right_t3_1_220774
 
 symbol_1_220744:
-	from left_t2_1_220738
+	from save_left_t2_1_220738
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_246741
 		else symbol_1_246741
@@ -20371,15 +20371,15 @@ symbol_1_246741:
 	S_t3 ^= '#
 	goto symbol_1_220753
 
-left_1p_t2_1_220738:
-	from left1_t2_1_220738
+save_left_1p_t2_1_220738:
+	from load_left_t2_1_220738
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_220738
+	goto save_left_t2_1_220738
 
-left_2p_t2_1_220738:
+load_left_2p_t2_1_220738:
 	from symbol_1_220732
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_220738
+	goto load_left_t2_1_220738
 
 symbol_1_220723:
 	from symbol_1_220719
@@ -20408,15 +20408,15 @@ symbol_1_246749:
 	S_t3 ^= '#
 	goto symbol_1_220732
 
-right_1p_t2_1_218066:
-	from right1_t2_1_218066
+save_right_1p_t2_1_218066:
+	from load_right_t2_1_218066
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_218066
+	goto save_right_t2_1_218066
 
-right_2p_t2_1_218066:
+load_right_2p_t2_1_218066:
 	from symbol_1_218030
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_218066
+	goto load_right_t2_1_218066
 
 symbol_1_218021:
 	from symbol_1_218019
@@ -20541,28 +20541,28 @@ symbol_1_246767:
 	S_t3 ^= '0
 	goto symbol_1_126278
 
-right_1p_t2_1_126279:
-	from right1_t2_1_126279
+save_right_1p_t2_1_126279:
+	from save_left_t3_1_126279
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_126279
+	goto save_right_t2_1_126279
 
-right_2p_t2_1_126279:
-	from left_t3_1_126279
-	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_126279
-
-left_1p_t3_1_126279:
-	from left1_t3_1_126279
+save_left_1p_t3_1_126279:
+	from load_left_t3_1_126279
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_126279
+	goto save_left_t3_1_126279
 
-left_2p_t3_1_126279:
-	from symbol_1_126278
+load_left_2p_t3_1_126279:
+	from load_right_t2_1_126279
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_126279
+	goto load_left_t3_1_126279
+
+load_right_2p_t2_1_126279:
+	from symbol_1_126278
+	S_right_t2 <- (S_t2 . S_right_t2)
+	goto load_right_t2_1_126279
 
 symbol_1_123466:
-	from right_t2_1_122689
+	from save_right_t2_1_122689
 	if (((S_t1 = '1) && (S_t2 = '#)) && (S_t3 = '#))
 		goto symbol1_1_246773
 		else symbol_1_246773
@@ -20588,15 +20588,15 @@ symbol_1_246773:
 	S_t3 ^= '#
 	goto symbol_1_123475
 
-right_1p_t2_1_122689:
-	from right1_t2_1_122689
+save_right_1p_t2_1_122689:
+	from load_right_t2_1_122689
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_122689
+	goto save_right_t2_1_122689
 
-right_2p_t2_1_122689:
+load_right_2p_t2_1_122689:
 	from symbol_1_122686
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_122689
+	goto load_right_t2_1_122689
 
 symbol_1_122677:
 	from symbol_1_122376
@@ -20625,15 +20625,15 @@ symbol_1_246779:
 	S_t3 ^= '#
 	goto symbol_1_122686
 
-right_1p_t2_1_4607:
-	from right1_t2_1_4607
+save_right_1p_t2_1_4607:
+	from load_right_t2_1_4607
 	(S_t2 . S_left_t2) <- S_left_t2
-	goto right_t2_1_4607
+	goto save_right_t2_1_4607
 
-right_2p_t2_1_4607:
+load_right_2p_t2_1_4607:
 	from symbol_1_4604
 	S_right_t2 <- (S_t2 . S_right_t2)
-	goto right1_t2_1_4607
+	goto load_right_t2_1_4607
 
 symbol_1_4577:
 	from symbol_1_2213
@@ -20668,7 +20668,7 @@ symbol1_1_246789:
 	goto symbol_1_4586
 
 symbol_1_2204:
-	from right_t3_1_2198
+	from save_right_t3_1_2198
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_247227
 		else symbol_1_247227
@@ -20694,28 +20694,28 @@ symbol_1_247227:
 	S_t3 ^= '#
 	goto symbol_1_2213
 
-right_1p_t3_1_2198:
-	from right1_t3_1_2198
+save_right_1p_t3_1_2198:
+	from load_right_t3_1_2198
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_2198
+	goto save_right_t3_1_2198
 
-right_2p_t3_1_2198:
-	from right_t3_1_2192
+load_right_2p_t3_1_2198:
+	from save_right_t3_1_2192
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_2198
+	goto load_right_t3_1_2198
 
-right_1p_t3_1_2192:
-	from right1_t3_1_2192
+save_right_1p_t3_1_2192:
+	from load_right_t3_1_2192
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_2192
+	goto save_right_t3_1_2192
 
-right_2p_t3_1_2192:
+load_right_2p_t3_1_2192:
 	from symbol_1_2189
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_2192
+	goto load_right_t3_1_2192
 
 symbol_1_2180:
-	from left_t3_1_2174
+	from save_left_t3_1_2174
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_247235
 		else symbol_1_247235
@@ -20741,28 +20741,28 @@ symbol_1_247235:
 	S_t3 ^= '#
 	goto symbol_1_2189
 
-left_1p_t3_1_2174:
-	from left1_t3_1_2174
+save_left_1p_t3_1_2174:
+	from load_left_t3_1_2174
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_2174
+	goto save_left_t3_1_2174
 
-left_2p_t3_1_2174:
-	from left_t3_1_2168
+load_left_2p_t3_1_2174:
+	from save_left_t3_1_2168
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_2174
+	goto load_left_t3_1_2174
 
-left_1p_t3_1_2168:
-	from left1_t3_1_2168
+save_left_1p_t3_1_2168:
+	from load_left_t3_1_2168
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_2168
+	goto save_left_t3_1_2168
 
-left_2p_t3_1_2168:
+load_left_2p_t3_1_2168:
 	from symbol_1_2165
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_2168
+	goto load_left_t3_1_2168
 
 symbol_1_2156:
-	from right_t3_1_2006
+	from save_right_t3_1_2006
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = '#))
 		goto symbol1_1_247243
 		else symbol_1_247243
@@ -20788,48 +20788,48 @@ symbol_1_247243:
 	S_t3 ^= '#
 	goto symbol_1_2165
 
-right_1p_t3_1_2006:
-	from right1_t3_1_2006
+save_right_1p_t3_1_2006:
+	from load_right_t3_1_2006
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_2006
+	goto save_right_t3_1_2006
 
-right_2p_t3_1_2006:
-	from right_t3_1_2000
+load_right_2p_t3_1_2006:
+	from save_right_t3_1_2000
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_2006
+	goto load_right_t3_1_2006
 
-right_1p_t3_1_2000:
-	from right1_t3_1_2000
+save_right_1p_t3_1_2000:
+	from load_right_t3_1_2000
 	(S_t3 . S_left_t3) <- S_left_t3
-	goto right_t3_1_2000
+	goto save_right_t3_1_2000
 
-right_2p_t3_1_2000:
-	from left_t3_1_1988
+load_right_2p_t3_1_2000:
+	from save_left_t3_1_1988
 	S_right_t3 <- (S_t3 . S_right_t3)
-	goto right1_t3_1_2000
+	goto load_right_t3_1_2000
 
-left_1p_t3_1_1988:
-	from left1_t3_1_1988
+save_left_1p_t3_1_1988:
+	from load_left_t3_1_1988
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_1988
+	goto save_left_t3_1_1988
 
-left_2p_t3_1_1988:
-	from left_t3_1_1976
+load_left_2p_t3_1_1988:
+	from save_left_t3_1_1976
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_1988
+	goto load_left_t3_1_1988
 
-left_1p_t3_1_1976:
-	from left1_t3_1_1976
+save_left_1p_t3_1_1976:
+	from load_left_t3_1_1976
 	(S_t3 . S_right_t3) <- S_right_t3
-	goto left_t3_1_1976
+	goto save_left_t3_1_1976
 
-left_2p_t3_1_1976:
+load_left_2p_t3_1_1976:
 	from symbol1_1_1970
 	S_left_t3 <- (S_t3 . S_left_t3)
-	goto left1_t3_1_1976
+	goto load_left_t3_1_1976
 
 symbol_1_1958:
-	from left_t2_1_1952
+	from save_left_t2_1_1952
 	if (((S_t1 = '1) && (S_t2 = 'BLANK)) && (S_t3 = 'BLANK))
 		goto symbol1_1_250052
 		else symbol_1_250052
@@ -21143,15 +21143,15 @@ symbol_1_252873:
 	S_t3 ^= 'BLANK
 	goto symbol_1_1949
 
-left_1p_t2_1_1952:
-	from left1_t2_1_1952
+save_left_1p_t2_1_1952:
+	from load_left_t2_1_1952
 	(S_t2 . S_right_t2) <- S_right_t2
-	goto left_t2_1_1952
+	goto save_left_t2_1_1952
 
-left_2p_t2_1_1952:
+load_left_2p_t2_1_1952:
 	from symbol_1_1949
 	S_left_t2 <- (S_t2 . S_left_t2)
-	goto left1_t2_1_1952
+	goto load_left_t2_1_1952
 
 symbol_1_1886:
 	from init_1

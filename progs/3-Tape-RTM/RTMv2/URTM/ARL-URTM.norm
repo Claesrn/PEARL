@@ -1775,7 +1775,7 @@ Block_246:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_539
 		else Block_241
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_251
 		else Block_252
 
@@ -1809,12 +1809,12 @@ Block_250:
 
 Block_251:
 	from Block_246
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_257
 
 Block_252:
 	from Block_246
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_257
 
 Block_253:
@@ -1846,10 +1846,10 @@ Block_256:
 		else Block_261
 
 Block_257:
-	fi (S_left_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_251
 		else Block_252
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_262
 		else Block_263
 
@@ -1888,14 +1888,14 @@ Block_262:
 
 Block_263:
 	from Block_257
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_268
 
 Block_264:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_574
 		else Block_258
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_269
 		else Block_270
 
@@ -1922,21 +1922,21 @@ Block_267:
 		else Block_273
 
 Block_268:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_262
 		else Block_263
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_274
 		else Block_275
 
 Block_269:
 	from Block_264
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_276
 
 Block_270:
 	from Block_264
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_276
 
 Block_271:
@@ -1963,19 +1963,19 @@ Block_273:
 
 Block_274:
 	from Block_268
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_280
 
 Block_275:
 	from Block_268
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_280
 
 Block_276:
-	fi (S_left_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_269
 		else Block_270
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_281
 		else Block_282
 
@@ -2002,7 +2002,7 @@ Block_279:
 		else Block_285
 
 Block_280:
-	fi (S_right_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_274
 		else Block_275
 	if (S_left_t2 = 'nil)
@@ -2016,7 +2016,7 @@ Block_281:
 
 Block_282:
 	from Block_276
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_288
 
 Block_283:
@@ -2052,10 +2052,10 @@ Block_287:
 	goto Block_292
 
 Block_288:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_281
 		else Block_282
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_293
 		else Block_294
 
@@ -2091,12 +2091,12 @@ Block_292:
 
 Block_293:
 	from Block_288
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_300
 
 Block_294:
 	from Block_288
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_300
 
 Block_295:
@@ -2139,7 +2139,7 @@ Block_299:
 		else Block_306
 
 Block_300:
-	fi (S_right_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_293
 		else Block_294
 	if (S_left_t2 = 'nil)
@@ -3663,7 +3663,7 @@ Block_510:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_694
 		else Block_499
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_523
 		else Block_524
 
@@ -3753,12 +3753,12 @@ Block_522:
 
 Block_523:
 	from Block_510
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_536
 
 Block_524:
 	from Block_510
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_536
 
 Block_525:
@@ -3840,10 +3840,10 @@ Block_535:
 		else Block_546
 
 Block_536:
-	fi (S_right_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_523
 		else Block_524
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_547
 		else Block_548
 
@@ -3927,7 +3927,7 @@ Block_547:
 
 Block_548:
 	from Block_536
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_557
 
 Block_549:
@@ -3940,7 +3940,7 @@ Block_550:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_742
 		else Block_540
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_559
 		else Block_560
 
@@ -3993,10 +3993,10 @@ Block_556:
 		else Block_566
 
 Block_557:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_547
 		else Block_548
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_567
 		else Block_568
 
@@ -4008,12 +4008,12 @@ Block_558:
 
 Block_559:
 	from Block_550
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_570
 
 Block_560:
 	from Block_550
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_570
 
 Block_561:
@@ -4058,12 +4058,12 @@ Block_566:
 
 Block_567:
 	from Block_557
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_577
 
 Block_568:
 	from Block_557
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_577
 
 Block_569:
@@ -4073,10 +4073,10 @@ Block_569:
 	goto Block_578
 
 Block_570:
-	fi (S_right_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_559
 		else Block_560
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_579
 		else Block_580
 
@@ -4133,7 +4133,7 @@ Block_576:
 		else Block_586
 
 Block_577:
-	fi (S_left_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_567
 		else Block_568
 	if (S_right_t2 = 'nil)
@@ -4153,7 +4153,7 @@ Block_579:
 
 Block_580:
 	from Block_570
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_590
 
 Block_581:
@@ -4213,10 +4213,10 @@ Block_589:
 		else Block_598
 
 Block_590:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_579
 		else Block_580
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_599
 		else Block_600
 
@@ -4284,12 +4284,12 @@ Block_598:
 
 Block_599:
 	from Block_590
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_610
 
 Block_600:
 	from Block_590
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_610
 
 Block_601:
@@ -4356,7 +4356,7 @@ Block_609:
 		else Block_620
 
 Block_610:
-	fi (S_left_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_599
 		else Block_600
 	if (S_right_t2 = 'nil)
@@ -5632,7 +5632,7 @@ Block_784:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_1018
 		else Block_772
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_796
 		else Block_797
 
@@ -5718,12 +5718,12 @@ Block_795:
 
 Block_796:
 	from Block_784
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_809
 
 Block_797:
 	from Block_784
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_809
 
 Block_798:
@@ -5812,10 +5812,10 @@ Block_808:
 		else Block_821
 
 Block_809:
-	fi (S_right_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_796
 		else Block_797
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_822
 		else Block_823
 
@@ -5908,7 +5908,7 @@ Block_822:
 
 Block_823:
 	from Block_809
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_835
 
 Block_824:
@@ -5994,10 +5994,10 @@ Block_834:
 		else Block_848
 
 Block_835:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_822
 		else Block_823
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_849
 		else Block_850
 
@@ -6089,12 +6089,12 @@ Block_848:
 
 Block_849:
 	from Block_835
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_862
 
 Block_850:
 	from Block_835
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_862
 
 Block_851:
@@ -6185,7 +6185,7 @@ Block_861:
 		else Block_873
 
 Block_862:
-	fi (S_left_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_849
 		else Block_850
 	if (S_right_t2 = 'nil)
@@ -8173,7 +8173,7 @@ Block_1130:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		from Block_1120
 		else Block_1119
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1140
 		else Block_1141
 
@@ -8241,12 +8241,12 @@ Block_1139:
 
 Block_1140:
 	from Block_1130
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1151
 
 Block_1141:
 	from Block_1130
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1151
 
 Block_1142:
@@ -8317,10 +8317,10 @@ Block_1150:
 	goto Block_1158
 
 Block_1151:
-	fi (S_left_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_1140
 		else Block_1141
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1159
 		else Block_1160
 
@@ -8379,7 +8379,7 @@ Block_1159:
 
 Block_1160:
 	from Block_1151
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_1168
 
 Block_1161:
@@ -8427,10 +8427,10 @@ Block_1167:
 	goto Block_1174
 
 Block_1168:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_1159
 		else Block_1160
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_1175
 		else Block_1176
 
@@ -8478,12 +8478,12 @@ Block_1174:
 
 Block_1175:
 	from Block_1168
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1184
 
 Block_1176:
 	from Block_1168
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_1184
 
 Block_1177:
@@ -8531,7 +8531,7 @@ Block_1183:
 	goto Block_1190
 
 Block_1184:
-	fi (S_right_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1175
 		else Block_1176
 	if (S_left_t2 = 'nil)
@@ -9625,7 +9625,7 @@ Block_1332:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = 'BLANK))
 		from Block_1314
 		else Block_1331
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1351
 		else Block_1352
 
@@ -9671,7 +9671,7 @@ Block_1338:
 	fi (((S_t1 = '0) && (S_t2 = '1)) && (S_t3 = 'BLANK))
 		from Block_1339
 		else Block_1320
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_1358
 		else Block_1359
 
@@ -9763,12 +9763,12 @@ Block_1350:
 
 Block_1351:
 	from Block_1332
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1370
 
 Block_1352:
 	from Block_1332
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1370
 
 Block_1353:
@@ -9813,12 +9813,12 @@ Block_1357:
 
 Block_1358:
 	from Block_1338
-	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
 	goto Block_1377
 
 Block_1359:
 	from Block_1338
-	S_right_t2 <- (S_t2 . S_right_t2)
+	S_right_t1 <- (S_t1 . S_right_t1)
 	goto Block_1377
 
 Block_1360:
@@ -9901,10 +9901,10 @@ Block_1369:
 		else Block_1388
 
 Block_1370:
-	fi (S_left_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_1351
 		else Block_1352
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1389
 		else Block_1390
 
@@ -9958,10 +9958,10 @@ Block_1376:
 		else Block_1397
 
 Block_1377:
-	fi (S_right_t2 = 'nil)
+	fi (S_right_t1 = 'nil)
 		from Block_1358
 		else Block_1359
-	if (S_left_t2 = 'nil)
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1398
 		else Block_1399
 
@@ -10055,7 +10055,7 @@ Block_1389:
 
 Block_1390:
 	from Block_1370
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_1412
 
 Block_1391:
@@ -10119,7 +10119,7 @@ Block_1398:
 
 Block_1399:
 	from Block_1377
-	(S_t2 . S_left_t2) <- S_left_t2
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1419
 
 Block_1400:
@@ -10213,10 +10213,10 @@ Block_1411:
 		else Block_1432
 
 Block_1412:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_1389
 		else Block_1390
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_1433
 		else Block_1434
 
@@ -10269,10 +10269,10 @@ Block_1418:
 		else Block_1439
 
 Block_1419:
-	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	fi (S_right_t2 = 'nil)
 		from Block_1398
 		else Block_1399
-	if ((S_right_t1 = 'nil) && (S_t1 = 'BLANK))
+	if (S_left_t2 = 'nil)
 		goto Block_1440
 		else Block_1441
 
@@ -10371,12 +10371,12 @@ Block_1432:
 
 Block_1433:
 	from Block_1412
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1455
 
 Block_1434:
 	from Block_1412
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_1455
 
 Block_1435:
@@ -10419,12 +10419,12 @@ Block_1439:
 
 Block_1440:
 	from Block_1419
-	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1461
 
 Block_1441:
 	from Block_1419
-	S_right_t1 <- (S_t1 . S_right_t1)
+	(S_t2 . S_left_t2) <- S_left_t2
 	goto Block_1461
 
 Block_1442:
@@ -10529,7 +10529,7 @@ Block_1454:
 		else Block_1473
 
 Block_1455:
-	fi (S_right_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1433
 		else Block_1434
 	if (S_left_t2 = 'nil)
@@ -10575,7 +10575,7 @@ Block_1460:
 		else Block_1480
 
 Block_1461:
-	fi (S_right_t1 = 'nil)
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		from Block_1440
 		else Block_1441
 	if (S_left_t1 = 'nil)
@@ -10596,7 +10596,7 @@ Block_1464:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = 'BLANK))
 		from Block_1445
 		else Block_1443
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
 		goto Block_1484
 		else Block_1485
 
@@ -10734,12 +10734,12 @@ Block_1483:
 
 Block_1484:
 	from Block_1464
-	S_t2 ^= 'BLANK
+	S_t1 ^= 'BLANK
 	goto Block_1504
 
 Block_1485:
 	from Block_1464
-	S_right_t2 <- (S_t2 . S_right_t2)
+	S_left_t1 <- (S_t1 . S_left_t1)
 	goto Block_1504
 
 Block_1486:
@@ -10879,10 +10879,10 @@ Block_1503:
 		else Block_1525
 
 Block_1504:
-	fi (S_right_t2 = 'nil)
+	fi (S_left_t1 = 'nil)
 		from Block_1484
 		else Block_1485
-	if (S_left_t2 = 'nil)
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1526
 		else Block_1527
 
@@ -11058,7 +11058,7 @@ Block_1526:
 
 Block_1527:
 	from Block_1504
-	(S_t2 . S_left_t2) <- S_left_t2
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1550
 
 Block_1528:
@@ -11234,10 +11234,10 @@ Block_1549:
 	goto Block_1568
 
 Block_1550:
-	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	fi (S_right_t2 = 'nil)
 		from Block_1526
 		else Block_1527
-	if ((S_left_t1 = 'nil) && (S_t1 = 'BLANK))
+	if (S_left_t2 = 'nil)
 		goto Block_1569
 		else Block_1570
 
@@ -11272,7 +11272,7 @@ Block_1554:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_1995
 		else Block_1531
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1572
 		else Block_1573
 
@@ -11378,12 +11378,12 @@ Block_1568:
 
 Block_1569:
 	from Block_1550
-	S_t1 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1587
 
 Block_1570:
 	from Block_1550
-	S_left_t1 <- (S_t1 . S_left_t1)
+	(S_t2 . S_left_t2) <- S_left_t2
 	goto Block_1587
 
 Block_1571:
@@ -11394,12 +11394,12 @@ Block_1571:
 
 Block_1572:
 	from Block_1554
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1588
 
 Block_1573:
 	from Block_1554
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1588
 
 Block_1574:
@@ -11498,7 +11498,7 @@ Block_1586:
 	goto Block_1602
 
 Block_1587:
-	fi (S_left_t1 = 'nil)
+	fi ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		from Block_1569
 		else Block_1570
 	if (S_right_t1 = 'nil)
@@ -11506,10 +11506,10 @@ Block_1587:
 		else Block_1604
 
 Block_1588:
-	fi (S_left_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_1572
 		else Block_1573
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1605
 		else Block_1606
 
@@ -11632,7 +11632,7 @@ Block_1605:
 
 Block_1606:
 	from Block_1588
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_1623
 
 Block_1607:
@@ -11753,10 +11753,10 @@ Block_1622:
 		else Block_1637
 
 Block_1623:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_1605
 		else Block_1606
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_1638
 		else Block_1639
 
@@ -11876,12 +11876,12 @@ Block_1637:
 
 Block_1638:
 	from Block_1623
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1655
 
 Block_1639:
 	from Block_1623
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_1655
 
 Block_1640:
@@ -11999,7 +11999,7 @@ Block_1654:
 	goto Block_1602
 
 Block_1655:
-	fi (S_right_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1638
 		else Block_1639
 	if (S_left_t2 = 'nil)
@@ -12378,7 +12378,7 @@ Block_1705:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = '#))
 		from Block_1693
 		else Block_1704
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1719
 		else Block_1720
 
@@ -12470,12 +12470,12 @@ Block_1718:
 
 Block_1719:
 	from Block_1705
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1732
 
 Block_1720:
 	from Block_1705
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1732
 
 Block_1721:
@@ -12566,10 +12566,10 @@ Block_1731:
 	goto Block_1542
 
 Block_1732:
-	fi (S_right_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_1719
 		else Block_1720
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1744
 		else Block_1745
 
@@ -12659,7 +12659,7 @@ Block_1744:
 
 Block_1745:
 	from Block_1732
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_1758
 
 Block_1746:
@@ -12752,10 +12752,10 @@ Block_1757:
 	goto Block_1768
 
 Block_1758:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_1744
 		else Block_1745
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_1769
 		else Block_1770
 
@@ -12837,12 +12837,12 @@ Block_1768:
 
 Block_1769:
 	from Block_1758
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1784
 
 Block_1770:
 	from Block_1758
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_1784
 
 Block_1771:
@@ -12932,7 +12932,7 @@ Block_1783:
 	goto Block_1795
 
 Block_1784:
-	fi (S_right_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1769
 		else Block_1770
 	if (S_left_t2 = 'nil)
@@ -13545,7 +13545,7 @@ Block_1865:
 	fi (((S_t1 = '0) && (S_t2 = '#)) && (S_t3 = '#))
 		from Block_1851
 		else Block_1864
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1878
 		else Block_1879
 
@@ -13642,12 +13642,12 @@ Block_1877:
 
 Block_1878:
 	from Block_1865
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1894
 
 Block_1879:
 	from Block_1865
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_1894
 
 Block_1880:
@@ -13756,10 +13756,10 @@ Block_1893:
 		else Block_1909
 
 Block_1894:
-	fi (S_right_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_1878
 		else Block_1879
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1910
 		else Block_1911
 
@@ -13880,7 +13880,7 @@ Block_1910:
 
 Block_1911:
 	from Block_1894
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_1926
 
 Block_1912:
@@ -13993,10 +13993,10 @@ Block_1925:
 		else Block_1937
 
 Block_1926:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_1910
 		else Block_1911
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_1938
 		else Block_1939
 
@@ -14004,7 +14004,7 @@ Block_1927:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2307
 		else Block_1912
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_1940
 		else Block_1941
 
@@ -14082,22 +14082,22 @@ Block_1937:
 
 Block_1938:
 	from Block_1926
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_1951
 
 Block_1939:
 	from Block_1926
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_1951
 
 Block_1940:
 	from Block_1927
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_1952
 
 Block_1941:
 	from Block_1927
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_1952
 
 Block_1942:
@@ -14167,7 +14167,7 @@ Block_1950:
 		else Block_1961
 
 Block_1951:
-	fi (S_right_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1938
 		else Block_1939
 	if (S_left_t2 = 'nil)
@@ -14175,10 +14175,10 @@ Block_1951:
 		else Block_1963
 
 Block_1952:
-	fi (S_left_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_1940
 		else Block_1941
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_1964
 		else Block_1965
 
@@ -14265,7 +14265,7 @@ Block_1964:
 
 Block_1965:
 	from Block_1952
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_1976
 
 Block_1966:
@@ -14343,10 +14343,10 @@ Block_1975:
 		else Block_1987
 
 Block_1976:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_1964
 		else Block_1965
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_1988
 		else Block_1989
 
@@ -14434,12 +14434,12 @@ Block_1987:
 
 Block_1988:
 	from Block_1976
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2002
 
 Block_1989:
 	from Block_1976
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_2002
 
 Block_1990:
@@ -14538,7 +14538,7 @@ Block_2001:
 		else Block_2013
 
 Block_2002:
-	fi (S_left_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_1988
 		else Block_1989
 	if (S_right_t2 = 'nil)
@@ -16678,7 +16678,7 @@ Block_2292:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2586
 		else Block_2282
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_2300
 		else Block_2301
 
@@ -16734,12 +16734,12 @@ Block_2299:
 
 Block_2300:
 	from Block_2292
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_2309
 
 Block_2301:
 	from Block_2292
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_2309
 
 Block_2302:
@@ -16798,10 +16798,10 @@ Block_2308:
 	goto Block_2314
 
 Block_2309:
-	fi (S_left_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_2300
 		else Block_2301
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_2315
 		else Block_2316
 
@@ -16846,7 +16846,7 @@ Block_2315:
 
 Block_2316:
 	from Block_2309
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_2322
 
 Block_2317:
@@ -16884,10 +16884,10 @@ Block_2321:
 	goto Block_2327
 
 Block_2322:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_2315
 		else Block_2316
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_2328
 		else Block_2329
 
@@ -16929,12 +16929,12 @@ Block_2327:
 
 Block_2328:
 	from Block_2322
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2336
 
 Block_2329:
 	from Block_2322
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_2336
 
 Block_2330:
@@ -16963,7 +16963,7 @@ Block_2333:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2474
 		else Block_2326
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_2340
 		else Block_2341
 
@@ -16978,7 +16978,7 @@ Block_2335:
 	goto Block_2342
 
 Block_2336:
-	fi (S_left_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_2328
 		else Block_2329
 	if (S_right_t2 = 'nil)
@@ -17009,12 +17009,12 @@ Block_2339:
 
 Block_2340:
 	from Block_2333
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_2348
 
 Block_2341:
 	from Block_2333
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_2348
 
 Block_2342:
@@ -17063,10 +17063,10 @@ Block_2347:
 	goto Block_2352
 
 Block_2348:
-	fi (S_right_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_2340
 		else Block_2341
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_2353
 		else Block_2354
 
@@ -17101,7 +17101,7 @@ Block_2353:
 
 Block_2354:
 	from Block_2348
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_2359
 
 Block_2355:
@@ -17136,10 +17136,10 @@ Block_2358:
 	goto Block_2365
 
 Block_2359:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_2353
 		else Block_2354
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_2366
 		else Block_2367
 
@@ -17189,12 +17189,12 @@ Block_2365:
 
 Block_2366:
 	from Block_2359
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2375
 
 Block_2367:
 	from Block_2359
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_2375
 
 Block_2368:
@@ -17248,7 +17248,7 @@ Block_2374:
 	goto Block_2382
 
 Block_2375:
-	fi (S_right_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_2366
 		else Block_2367
 	if (S_left_t2 = 'nil)
@@ -18682,7 +18682,7 @@ Block_2565:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2665
 		else Block_2557
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_2573
 		else Block_2574
 
@@ -18738,12 +18738,12 @@ Block_2572:
 
 Block_2573:
 	from Block_2565
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_2582
 
 Block_2574:
 	from Block_2565
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_2582
 
 Block_2575:
@@ -18797,10 +18797,10 @@ Block_2581:
 		else Block_2589
 
 Block_2582:
-	fi (S_right_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_2573
 		else Block_2574
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_2590
 		else Block_2591
 
@@ -18873,7 +18873,7 @@ Block_2590:
 
 Block_2591:
 	from Block_2582
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_2599
 
 Block_2592:
@@ -18931,10 +18931,10 @@ Block_2598:
 		else Block_2607
 
 Block_2599:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_2590
 		else Block_2591
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_2608
 		else Block_2609
 
@@ -19005,12 +19005,12 @@ Block_2607:
 
 Block_2608:
 	from Block_2599
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2617
 
 Block_2609:
 	from Block_2599
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_2617
 
 Block_2610:
@@ -19064,7 +19064,7 @@ Block_2616:
 		else Block_2623
 
 Block_2617:
-	fi (S_right_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_2608
 		else Block_2609
 	if (S_left_t2 = 'nil)
@@ -19270,7 +19270,7 @@ Block_2644:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2721
 		else Block_2640
-	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_2648
 		else Block_2649
 
@@ -19298,12 +19298,12 @@ Block_2647:
 
 Block_2648:
 	from Block_2644
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_2653
 
 Block_2649:
 	from Block_2644
-	S_right_t3 <- (S_t3 . S_right_t3)
+	S_right_t2 <- (S_t2 . S_right_t2)
 	goto Block_2653
 
 Block_2650:
@@ -19329,10 +19329,10 @@ Block_2652:
 		else Block_2656
 
 Block_2653:
-	fi (S_right_t3 = 'nil)
+	fi (S_right_t2 = 'nil)
 		from Block_2648
 		else Block_2649
-	if (S_left_t3 = 'nil)
+	if ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_2657
 		else Block_2658
 
@@ -19365,7 +19365,7 @@ Block_2657:
 
 Block_2658:
 	from Block_2653
-	(S_t3 . S_left_t3) <- S_left_t3
+	S_right_t3 <- (S_t3 . S_right_t3)
 	goto Block_2662
 
 Block_2659:
@@ -19391,10 +19391,10 @@ Block_2661:
 		else Block_2665
 
 Block_2662:
-	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_right_t3 = 'nil)
 		from Block_2657
 		else Block_2658
-	if ((S_right_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_left_t3 = 'nil)
 		goto Block_2666
 		else Block_2667
 
@@ -19427,12 +19427,12 @@ Block_2665:
 
 Block_2666:
 	from Block_2662
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2669
 
 Block_2667:
 	from Block_2662
-	S_right_t2 <- (S_t2 . S_right_t2)
+	(S_t3 . S_left_t3) <- S_left_t3
 	goto Block_2669
 
 Block_2668:
@@ -19444,7 +19444,7 @@ Block_2668:
 		else Block_2671
 
 Block_2669:
-	fi (S_right_t2 = 'nil)
+	fi ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_2666
 		else Block_2667
 	if (S_left_t2 = 'nil)
@@ -20628,25 +20628,25 @@ Block_2828:
 	fi (((S_t1 = '0) && (S_t2 = '0)) && (S_t3 = '0))
 		from Block_2903
 		else Block_2825
-	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
+	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
 		goto Block_2829
 		else Block_2830
 
 Block_2829:
 	from Block_2828
-	S_t3 ^= 'BLANK
+	S_t2 ^= 'BLANK
 	goto Block_2831
 
 Block_2830:
 	from Block_2828
-	S_left_t3 <- (S_t3 . S_left_t3)
+	S_left_t2 <- (S_t2 . S_left_t2)
 	goto Block_2831
 
 Block_2831:
-	fi (S_left_t3 = 'nil)
+	fi (S_left_t2 = 'nil)
 		from Block_2829
 		else Block_2830
-	if (S_right_t3 = 'nil)
+	if ((S_left_t3 = 'nil) && (S_t3 = 'BLANK))
 		goto Block_2832
 		else Block_2833
 
@@ -20657,29 +20657,29 @@ Block_2832:
 
 Block_2833:
 	from Block_2831
-	(S_t3 . S_right_t3) <- S_right_t3
+	S_left_t3 <- (S_t3 . S_left_t3)
 	goto Block_2834
 
 Block_2834:
-	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
+	fi (S_left_t3 = 'nil)
 		from Block_2832
 		else Block_2833
-	if ((S_left_t2 = 'nil) && (S_t2 = 'BLANK))
+	if (S_right_t3 = 'nil)
 		goto Block_2835
 		else Block_2836
 
 Block_2835:
 	from Block_2834
-	S_t2 ^= 'BLANK
+	S_t3 ^= 'BLANK
 	goto Block_2837
 
 Block_2836:
 	from Block_2834
-	S_left_t2 <- (S_t2 . S_left_t2)
+	(S_t3 . S_right_t3) <- S_right_t3
 	goto Block_2837
 
 Block_2837:
-	fi (S_left_t2 = 'nil)
+	fi ((S_right_t3 = 'nil) && (S_t3 = 'BLANK))
 		from Block_2835
 		else Block_2836
 	if (S_right_t2 = 'nil)
