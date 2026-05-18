@@ -378,8 +378,6 @@ load_t1_done: fi S2_t1 = 'RIGHT
                  from load_t1_right_done else load_stay_t1
               goto shft2
 
-// ================================================================
-
 shft2: fi S2_t1 = 'LEFT
           from load_t1_left_done else load_t1_done
        goto shft3
